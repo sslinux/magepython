@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="Python异常.md">
+        <li class="chapter " data-level="1.12" data-path="Python异常.html">
             
-                <span>
+                <a href="Python异常.html">
             
                     
                     Python异常
@@ -316,7 +316,85 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5B57;&#x5178;&#x3001;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x8BED;&#x53E5;">&#x5B57;&#x5178;&#x3001;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x8BED;&#x53E5;</h1>
+                                <h1 id="&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x8BED;&#x53E5;">&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x8BED;&#x53E5;</h1><h3 id="python&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x8BED;&#x53E5;&#xFF1A;">Python&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x8BED;&#x53E5;&#xFF1A;</h3><p>&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;&#x67D0;&#x4E8B;
+&#x8BED;&#x53E5;&#xFF1A;&#x505A;&#x67D0;&#x4E8B;</p><p>python&#x4E2D;&#x7684;&#x5E38;&#x7528;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x64CD;&#x4F5C;&#x7B26;&#xFF1A;
+    &#x7B97;&#x672F;&#x8FD0;&#x7B97;&#xFF1A;
+    &#x903B;&#x8F91;&#x8FD0;&#x7B97;&#xFF1A;
+        x or y, x and y, not x
+    &#x6210;&#x5458;&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#xFF1A;
+        x in y, x not in y
+    &#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x6D4B;&#x8BD5;&#xFF1A;
+        x is y , x not is y
+    &#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#xFF1A;
+        x &lt; y , x &gt; y ,x &lt;= y , x &gt;=y ,x ==y , x != y
+    &#x4F4D;&#x8FD0;&#x7B97;&#xFF1A;
+        x | y, x &amp; y , x ^ y, x &lt;&lt; y, x &gt;&gt; y
+    &#x4E00;&#x5143;&#x8FD0;&#x7B97;&#xFF1A;
+        -x , +x, ~x
+    &#x5E42;&#x8FD0;&#x7B97;&#xFF1A;
+        x ** y
+    &#x7D22;&#x5F15;&#x548C;&#x5206;&#x7247;&#xFF1A;
+        x[i],x[i:j],x[i:j:stride]
+    &#x8C03;&#x7528;&#xFF1A;
+        x(...)
+    &#x53D6;&#x5C5E;&#x6027;:
+        x.attribute
+    &#x5143;&#x7EC4;&#xFF1A;(...)
+    &#x5217;&#x8868;&#xFF1A;[...]
+    &#x5B57;&#x5178;&#xFF1A;{...}</p><pre><code>&#x4E09;&#x5143;&#x9009;&#x62E9;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A; 
+    x if y else z
+
+&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF1A;
+    lambda args: expression
+
+&#x751F;&#x6210;&#x5668;&#x51FD;&#x6570;&#x53D1;&#x9001;&#x534F;&#x8BAE;&#xFF1A; yield x</code></pre>
+<p>&#x8FD0;&#x7B97;&#x4F18;&#x5148;&#x7EA7;&#xFF1A;
+    (...),[...],{...}
+    s[i],s[i:j]
+    s.attrbute
+    s(...)
+    +x,-x,~x
+    x <em>* y
+    </em>,/,//,%</p><pre><code>+ , -
+&lt;&lt;,&gt;&gt;
+&amp;,
+^,
+|,
+&lt;,&lt;=,&gt;,&gt;=,==,!=
+is,not is
+in,not in
+not
+and
+or
+lanbda</code></pre>
+<h3 id="&#x8BED;&#x53E5;&#xFF1A;">&#x8BED;&#x53E5;&#xFF1A;</h3><pre><code>&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#xFF1A;
+&#x8C03;&#x7528;&#x8BED;&#x53E5;&#xFF1A;
+    print&#xFF1A;&#x6253;&#x5370;&#x5BF9;&#x8C61;&#xFF1B;
+if/elif/else:&#x6761;&#x4EF6;&#x5224;&#x65AD;:
+for/else: &#x5E8F;&#x5217;&#x8FED;&#x4EE3;&#xFF1B;
+while/else&#xFF1A;&#x666E;&#x901A;&#x5FAA;&#x73AF;&#xFF1B;
+pass&#xFF1A; &#x5360;&#x4F4D;&#x7B26;
+break
+continue
+def
+return
+yield
+global&#xFF1A;&#x547D;&#x540D;&#x7A7A;&#x95F4;
+raise&#xFF1A;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#x5F02;&#x5E38;
+import
+from&#xFF1A;&#x6A21;&#x5757;&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#xFF1B;
+class&#xFF1A;&#x7C7B;
+try/except/finally: &#x6355;&#x6349;&#x5F02;&#x5E38;&#xFF1B;
+del: &#x5220;&#x9664;&#x5F15;&#x7528;&#xFF1B;
+assert: &#x8C03;&#x8BD5;&#x68C0;&#x67E5;&#xFF1B;
+with/as: &#x73AF;&#x5883;&#x7BA1;&#x7406;&#x5668;&#xFF1B;</code></pre>
+<p>&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#xFF1A;
+    &#x9690;&#x5F0F;&#x8D4B;&#x503C;&#xFF1A;import&#xFF0C;from,def,class,for,&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF1B;</p><pre><code>&#x5143;&#x7EC4;&#x548C;&#x5217;&#x8868;&#x5206;&#x89E3;&#x8D4B;&#x503C;&#xFF1A;&#x5F53;&#x8D4B;&#x503C;&#x7B26;&#x53F7;(=)&#x7684;&#x5DE6;&#x4FA7;&#x4E3A;&#x5143;&#x7EC4;&#x6216;&#x5217;&#x8868;&#x65F6;&#xFF0C;python&#x4F1A;&#x6309;&#x7167;&#x4F4D;&#x7F6E;&#x628A;&#x53F3;&#x8FB9;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x5DE6;&#x8FB9;&#x7684;&#x76EE;&#x6807;&#x81EA;&#x5DE6;&#x800C;&#x53F3;&#x9010;&#x4E00;&#x8FDB;&#x884C;&#x914D;&#x5BF9;&#x513F;&#xFF1B;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x5207;&#x7247;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#xFF1B;
+
+&#x591A;&#x79CD;&#x76EE;&#x6807;&#x8D4B;&#x503C;&#xFF1A;num1 = num2 = num3 = 55
+
+&#x589E;&#x5F3A;&#x8D4B;&#x503C;&#xFF1A;+=&#xFF0C;-+&#xFF0C;*=&#xFF0C;/=&#xFF0C;//=&#xFF0C;%=&#xFF0C;</code></pre>
+
                                 
                                 </section>
                             
@@ -359,7 +437,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"字典、表达式和语句","level":"1.4","depth":1,"next":{"title":"Python程序控制结构","level":"1.5","depth":1,"path":"Python程序控制结构.md","ref":"Python程序控制结构.md","articles":[]},"previous":{"title":"Python内置类型","level":"1.3","depth":1,"path":"Python内置类型.md","ref":"Python内置类型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"字典、表达式和语句.md","mtime":"2016-10-06T05:27:36.804Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-06T12:58:02.968Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"字典、表达式和语句","level":"1.4","depth":1,"next":{"title":"Python程序控制结构","level":"1.5","depth":1,"path":"Python程序控制结构.md","ref":"Python程序控制结构.md","articles":[]},"previous":{"title":"Python内置类型","level":"1.3","depth":1,"path":"Python内置类型.md","ref":"Python内置类型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"字典、表达式和语句.md","mtime":"2016-10-07T08:51:33.124Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-10T14:23:10.505Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

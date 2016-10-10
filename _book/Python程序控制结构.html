@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="Python异常.md">
+        <li class="chapter " data-level="1.12" data-path="Python异常.html">
             
-                <span>
+                <a href="Python异常.html">
             
                     
                     Python异常
@@ -316,7 +316,197 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x7ED3;&#x6784;">Python&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x7ED3;&#x6784;</h1>
+                                <h1 id="python&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x7ED3;&#x6784;">Python&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x7ED3;&#x6784;</h1><p>&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#xFF1A;</p><h3 id="python&#x7684;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#xFF1A;">Python&#x7684;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#xFF1A;</h3><p>&#x6240;&#x6709;&#x7684;Python&#x5BF9;&#x8C61;&#x90FD;&#x652F;&#x6301;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#xFF1A;
+    &#x53EF;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x76F8;&#x7B49;&#x6027;&#x3001;&#x76F8;&#x5BF9;&#x5927;&#x5C0F;&#x7B49;&#xFF1B;
+    &#x5982;&#x679C;&#x662F;&#x590D;&#x5408;&#x5BF9;&#x8C61;&#xFF0C;python&#x4F1A;&#x68C0;&#x67E5;&#x5176;&#x6240;&#x6709;&#x90E8;&#x5206;&#xFF0C;&#x5305;&#x62EC;&#x81EA;&#x52A8;&#x904D;&#x5386;&#x5404;&#x7EA7;&#x5D4C;&#x5957;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x77E5;&#x9053;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#xFF1B;</p><p>&#x6D4B;&#x8BD5;&#x64CD;&#x4F5C;&#x7B26;&#xFF1A;
+    &quot;==&quot;&#x64CD;&#x4F5C;&#x7B26;&#x6D4B;&#x8BD5;&#x503C;&#x7684;&#x76F8;&#x7B49;&#x6027;&#xFF1B;
+    &quot;is&quot;&#x8868;&#x8FBE;&#x5F0F;&#x6D4B;&#x8BD5;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x81F4;&#x6027;&#xFF1B;</p><p>python&#x4E2D;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6BD4;&#x8F83;&#x65B9;&#x6CD5;&#xFF1A;
+    &#x6570;&#x5B57;&#xFF1A;&#x901A;&#x8FC7;&#x76F8;&#x5BF9;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF1B;
+    &#x5B57;&#x7B26;&#x4E32;&#xFF1A;&#x6309;&#x7167;&#x5B57;&#x5178;&#x6B21;&#x5E8F;&#x9010;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF1B;
+    &#x5217;&#x8868;&#x548C;&#x5143;&#x7EC4;&#xFF1A;&#x81EA;&#x5DE6;&#x81F3;&#x53F3;&#x6BD4;&#x8F83;&#x4E2A;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF1B;
+    &#x5B57;&#x5178;&#xFF1A;&#x5BF9;&#x6392;&#x5E8F;&#x4E4B;&#x540E;&#x7684;(&#x952E;&#x3001;&#x503C;)&#x5217;&#x8868;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF1B;</p><p>python&#x4E2D;&#x771F;&#x548C;&#x5047;&#x7684;&#x542B;&#x4E49;&#xFF1A;
+    1&#x3001;&#x4EFB;&#x4F55;&#x975E;0&#x6570;&#x5B57;&#x548C;&#x975E;&#x7A7A;&#x5BF9;&#x8C61;&#x90FD;&#x4E3A;&#x771F;&#xFF1B;
+    2&#x3001;&#x6570;&#x5B57;0&#x3001;&#x7A7A;&#x5BF9;&#x8C61;&#x548C;&#x7279;&#x6B8A;&#x5BF9;&#x8C61;&#x5747;&#x4E3A;&#x5047;&#xFF1B;
+    3&#x3001;&#x6BD4;&#x8F83;&#x548C;&#x76F8;&#x7B49;&#x6D4B;&#x8BD5;&#x4F1A;&#x9012;&#x5F52;&#x5E94;&#x7528;&#x5230;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E2D;&#xFF1B;
+    4&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;True&#x6216;False&#xFF1B;</p><pre><code>&#x975E;&#x96F6;&#x6570;&#x5B57;&#x4E3A;&#x771F;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x5047;&#xFF1B;
+&#x975E;&#x7A7A;&#x5BF9;&#x8C61;&#x4E3A;&#x771F;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x5047;&#xFF1B;
+None&#x5219;&#x59CB;&#x7EC8;&#x4E3A;&#x5047;&#xFF1B;</code></pre>
+<p>&#x7EC4;&#x5408;&#x6761;&#x4EF6;&#x6D4B;&#x8BD5;&#xFF1A;
+    and&#xFF1A;&#x903B;&#x8F91;&#x4E0E;&#xFF1B;&#x77ED;&#x8DEF;&#x4E0E;&#xFF1B;
+    or&#xFF1A;&#x6216;&#x8FD0;&#x7B97;&#xFF1B;
+    not&#xFF1A;&#x975E;&#x8FD0;&#x7B97;&#xFF1B;&#x8FD4;&#x56DE;True&#x6216;False</p><p>&#x6CE8;&#x610F;&#xFF1A;
+    Python&#x4E2D;&#xFF0C;and&#x548C;or&#x8FD0;&#x7B97;&#x4F1A;&#x8FD4;&#x56DE;&#x771F;&#x6216;&#x52A0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;True&#x6216;False&#xFF1B;</p><pre><code>&#x5BF9;&#x8C61;&#x5728;&#x672C;&#x8D28;&#x4E0A;&#x4E0D;&#x662F;&quot;&#x771F;&quot;,&#x5C31;&#x662F;&quot;&#x5047;&quot;</code></pre>
+<p>and&#x548C;or&#x662F;&#x77ED;&#x8DEF;&#x64CD;&#x4F5C;&#x7B26;&#xFF1B;</p><p>&#x6761;&#x4EF6;&#x6D4B;&#x8BD5;&#xFF1A;</p><p>if&#x6D4B;&#x8BD5;&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#xFF1A;</p><pre><code>if boolean_expression1:
+    suit1
+elif boolean_expression2:
+    suite2
+...
+else:
+    else_suite</code></pre>
+<p>elif&#x8BED;&#x53E5;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x4EC5;&#x7528;&#x4E8E;&#x5360;&#x4F4D;&#xFF0C;&#x800C;&#x540E;&#x518D;&#x586B;&#x5145;&#x76F8;&#x5173;&#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;pass&#xFF1B;</p><pre><code>x = 1 
+y = 2
+if x &gt; y:
+    print &quot;the max number is %d.&quot; % x
+else:
+    print &quot;the max nuber is %d.&quot; % y</code></pre>
+<p>if&#x4E09;&#x5143;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;
+    A = X if Y else z</p><pre><code>&amp;lt;==&amp;gt;
+
+if Y:
+    A = X
+else:
+    A = Z</code></pre>
+<p>&#x683C;&#x5F0F;&#xFF1A;expression1 if boolean_expression else expression2</p><pre><code class="lang-python">In [<span class="hljs-number">1</span>]: A = <span class="hljs-number">7</span>
+
+In [<span class="hljs-number">2</span>]: B = <span class="hljs-number">9</span>
+
+In [<span class="hljs-number">3</span>]: max = A <span class="hljs-keyword">if</span> A &gt; B <span class="hljs-keyword">else</span> B
+
+In [<span class="hljs-number">4</span>]: print(max)
+<span class="hljs-number">9</span></code></pre>
+<h3 id="while&#x5FAA;&#x73AF;&#xFF1A;">while&#x5FAA;&#x73AF;&#xFF1A;</h3><p>&#x7528;&#x4E8E;&#x7F16;&#x5199;&#x901A;&#x7528;&#x8FED;&#x4EE3;&#x7ED3;&#x6784;&#xFF1B;
+&#x9876;&#x7AEF;&#x6D4B;&#x8BD5;&#x672A;&#x771F;&#x5373;&#x4F1A;&#x6267;&#x884C;&#x5FAA;&#x73AF;&#x4F53;&#xFF0C;&#x5E76;&#x4F1A;&#x91CD;&#x590D;&#x6D4B;&#x8BD5;&#x77E5;&#x9053;&#x4E3A;&#x5047;&#x540E;&#x6267;&#x884C;&#x5FAA;&#x73AF;&#x540E;&#x7684;&#x5176;&#x4ED6;&#x8BED;&#x53E5;&#xFF1B;</p><p>for&#x5FAA;&#x73AF;&#xFF1A;
+    &#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x5E8F;&#x5217;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x904D;&#x5386;&#x4EFB;&#x4F55;&#x6709;&#x5E8F;&#x7684;&#x5E8F;&#x5217;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x5143;&#x7D20;&#xFF1B;
+    &#x53EF;&#x7528;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x5143;&#x7EC4;&#x3001;&#x5217;&#x8868;&#x548C;&#x5176;&#x4ED6;&#x7684;&#x5185;&#x7F6E;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x53CA;&#x901A;&#x8FC7;&#x7C7B;&#x6240;&#x521B;&#x5EFA;&#x7684;&#x65B0;&#x5BF9;&#x8C61;&#xFF1B;</p><p>python&#x4E5F;&#x63D0;&#x4F9B;&#x7C7B;&#x4E00;&#x4E9B;&#x80FD;&#x591F;&#x8FDB;&#x884C;&#x9690;&#x6027;&#x8FED;&#x4EE3;&#x7684;&#x5DE5;&#x5177;&#xFF1A;
+    in&#x6210;&#x5458;&#x5173;&#x7CFB;&#x6D4B;&#x8BD5;&#xFF1B;
+    &#x5217;&#x8868;&#x89E3;&#x6790;&#xFF1B;
+    map&#x3001;reduce&#x548C;filter&#x51FD;&#x6570;&#xFF1B;</p><p>while&#x5FAA;&#x73AF;&#xFF1A;
+&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#xFF1A;</p><p>while boolean_expression:
+    while_suite
+else:
+    else_suite</p><p>else&#x5206;&#x652F;&#x4E3A;&#x53EF;&#x9009;&#x90E8;&#x5206;&#xFF1B;
+&#x53EA;&#x8981;boolean_expression&#x7684;&#x7ED3;&#x679C;&#x4E3A;True&#xFF0C;&#x5FAA;&#x73AF;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#xFF1B;
+boolean_expression&#x7684;&#x7ED3;&#x679C;&#x4E3A;False&#x662F;&#x7EC8;&#x6B62;&#x5FAA;&#x73AF;&#xFF0C;&#x6B64;&#x65F6;&#x5982;&#x679C;&#x6709;else&#x5206;&#x652F;&#xFF0C;&#x5219;&#x4F1A;&#x6267;&#x884C;&#xFF1B;&#x5373;&#xFF1A;&#x5FAA;&#x73AF;&#x6B63;&#x5E38;&#x7ED3;&#x675F;&#x65F6;&#x6267;&#x884C;else&#x8BED;&#x53E5;&#xFF1B;</p><p>break: &#x8DF3;&#x51FA;&#x6700;&#x5185;&#x5C42;&#x7684;&#x5FAA;&#x73AF;&#xFF1B;
+continue&#xFF1A;&#x8DF3;&#x5230;&#x6240;&#x5904;&#x7684;&#x6700;&#x8FD1;&#x66FE;&#x5FAA;&#x73AF;&#x7684;&#x5F00;&#x59CB;&#x5904;&#xFF1B;
+pass&#xFF1A;&#x5360;&#x4F4D;&#x8BED;&#x53E5;&#xFF1B;
+else&#x4EE3;&#x7801;&#x5757;&#xFF1A;&#x5FAA;&#x73AF;&#x6B63;&#x5E38;&#x7EC8;&#x6B62;&#x624D;&#x4F1A;&#x6267;&#x884C;&#xFF1B;&#x5982;&#x679C;&#x5FAA;&#x73AF;&#x7EC8;&#x6B62;&#x65F6;break&#x8DF3;&#x51FA;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x5219;else&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#xFF1B;</p><pre><code class="lang-python">In [<span class="hljs-number">8</span>]: url = <span class="hljs-string">&apos;www.sslinux.com&apos;</span>
+
+In [<span class="hljs-number">9</span>]: <span class="hljs-keyword">while</span> url:
+   ...:     print(url)
+   ...:     url = url[<span class="hljs-number">1</span>:]
+   ...:
+www.sslinux.com
+ww.sslinux.com
+w.sslinux.com
+.sslinux.com
+sslinux.com
+slinux.com
+linux.com
+inux.com
+nux.com
+ux.com
+x.com
+.com
+com
+om
+m
+
+In [<span class="hljs-number">10</span>]:</code></pre>
+<pre><code class="lang-python">In [<span class="hljs-number">15</span>]: x = <span class="hljs-number">0</span>;y = <span class="hljs-number">100</span>
+
+In [<span class="hljs-number">16</span>]: <span class="hljs-keyword">while</span> x &lt; y:
+    ...:     print(x)
+    ...:     x += <span class="hljs-number">1</span>
+    ...:</code></pre>
+<pre><code class="lang-python">In [<span class="hljs-number">17</span>]: l1 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+In [<span class="hljs-number">18</span>]: count = <span class="hljs-number">2</span>
+
+In [<span class="hljs-number">21</span>]: <span class="hljs-keyword">while</span> l1:
+    ...:     print(l1[<span class="hljs-number">0</span>])
+    ...:     l1 = l1[<span class="hljs-number">1</span>:]
+    ...:
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span></code></pre>
+<pre><code class="lang-python">In [<span class="hljs-number">22</span>]: l1 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+
+In [<span class="hljs-number">23</span>]: <span class="hljs-keyword">while</span> l1:
+    ...:     print(l1[<span class="hljs-number">-1</span>])
+    ...:     l1.pop()
+    ...:
+<span class="hljs-number">4</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">1</span></code></pre>
+<p>&#x6B7B;&#x5FAA;&#x73AF;&#xFF1A;
+    while True:
+        suite</p><p>for&#x5FAA;&#x73AF;&#x683C;&#x5F0F;&#xFF1B;</p><p>for expression1 in iterable:
+    for suite
+else:
+    else_suite</p><p>&#x901A;&#x5E38;&#xFF0C;expression&#x6216;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6216;&#x662F;&#x4E00;&#x4E2A;&#x53D8;&#x72FC;&#x5E8F;&#x5217;&#xFF0C;&#x4E00;&#x822C;&#x4EE5;&#x5143;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;&#x5F62;&#x5F0F;&#x7ED9;&#x51FA;&#xFF1B;</p><p>&#x5982;&#x679C;&#x4EE5;&#x5143;&#x7EC4;&#x6216;&#x5217;&#x8868;&#x7528;&#x4E8E;expression&#xFF0C;&#x5219;&#x5176;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x9879;&#x8D2D;&#x6C47;&#x62C6;&#x5206;&#x5230;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x9879;&#xFF1B;</p><pre><code class="lang-python">In [<span class="hljs-number">24</span>]: sum = <span class="hljs-number">0</span>
+
+In [<span class="hljs-number">25</span>]: <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">101</span>):
+    ...:     sum += i
+    ...:
+
+In [<span class="hljs-number">27</span>]: print(sum)
+<span class="hljs-number">5050</span></code></pre>
+<h3 id="for&#x5FAA;&#x73AF;&#x5F62;&#x5F0F;&#x6269;&#x5C55;&#xFF1A;">for&#x5FAA;&#x73AF;&#x5F62;&#x5F0F;&#x6269;&#x5C55;&#xFF1A;</h3><p>&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#xFF1A;
+for expression in iterable:
+    for_suite
+    if boolean_expression2: break
+    if boolean_expression3: continue
+else:
+    else_suite</p><h3 id="&#x7F16;&#x5199;&#x5FAA;&#x73AF;&#x7684;&#x6280;&#x5DE7;&#xFF1B;">&#x7F16;&#x5199;&#x5FAA;&#x73AF;&#x7684;&#x6280;&#x5DE7;&#xFF1B;</h3><p>for&#x5FAA;&#x73AF;&#x6BD4;while&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x5FEB;&#xFF1B;
+python&#x63D0;&#x4F9B;&#x7C7B;&#x4E24;&#x4E2A;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x5B9A;&#x5236;&#x7279;&#x6B8A;&#x7684;&#x5FAA;&#x73AF;&#xFF1B;
+    range&#x548C;xrange
+        range&#xFF1A;&#x4E00;&#x6B21;&#x6027;&#x5730;&#x8FD4;&#x56DE;&#x8FDE;&#x7EED;&#x7684;&#x6574;&#x6570;&#x5217;&#x8868;&#xFF1B;
+        xrange&#xFF1A;&#x4E00;&#x6B21;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5143;&#x7D20;&#xFF0C;&#x76F8;&#x8F83;&#x4E8E;range&#x66F4;&#x8282;&#x7EA6;&#x7A7A;&#x95F4;&#xFF1B;
+    zip&#xFF1A;
+        &#x8FD4;&#x56DE;&#x5E76;&#x884C;&#x7684;&#x5143;&#x7D20;&#x5143;&#x7EC4;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x904D;&#x5386;&#x6570;&#x4E2A;&#x5E8F;&#x5217;&#xFF1B;</p><p>range&#x51FD;&#x6570;&#xFF1A;
+&#x975E;&#x5B8C;&#x5907;&#x904D;&#x5386;&#xFF1A;
+    &#x7528;&#x4E8E;&#x6BCF;&#x9694;&#x4E00;&#x5B9A;&#x7684;&#x4E2A;&#x6570;&#x6311;&#x9009;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF1B;</p><pre><code class="lang-python">In [28]: S = &apos;How are you these days?&apos;
+In [30]: range(0,len(S),2)
+Out[30]: range(0, 23, 2)
+In [32]: for i in range(0,len(S),2):
+    ...:     print(S[i])
+    ...:
+H
+w
+a
+e
+y
+u
+t
+e
+e
+d
+y
+?</code></pre>
+<p>&#x4FEE;&#x6539;&#x5217;&#x8868;&#xFF1A;</p><pre><code class="lang-python">In [<span class="hljs-number">33</span>]: L = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+
+In [<span class="hljs-number">34</span>]: <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(L)):
+    ...:     L[i] += <span class="hljs-number">1</span>
+    ...:
+
+In [<span class="hljs-number">35</span>]: print(L)
+[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]</code></pre>
+<h3 id="&#x5E76;&#x884C;&#x904D;&#x5386;&#xFF1A;">&#x5E76;&#x884C;&#x904D;&#x5386;&#xFF1A;</h3><p>zip:
+&#x53D6;&#x5F97;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5C06;&#x7ED9;&#x5B9A;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x5E76;&#x6392;&#x7684;&#x5143;&#x7D20;&#x914D;&#x6210;&#x5143;&#x7EC4;&#xFF0C;&#x8FD4;&#x56DE;&#x8FD9;&#x4E9B;&#x5143;&#x7EC4;&#x7684;&#x5217;&#x8868;&#xFF1B;
+    &#x5F53;&#x53C2;&#x6570;&#x957F;&#x5EA6;&#x4E0D;&#x540C;&#x65F6;&#xFF0C;zip&#x4F1A;&#x4EE5;&#x6700;&#x77ED;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x4E3A;&#x51C6;&#xFF1B;</p><p>&#x53EF;&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x5E76;&#x884C;&#x8FED;&#x4EE3;&#xFF1A;</p><pre><code class="lang-python">In [<span class="hljs-number">42</span>]: L1 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]
+
+In [<span class="hljs-number">43</span>]: L2 = [<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;b&apos;</span>,<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;d&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>,<span class="hljs-string">&apos;f&apos;</span>,<span class="hljs-string">&apos;g&apos;</span>]
+
+In [<span class="hljs-number">44</span>]: zip(L1,L2)
+Out[<span class="hljs-number">44</span>]: &lt;zip at <span class="hljs-number">0x4719350</span>&gt;
+
+python2&#x4E2D;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x5143;&#x7EC4;&#x6784;&#x6210;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;
+[(<span class="hljs-number">1</span>,<span class="hljs-string">&apos;a&apos;</span>),(<span class="hljs-number">2</span>,<span class="hljs-string">&apos;b&apos;</span>),(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;c&apos;</span>),(<span class="hljs-number">4</span>,<span class="hljs-string">&apos;d&apos;</span>),(<span class="hljs-number">5</span>,<span class="hljs-string">&apos;e&apos;</span>),(<span class="hljs-number">6</span>,<span class="hljs-string">&apos;f&apos;</span>),(<span class="hljs-number">7</span>,<span class="hljs-string">&apos;g&apos;</span>)]
+</code></pre>
+<p>zip&#x4E5F;&#x5E38;&#x7528;&#x8BED;&#x52A8;&#x6001;&#x6784;&#x9020;&#x5B57;&#x5178;&#xFF1A;</p><pre><code class="lang-python">In [<span class="hljs-number">45</span>]: keys = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]
+
+In [<span class="hljs-number">46</span>]: values = [<span class="hljs-string">&apos;Mon&apos;</span>,<span class="hljs-string">&apos;Tus&apos;</span>,<span class="hljs-string">&apos;Wed&apos;</span>,<span class="hljs-string">&apos;Thu&apos;</span>,<span class="hljs-string">&apos;Fri&apos;</span>,<span class="hljs-string">&apos;Sta&apos;</span>,<span class="hljs-string">&apos;Sun&apos;</span>]
+
+In [<span class="hljs-number">47</span>]: D = {}
+
+In [<span class="hljs-number">48</span>]: <span class="hljs-keyword">for</span> (k,v) <span class="hljs-keyword">in</span> zip(keys,values):
+    ...:     D[k] = v
+    ...:
+
+In [<span class="hljs-number">49</span>]: D
+Out[<span class="hljs-number">49</span>]: {<span class="hljs-number">1</span>: <span class="hljs-string">&apos;Mon&apos;</span>, <span class="hljs-number">2</span>: <span class="hljs-string">&apos;Tus&apos;</span>, <span class="hljs-number">3</span>: <span class="hljs-string">&apos;Wed&apos;</span>, <span class="hljs-number">4</span>: <span class="hljs-string">&apos;Thu&apos;</span>, <span class="hljs-number">5</span>: <span class="hljs-string">&apos;Fri&apos;</span>, <span class="hljs-number">6</span>: <span class="hljs-string">&apos;Sta&apos;</span>, <span class="hljs-number">7</span>: <span class="hljs-string">&apos;Sun&apos;</span>}</code></pre>
+
                                 
                                 </section>
                             
@@ -359,7 +549,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python程序控制结构","level":"1.5","depth":1,"next":{"title":"Python迭代器、列表解析及生成器","level":"1.6","depth":1,"path":"Python迭代器、列表解析及生成器.md","ref":"Python迭代器、列表解析及生成器.md","articles":[]},"previous":{"title":"字典、表达式和语句","level":"1.4","depth":1,"path":"字典、表达式和语句.md","ref":"字典、表达式和语句.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python程序控制结构.md","mtime":"2016-10-06T05:27:36.806Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-06T12:58:02.968Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python程序控制结构","level":"1.5","depth":1,"next":{"title":"Python迭代器、列表解析及生成器","level":"1.6","depth":1,"path":"Python迭代器、列表解析及生成器.md","ref":"Python迭代器、列表解析及生成器.md","articles":[]},"previous":{"title":"字典、表达式和语句","level":"1.4","depth":1,"path":"字典、表达式和语句.md","ref":"字典、表达式和语句.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python程序控制结构.md","mtime":"2016-10-07T11:18:26.293Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-10T14:23:10.505Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
