@@ -778,11 +778,287 @@ In [9]: reduce(f5,l1,10)
 Out[9]: 31
 ```
 
+回顾:
+定义函数：
+def func_name(arg1,...):
+    func_suite
 
 
+嵌套函数；
+	python闭包；闭包叫lexical closuer,词法闭包；外层函数是提供内层函数运行的环境的；
+	
+	子函数作为上层函数的返回值；子函数可以记忆外层函数的变量；
+```python
+In [10]: def f1(x):
+    ...:     def f2(y):
+    ...:         return y ** x
+    ...:     return f2
+    ...: 
+
+In [11]: f1(4)
+Out[11]: <function __main__.f2>
+
+In [12]: f3 = f1(3)
+
+In [13]: type(f3)
+Out[13]: function
+
+In [14]: f3(2)
+Out[14]: 8
+
+In [15]: f3(3)
+Out[15]: 27
+
+In [16]: f3(4)
+Out[16]: 64
+```
+
+```python
+In [17]: def startPos(m,n):
+    ...:     def newPos(x,y):
+    ...:         print("The old position is (%d,%d),and the new position is (%d,%d)." % (m,n,m+x,n+y))
+    ...:     return newPos   
+
+In [18]: action = startPos(10,10)
+
+In [19]: action(1,2)
+The old position is (10,10),and the new position is (11,12).
+
+In [20]: action(-1,3)
+The old position is (10,10),and the new position is (9,13).
+
+In [21]: action = startPos(10,10)
+
+In [23]: action(-1,3)
+The old position is (10,10),and the new position is (9,13).
+
+In [25]: action = startPos(9,13)
+
+In [26]: action(1,-3)
+The old position is (9,13),and the new position is (10,10).
+
+```
+
+参数传递；
+	位置参数；
+	关键字参数；
+	可变参数；
+
+列表解析：
+
+生成器：
+```python
+In [28]: for i in (j**2 for j in range(1,11)):
+    ...:     print(i)
+    ...:   
+
+In [30]: list((i**2 for i in range(1,11)))
+Out[30]: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+```
+
+```python
+In [30]: list((i**2 for i in range(1,11)))
+Out[30]: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 
+```python
+函数内部使用yield,使其成为生成器对象；
+# 函数中使用yield，会返回一个生成器对象；
+In [31]: def genNum(x):
+    ...:     y = 0
+    ...:     while y <= x:
+    ...:         yield y
+    ...:         y += 1
+    ...:         
 
+In [32]: g1 = genNum(10)
+
+In [33]: type(g1)
+Out[33]: generator
+
+In [34]: g1.next()
+Out[34]: 0
+
+In [35]: g1.next()
+Out[35]: 1
+
+In [36]: g1.next()
+Out[36]: 2
+
+In [37]: g1.next()
+Out[37]: 3
+
+In [38]: g1.next()
+Out[38]: 4
+
+In [39]: g1.next()
+Out[39]: 5
+
+In [40]: g1.next()
+Out[40]: 6
+
+In [41]: g1.next()
+Out[41]: 7
+
+In [42]: g1.next()
+Out[42]: 8
+
+In [43]: g1.next()
+Out[43]: 9
+
+In [44]: g1.next()
+Out[44]: 10
+
+In [45]: g1.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-45-9066a8f18086> in <module>()
+----> 1 g1.next()
+
+StopIteration: 
+```
+
+```python
+# 生成器
+In [46]: def genNum(n):
+    ...:     i = 1
+    ...:     while i <= n:
+    ...:         yield i ** 2
+    ...:         i += 1
+    ...:         
+
+In [47]: g1 = genNum(20)
+
+In [48]: for i in g1:
+    ...:     print(i)
+    ...:     
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+121
+144
+169
+196
+225
+256
+289
+324
+361
+400
+```
+
+## 装饰器：
+函数装饰器，能够把其他函数的功能增强；
+
+	1、装饰器本身是一个函数，用于装饰其它函数；
+	2、功能：增强被装饰函数的功能；
+装饰器一般接受一个函数对象作为参数，以对其进行增强；
+
+```python
+# 函数的增强器/装饰器
+In [49]: def deco(func):
+    ...:     def wrapper():
+    ...:         print("Please say something:")
+    ...:         func()
+    ...:         print("No zuo no die...")
+    ...:     return wrapper
+    ...: 
+
+In [50]: @deco
+    ...: def show():
+    ...:     return "I am from Mars."
+    ...: 
+
+In [51]: show()
+Please say something:
+No zuo no die...
+
+In [52]: @deco
+    ...: def show():
+    ...:     print "I am from Mars."
+    ...: 
+
+In [53]: show()
+Please say something:
+I am from Mars.
+No zuo no die..
+```
+
+```python
+In [54]: def deco(func):
+    ...:     def wrapper(x):
+    ...:         print("Plz say something...>")
+    ...:         func(x)
+    ...:         print("No zuo no die.")
+    ...:     return wrapper
+    ...: 
+
+In [55]: @deco
+    ...: def show(x):
+    ...:     print(x)
+    ...:     
+
+In [56]: show('hello,mars')
+Plz say something...>
+hello,mars
+No zuo no die.
+```
+
+## 递归：
+	函数执行过程中调用自身；
+	递归需要边界条件，递归前进段和递归返回段；
+
+	递归求阶乘：
+	10 * 9 * 8 * 7 * 6 * 5 * 4 *3 * 2 * 1
+	10 * (10-1) (10-1-1)
+```python
+In [58]: def fact(n):
+    ...:     if n <= 1: return 1
+    ...:     else: return n * fact(n-1)
+    ...:     
+
+In [59]: fact(3)
+Out[59]: 6
+
+In [60]: fact(100)
+Out[60]: 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000L
+
+In [61]: fact(10)
+Out[61]: 3628800
+```
+
+练习：
+	以递归的方式实现：斐波拉锲数列	
+
+
+协程： 不太常用，自行研究
+
+
+函数的设计规范：
+	耦合性：
+		(1)通过参数接收输入，以及通过return产生输出以保证函数的独立性；
+		(2)尽量减少使用全局变量进行函数间通信；
+		(3)不要在函数中修改可变类型的参数；
+		(4)避免直接改变定义在另外一个模块中的变量；
+	聚合性：
+		(1) 每个函数都应该有一个单一的、统一的目标；
+		(2) 每个函数的功能都应该相对简单；
+	.	
+练习1： 将/etc/passwd文件中的每一行都分隔为一个列表；
+练习2：将任意文件按用户指定的分隔符把每一行都分隔为一个列表；
+练习3：用折叠的方式(reduce)求阶乘；
+
+函数执行环境：
+函数可以通过多种办法获得输入及产生输出；
+![函数执行环境](/images/funcIO.png)
 
 
 
