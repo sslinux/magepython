@@ -14,7 +14,7 @@
 	lambda函数：表达式；可以出现任何表达式可出现的位置；
 
 	方法：与特定数据类型关联的函数，并且只能与数据类型关联一起使用，
-			也就是定义在类中的函数；
+	也就是定义在类中的函数；
 
 Python提供了很多内置函数，例如：help(),type(),len(),int(),str()等；
 
@@ -557,3 +557,257 @@ In [92]: f19(m,n,o,key1='v1',key2='v2')
 ```
 
 ### 匿名函数：
+
+lambda运算符：
+	lambda args: expression
+	  args: 以都好分隔的参数列表；
+	  expression：用到args中各参数的表达式；
+	lambda语句定义的代码必须是合法的表达式，不能出现多条件语句(可使用if的三元表达式)和其他非表达式语句，如for和while等；
+	lambda的首要用途是指定短小的回调函数；
+	lambda将返回一个函数而不是将函数赋值给某变量名；
+
+注意：
+	lambda是一个表达式而非语句；
+	lambda是一个单个表达式，而不是一个代码块；
+
+```python
+In [1]: lambda x,y: pring(x,y)             # python2中会报错，要求lambda函数中只能是表达式，而不能是语句；
+Out[1]: <function __main__.<lambda>>
+
+In [2]: lambda x,y: x+y
+Out[2]: <function __main__.<lambda>>
+
+In [3]: f20 = lambda x,y: x + y    # lambda定义的函数没有名称，所以需要将其赋值给一个变量，以方便调用；
+
+In [4]: f20(3,4)
+Out[4]: 7
+
+In [5]: f20(5,8)
+Out[5]: 13
+```
+上述匿名函数相当于：
+
+```python
+In [6]: def f20(x,y):
+   ...:     return x + y    # 是以返回值的形式返回值的；
+   ...: 
+
+In [7]: f20(3,4)         # 此处是返回值，而不是函数输出；
+Out[7]: 7
+```
+
+匿名函数lambda：
+def语句创建的函数将赋值给某变量名，而lambda表达式则直接返回函数；
+
+lambda也支持使用默认参数：
+
+```python
+In [8]: def testFunc(x,y,z): return x + y + z
+
+In [9]: testFunc(4,5,6)
+Out[9]: 15
+
+In [10]: f = lambda x,y,z: x+y+z
+
+In [11]: f(4,5,6)
+Out[11]: 15
+
+In [12]: f2 = (lambda x,y,z=10: x+y+z)  # 默认参数；
+
+In [13]: f2(4,5)            # 调用是默认参数，可以不传递；
+Out[13]: 19
+```
+
+lambda，起到的是函数速写的作用；
+
+```python
+In [14]: l3 = [ (lambda x: x*2),(lambda y: y*3) ]   # 用两个匿名函数组成的列表；列表的元素是函数；
+
+In [15]: print(l3)
+[<function <lambda> at 0x7fa81ee75ae8>, <function <lambda> at 0x7fa81ee75598>]
+
+In [17]: for i in l3:            # 使用for遍历匿名函数列表，并对列表内的函数进行调用；
+    ...:     print(i(4))
+    ...:     
+8
+12
+
+```
+
+### python函数式编程：
+函数式编程： 把函数当作参数传递给其他函数；
+	也称作泛函编程，是一种编程范例；
+	它将电脑运算视为科学上的函数计算，并且避免状态以及可变数据；
+	函数式编程语言最重要的基础是lambda演算，而且lambda演算的函数可以接收函数当作输入和输出；
+
+### python支持有限的函数式编程功能：
+fileter(func,seq) : 调用一个布尔函数func来迭代遍历每个seq中的元素；返回一个使func返回值为true的元素的序列；
+map(func,seq[,seq2...]): 将函数func作用于给定序列(s)的每个元素，并用一个列表来提供返回值，如果func为None，func表现为一个身份函数，返回一个含有每个序列中元素集合的n个元素的列表；
+
+reduce (func,deq[,init])： 将二元函数作用于deq序列的元素，每次携带一对(先前的结果以及下一个序列元素)，连续地将现有的结果和下一个作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值；如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。
+
+
+### 过滤器：filter()
+filter()为已知的序列的每个元素调用给定的布尔函数；
+调用中，返回值为非零值的元素将被添加至一个列表中；
+
+![filter](/images/filter.png)
+
+```python
+# python3.5
+In [20]: l1 = [1,2,3,42,67,16]
+
+In [22]: def f1(x):
+    ...:     if x > 20: 
+    ...:         return True
+    ...:     else: 
+    ...:         return False
+In [23]: filter(f1,l1)
+Out[23]: <filter at 0x7fa81f8e7470>
+```
+
+```python
+# python 2.7.12
+In [1]: l1 = [1,2,3,42,67,16]
+
+In [2]: def f1(x):
+   ...:     if x > 20:
+   ...:         return True
+   ...:     else:
+   ...:         return False
+   ...:     
+
+In [3]: filter(f1,l1)
+Out[3]: [42, 67]
+```
+
+将函数中所有返回True的元素组成一个新的列表；
+
+练习：
+	使用过滤器，过滤/etc/passwd中所有shell为bash的用户；
+	返回/etc/passwd中包含来/bin/bash字符串的所有用户名为一个列表；
+
+
+### map(func,seq1[,seq2...])
+映射器：
+  map()将函数调用"映射"到每个序列的对应元素上并返回一个含有所有返回值的列表；
+带有单个队列的map()
+
+![map](/images/map.png)
+
+
+![map_multi_seq](/images/map_multi_seq.png)
+
+
+```python
+# python 2.7.12
+In [4]: l1 = [0,1,2,3,4,5,6]
+
+In [5]: l2 = ['Sun','Mon','W','T','F','S']
+
+In [6]: map(None,l1,l2)
+Out[6]: [(0, 'Sun'), (1, 'Mon'), (2, 'W'), (3, 'T'), (4, 'F'), (5, 'S'), (6, None)]
+```
+
+```python
+In [27]: l1 = [0,1,2,3,4,5,6]
+
+In [28]: l2 = ['Sun','Mon','W','T','F','S']
+
+In [29]: map(None,l1,l2)
+Out[29]: <map at 0x7fa81f9289e8>
+```
+
+```python
+In [7]: def f3(x):
+   ...:     return x * 2
+   ...: 
+
+In [8]: map(f3,f1)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-8-ee1e6dd1e372> in <module>()
+----> 1 map(f3,f1)
+
+TypeError: argument 2 to map() must support iteration
+# 
+
+In [9]: map(f3,l1)
+Out[9]: [0, 2, 4, 6, 8, 10, 12]
+
+In [10]: map(f3,l2)
+Out[10]: ['SunSun', 'MonMon', 'WW', 'TT', 'FF', 'SS']
+```
+
+```python
+In [1]: l1 = [0,1,2,3,4,5,6]
+
+In [2]: l2 = ['Sun','Mon','Tus','Wes','Thu','Fri','Stu']
+
+In [3]: def f4(x,y):
+   ...:     return x*2,y*2
+   ...: 
+
+In [4]: map(f4,l1,l2)
+Out[4]: 
+[(0, 'SunSun'),
+ (2, 'MonMon'),
+ (4, 'TusTus'),
+ (6, 'WesWes'),
+ (8, 'ThuThu'),
+ (10, 'FriFri'),
+ (12, 'StuStu')]
+```
+
+
+
+### reduce(func,seq[,init])
+```python
+
+In [5]: def f5(x,y):
+   ...:     return x + y
+   ...: 
+
+In [7]: print(l1)
+[0, 1, 2, 3, 4, 5, 6]
+
+In [8]: reduce(f5,l1)
+Out[8]: 21
+
+In [9]: reduce(f5,l1,10)
+Out[9]: 31
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
