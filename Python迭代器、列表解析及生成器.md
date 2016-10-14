@@ -250,3 +250,5 @@ Out[90]: (3, '.')
 In [91]: g1.__next__()
 Out[91]: (4, 's')
 ```	
+
+[Blog:Python语言中的各种器具](BlogPython语言中的各种器具.md)
