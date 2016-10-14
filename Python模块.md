@@ -707,6 +707,7 @@ new_date = datetime.datetime.now() + datetime.timedelta(days=-10) #比现在减1
 new_date = datetime.datetime.now() + datetime.timedelta(hours=-10) #比现在减10小时
 new_date = datetime.datetime.now() + datetime.timedelta(seconds=120) #比现在+120s
 print(new_date)
+```
 
 
 ![time_arrtribute](/images/time_arrtribute.jpg)
