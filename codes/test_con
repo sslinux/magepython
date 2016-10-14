@@ -1,0 +1,20 @@
+[sslinux]
+passwd = 123456
+card = 625813964
+limi5 = 1500000
+debt = 0
+interest = 0.5
+
+[mayun]
+passwd = 234567
+card = 623052909
+limit = 150000
+debt=0
+interest = 0.5
+
+[donghang]
+passwd = 234567
+card = 6230582403
+limit = 150000
+debt = 0
+interest = 0.5

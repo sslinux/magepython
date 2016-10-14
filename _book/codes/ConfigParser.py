@@ -1,0 +1,25 @@
+#!/usr/bin/env python3.5
+#_*_coding:utf-8_*_
+
+import configparser
+config = configparser.ConfigParser()
+config.read('test_con')
+sections = config.sections()
+print ('sections',sections)
+options = config.options("liuyao")
+print ('options',options)
+kvs = config.items("liuyao")
+print ('kvs',kvs)
+str_val = config.get("liuyao", "card")
+int_val = config.getint("liuyao", "limit")
+print ('liuyao 的 card',str_val)
+print ('liuyao 的 limit',int_val)
+config.set("mayun", "limit", "110000")
+int_val = config.getint("mayun", "limit")
+print ('mayun 的 limit',int_val)
+config.set("liuyao", "age", "21")
+int_val = config.getint("liuyao", "age")
+print ('liuyao 的 age',int_val)
+config.add_section('duobian')
+config.set('duobian', 'age', '21')
+config.write(open("test_con",'w')
