@@ -273,4 +273,365 @@ In [22]: class MyClass():
 ```
 ![class_instance](/images/class_instance.png)
 
+### Python构造器
+
+创建实例时，Python会自动调用类中的__init__方法，以隐性地为实例提供属性；
+	__init__方法被称为构造器；
+	如果类中没有定义__init__方法，实例创建之初仅是一个简单的名称空间；
+```python
+In [23]: class MyClass():
+    ...:     gender = 'Male'
+    ...:     def __init__(self,who):
+    ...:         self.name = who
+    ...:         
+
+In [24]: x = MyClass('tom')
+
+In [25]: y = MyClass('jerry')
+
+In [26]: x.gender,x.name
+Out[26]: ('Male', 'tom')
+
+In [27]: y.gender,y.name
+Out[27]: ('Male', 'jerry')
+```
+
+__varname__() : 会被python解释器中自动调用；
+
+a + b = a.__add__(b)
+l1 = ['abce','xyz']  
+	list.__init__()
+
+### 析构器：销毁实例；
+
+![class_init](/images/class_init.png)
+
+
+### 类的特殊属性：
+可以使用类的__dict__字典属性或Python内置的dir()函数来获取类的属性：
+![class_arrtribute](/images/class_arrtribute.png)
+
+### 实例属性：
+实例仅拥有数据属性(严格意义上来说，方法是类属性)
+	通常通过构造器"__init__"为实例提供属性；
+	这些数据属性独立于其它实例或类；
+	实例释放时，其属性也将被清除；
+
+内建函数dir()或实例的特殊属性__dict__可用于查看实例属性：
+```python
+In [41]: dir(x)
+Out[41]: 
+['__class__',
+ '__delattr__',
+ '__module__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__weakref__',
+ 'gender',
+ 'name']
+
+In [42]: x.__dict__
+Out[42]: {'name': 'tom'}
+```
+实例的特殊属性：
+I.__class__     		# 实例化I的类；
+I.__dict__   			# I的属性；
+
+### Python类方法中可用的变量
+方法的可用变量
+	实例变量：指定变量名称及实例自身进行引用；
+		self.变量名
+	局部变量：方法内部创建的变量，可直接使用；
+	类变量(也称静态变量):通过指定变量名与类名进行引用；
+		类名.变量名
+	全局变量：直接使用
+
+![class_method_variable](/images/class_method_variable.png)
+
+```python
+In [43]: class c1():
+    ...:     d1 = 'hello,c1'    # 类属性；
+    ...:     def __init__(self,x):
+    ...:         self.insdata = x  # 实例属性；
+    ...:         
+
+In [44]: i1 = c1(50)    # 实例化；
+
+In [45]: i1.insdata
+Out[45]: 50
+
+In [46]: i2 = c1(100)
+
+In [47]: i2.d1
+Out[47]: 'hello,c1'
+
+In [48]: i2.insdata
+Out[48]: 100
+
+In [49]: i1.d1 = 'new value'     # 修改实例i1的属性d1，并不影响其他实例的d1的值；
+
+In [50]: i1.d1
+Out[50]: 'new value'
+
+In [51]: i2.d1
+Out[51]: 'hello,c1'
+
+In [52]: c1.d1 = "class new value"
+
+In [53]: c1.d1   # 修改class的d1的值，将会影响所有实例的该属性的值(未被重新赋值。)
+Out[53]: 'class new value'
+
+In [54]: i1.d1
+Out[54]: 'new value'
+
+In [55]: i2.d1
+Out[55]: 'class new value'
+```
+
+### 继承：
+继承描述类基类的属性如何"遗传"给派生类；
+	子类可以继承它的基类的任何属性，包括数据属性和方法；
+	一个未指定基类的类，其默认有一个名为object的基类；
+	Python允许多重继承；可以有多个并行的父类；
+
+创建子类：
+	创建子类时，只需要在类名后跟一个或从其中派生的父类；
+	class SubClassName(ParentClass1[,ParentClass2,...])
+	'optional class documentation string'
+	class suite
+
+Python类继承的例子：
+子类可以继承它的基类的任何属性，包括数据属性和方法；
+```python
+In [56]: class ParentClass(object):
+    ...:     'Parent Class'
+    ...:     gender = 'Male'
+    ...:     def setName(self,who):
+    ...:         self.name = who
+    ...:         
+
+In [57]: class ChildClass(ParentClass):
+    ...:     'Child Class'
+    ...:     def displayInfo(self):
+    ...:         print(self.gender,self.name)
+    ...:         
+
+In [58]: x = ChildClass()
+
+In [59]: x.setName('tom')
+
+In [60]: x.displayInfo()
+Male tom
+
+In [61]: dir(ParentClass)
+Out[61]: 
+['__class__',
+ '__delattr__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ ...
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__weakref__',
+ 'gender',
+ 'setName']
+
+In [62]: dir(ChildClass)
+Out[62]: 
+['__class__',
+ '__delattr__',
+ '__dict__',
+ '__dir__',
+...
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__weakref__',
+ 'displayInfo',
+ 'gender',
+ 'setName']
+```
+
+从父类中继承构造器：
+```python
+In [63]: class PClass(object):
+    ...:     gender = 'Male'
+    ...:     def __init__(self,who):   # 构造器；
+    ...:         self.name = who
+    ...:         
+
+In [64]: class CClass(PClass):
+    ...:     def displayInfo(self):
+    ...:         print(self.gender,self.name)
+    ...:         
+
+In [65]: x = CClass('tom')
+
+In [66]: x.name
+Out[66]: 'tom'
+
+In [67]: x.gender
+Out[67]: 'Male'
+
+In [68]: x.displayInfo()
+Male tom
+
+In [69]: dir(x)
+Out[69]: 
+['__class__',
+ '__delattr__',
+....
+ '__str__',
+ '__subclasshook__',
+ '__weakref__',
+ 'displayInfo',
+ 'gender',    # 从父类中获得的；
+ 'name']      # 这个也是从父类中继承的；
+```
+
+### Python类的继承和属性搜索：
+Python中几乎所有属性的获取都可以使用"object.attribute"的格式；
+	不过，此表达式会在Python中启动搜索——搜索连续的树；
+class语句会产生一个类对象，对class的调用会创建实例，实例自动连结至创建了此实例的类；
+	类连结至其超类的方式：
+		将超类列在类头部的括号内，其从左至右的顺序会决定树中的次序；
+		由下至上，由左至右；
+![attribute_search](/images/attribute_search.png)
+
+### 继承方法专用化：
+继承会先在子类寻找变量名，然后才查找超类，因此，子类可以对超类的属性重新定义来取代继承而来的行为；
+	子类可以完全取代从超类继承而来的属性；
+	也可以通过已覆盖的方法回调超类来扩展超类的方法；
+```python
+In [70]: class ParClass(object):
+    ...:     def setInfo(self,sex='Male'):
+    ...:         self.gender = sex
+    ...:         
+
+In [71]: class ChiClass(ParClass):
+    ...:     def setInfo(self,who):
+    ...:         self.name = who
+    ...:         
+
+In [72]: x = ChiClass()
+
+In [73]: x.setInfo('tom')
+
+In [74]: x.name
+Out[74]: 'tom'
+
+In [75]: x.gender
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-75-dcfdb2ec694c> in <module>()
+----> 1 x.gender
+
+AttributeError: 'ChiClass' object has no attribute 'gender'
+```
+
+```python
+In [76]: class ParClass(object):
+    ...:     def setInfo(self,sex='Male'):
+    ...:         self.gender = sex
+    ...:         
+
+In [77]: class ChiClass(ParClass):
+    ...:     def setInfo(self,who):
+    ...:         self.name = who
+    ...:         ParClass.setInfo(self)
+    ...:         
+
+In [78]: x = ChiClass()
+
+In [79]: x.setInfo('tom')
+
+In [80]: x.name
+Out[80]: 'tom'
+
+In [81]: x.gender
+Out[81]: 'Male'
+```
+
+### 类、实例和其他对象的内建函数
+- issubclass()
+	布尔函数，判断一个类是否由另一个类派生，语法：
+		issubclass(sub,sup)
+
+- isinstance()
+	布尔函数，判断一个对象是否是给定类的实例，语法：
+		isinstance(obj1,class_obj2)
+
+- hasattr()
+	布尔函数，判断一个对象是否拥有特定的属性，语法：
+		hasattr(obj,'attr')
+	同类的函数还有getattr(),setattr()和delattr()
+
+- super()
+	在子类中找出其父类以便于调用其属性；
+	一般情况下仅能采用非绑定方式调用祖先类方法；
+	而super()可用于传入实例或类型对象，语法：
+		super(type[,obj])
+
+### 运算符重载
+运算符重载是指在方法中拦截内置的操作——当类的实例出现在内置操作中，Python会自动调用自定义的方法，并且返回自定义方法的操作结果。
+
+	运算符重载让类拦截常规的Python运算；
+		类可以重载所有Python表达式运算符；
+		类也可重载打印、函数调用、属性点号运算等内置运算；
+	重载使类实例的行为像内置类型；
+	重载通过提供特殊名称的类方法实现；
+
+运算符重载并非必须，并且通常也不是默认的；
+
+### 基于特殊的方法定制类：
+除了__init__和__del__之外，Python类支持使用许多的特殊方法：
+	特殊方法都以双下划线开头和结尾，有些特殊方法有默认行为，没有默认行为的是为了留到需要的时候再实现；
+
+	这些特殊方法是Python中用来扩充类的强大工具，它们可以实现：
+		模拟标准类型；
+		重载操作符；
+
+	特殊方法允许我们通过重载标准操作符+,*,甚至包括分段下标及映射操作[]来模拟标准类型；
+
+### 常见的运算符重载方法：
+![常见运算符重载方法](/images/常见运算符重载方法.png)
+![常见运算符重载方法](/images/常见运算符重载方法2.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
