@@ -628,44 +628,53 @@ Out[81]: 'Male'
 	类方法
 	
 函数的属性：
+```python
 	__doc__
 	__name__
 	__dict__
 	__code__
 	__globals__
+```
 
 方法的属性：
+```python
 	__doc__
 	__name__
 	__class__  : 方法所属的类
 	__func__:   实现该方法的函数对象；
 	__self__:   调用此方法的实例；
+```
 
 内置函数：
+```python
 	__doc__
 	__name__
 	__self__
-
+```
 
 类：
+```python
 	__doc__
 	__name__
 	__bases__
 	__dict__
 	__module__: 定义了当前类的模块名称；
+```
 
 实例：
+```python
 	__class__  : 创建了此实例的类；
 	__dict__
-
+```
 对象都有特殊方法：
+```python
 	__init__,__new__,__del__
 	__dir__()
 	__add__()
 	__ge__()
 
 	a >= b   <==>   a.__ge__(b)
-	
+```
 
 
 
