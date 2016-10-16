@@ -296,6 +296,40 @@ python3 setup.py sdist --formats=msi   # 只能在windows平台下能执行成�
 上传到PyPI后就可以使用pip和easy_install方式来安装了；
 
 
+安装包：
+	python setup.py build   # 默认被install包含；
+	python setup.py install
+
+	python setup.py build:
+		--build-base=/path/to/build_dir   # build目录放到其他目录；
+			lib,   # 保存python库文件；
+			lib.platform  # 保存其他语言编写的跟平台密切相关的文件；
+
+	第三方模块的默认安装路径通常为：site-packages目录下；
+		'/usr/lib/python3/dist-packages'
+
+	自定义安装路径：
+		--user=    # 安装到用户的家目录下；
+		--prefix=  # 安装到其他指定目录；
+		--exec-prefix= # 指定跟python无关，由其他语言编写的与平台相关的文件的路径；
+
+	深度定制：
+		--install-purelib=/path/to/python-lib   # 纯python库文件；
+		--install-platlib=/path/to/plat_lit  # 其他语言的平台相关的库；
+		--install-lib=/path/to/lib   # 不区分上述两者；
+
+		--install-scripts=/path/to/bin  # 可执行文件的安装路径；
+
+		--install-data=    # 数据文件的安装位置；
+		--install-headers= # C的头文件安装路径；
+
+		还可以编辑distutils文件的install段；
+
+
+
+
+
+
 
 
 
