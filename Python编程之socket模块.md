@@ -2,14 +2,14 @@
 
 ## python网络编程：
 
-分层模型：
+分层模型：  
 ![network_layer](/images/network_layer.png)
 
 跨Inter的主机间通讯：
 ![hosts_comminication](/images/hosts_comminication.png)
 
-基于TCP客户/服务器程序的套接字函数：
-![socket_function](/imges/socket_function.png)
+基于TCP客户/服务器程序的套接字函数：  
+![socket_function](/images/socket_function.png)
 
 In [5]: import socket
 
