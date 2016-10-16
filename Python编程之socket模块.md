@@ -63,6 +63,7 @@ tcpconn = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
 
 服务器端完整脚本：
+```python
 import socket
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 sa = ('172.27.100.7',8023)
@@ -75,8 +76,10 @@ while True:
     print("Recv data: %s" % data)
     cinfo.send("echo:" + data)
     cinfo.close()
+```
 
 客户端：
+```python
 import socket
 c = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 saddr = ('192.168.0.100',8023)
@@ -84,7 +87,7 @@ c.connect(saddr)
 c.send("hello server")
 data = c.recv(1024)
 print("Reply from server %s" % data)
-
+```
 
 Web框架：
 	Django
