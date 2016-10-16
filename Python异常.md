@@ -239,7 +239,7 @@ ValueError: Seq must not be empty.
 ```
 
 ### raise语句的用法大全；
-![raise_usage](/imges/raise_usage.png)
+![raise_usage](/images/raise_usage.png)
 
 ### 异常对象：
 Python异常时内置的经典类Exception的子类的实例：
