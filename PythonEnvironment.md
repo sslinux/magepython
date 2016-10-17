@@ -83,6 +83,7 @@ sqlite-devel readline-devel zlib-devel bzip2-devel
 ```
 
 ### 使用pyenv：
+
 ```bash
 [sslinux@localhost .pyenv]$ pyenv
 pyenv 1.0.2
@@ -104,6 +105,7 @@ Some useful pyenv commands are:
 See `pyenv help <command>' for information on a specific command.
 For full documentation, see: https://github.com/yyuu/pyenv#readme
 ```
+
 **local命令**
 local命令切换当前目录及子目录的Python版本，可以通过删除'.python-version'恢复默认Python版本；
 
