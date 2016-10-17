@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2.7
+#encoding: utf-8
 
 # 导入日志模块
 import logging
