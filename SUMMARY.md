@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [python编程环境准备](PythonEnvironment.md)
 * [Python快速入门](Python快速入门.md)
 * [Python内置类型](Python内置类型.md)
 * [字典、表达式和语句](字典、表达式和语句.md)

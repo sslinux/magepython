@@ -715,5 +715,7 @@ print(new_date)
 
 
 ### 7、Logging日志模块
+1、简单日志打印：
+
 
 
