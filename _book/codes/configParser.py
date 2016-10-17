@@ -1,48 +1,25 @@
-#!/usr/bin/env python3
-# _*_ encoding: utf-8 _*_
+#!/usr/bin/env python3.5
+#_*_coding:utf-8_*_
 
 import configparser
-
-#生成config对象：
-config = config.ConfigParser()
-
-# 用config对象读取配置文件；
+config = configparser.ConfigParser()
 config.read('test_con')
-
-# 以列表形式返回所有的section：
 sections = config.sections()
-print('sections:',sections)
-
-# 得到指定section的所有option
-options = config.options("sslinux")
-print('options:',options)
-
-# 得到指定section的所有键值对：
-kvs = config.items("sslinux")
-print('kvs:',kvs)
-
-# 指定section，option读取值：
-str_val = config.get('sslinux','card')
-int_val = config.getint('sslinux','limit')
-print('sslinux的card:',str_val)
-print('sslinux的limit:',int_val)
-
-# 修改写入配置文件：
-# 更新指定section，option的值：
-config.set('mayun','limit','110000')
-int_val = config.getint('mayun','limit')
-print('mayun的limit:',int_val)
-
-# 写入指定section增加新option和值；
-config.set("sslinux","age","21")
-int_val = config.getint("sslinux","age")
-print("SSLinux的age",int_val)
-
-# 增加新的section
+print ('sections',sections)
+options = config.options("liuyao")
+print ('options',options)
+kvs = config.items("liuyao")
+print ('kvs',kvs)
+str_val = config.get("liuyao", "card")
+int_val = config.getint("liuyao", "limit")
+print ('liuyao 的 card',str_val)
+print ('liuyao 的 limit',int_val)
+config.set("mayun", "limit", "110000")
+int_val = config.getint("mayun", "limit")
+print ('mayun 的 limit',int_val)
+config.set("liuyao", "age", "21")
+int_val = config.getint("liuyao", "age")
+print ('liuyao 的 age',int_val)
 config.add_section('duobian')
-config.set('duobian','age','21')
-
-# 写回配置文件：
+config.set('duobian', 'age', '21')
 config.write(open("test_con",'w')
-
-
