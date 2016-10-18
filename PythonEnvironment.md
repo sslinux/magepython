@@ -162,7 +162,8 @@ Usage: pyenv virtualenv [-f|--force] [VIRTUALENV_OPTIONS] [version] <virtualenv-
 
 卸载某个版本，包括虚拟环境；
 
-环境配置情况：
+**环境配置原理：**
+
 python的环境是基于site的，即整个机器的python环境是一样的；
 
 java是基于project的，每个项目可以使用不同的java环境；
