@@ -5,54 +5,66 @@
 关闭firewalld和selinux；
 
 ## 1、安装IDEA
-下载地址：https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz
 
-tar xf ideaIU-2016.2.4.tar.gz
+下载地址：[https:\/\/download.jetbrains.8686c.com\/idea\/ideaIU-2016-2.4.tar.gz](https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz)
+
+tar xf ideaIU-2016.2.4.tar.gz  
 ln -sv idea-IU-162.2032.8 idea
 cd idea
-./bin/idea.sh     # 因为我下的版本是包含了JDK的，所以不需要单独安装JDK，否则需要安装并配置JDK；  
+.\/bin\/idea.sh     \# 因为我下的版本是包含了JDK的，所以不需要单独安装JDK，否则需要安装并配置JDK；
+
 上述命令启动了安装界面，顺着界面就可以完成安装了，可以为所有用户创建一个快捷图标；
 
-然后在初始界面点击configure --> 并安装plugins --> python  --> Install  
+然后在初始界面点击configure --&gt; 并安装plugins --&gt; python  --&gt; Install
+
 安装完成后就可以创建python项目了
 
-
 ## 2、安装git：
+
 ```bash
 [sslinux@localhost ~]$ sudo yum -y install git
 ```
 
 **安装pyenv**:
-为了安装pyenv方便，作者开发了另一个项目：pyenv-installer来帮助广大劳苦大众安装pyenv；  
+为了安装pyenv方便，作者开发了另一个项目：pyenv-installer来帮助广大劳苦大众安装pyenv；
 
-pyenv：https://github.com/yyuu/pyenv/  
-pyenv-installer：https://github.com/yyuu/pyenv-installer
+pyenv：[https:\/\/github.com\/yyuu\/pyenv\/](https://github.com/yyuu/pyenv/)
 
-使用pyenv-install安装pyenv：  
+pyenv-installer：[https:\/\/github.com\/yyuu\/pyenv-installer](https://github.com/yyuu/pyenv-installer)
+
+使用pyenv-install安装pyenv：
+
 ```bash
 $ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash  
 ```
+
 修改环境变量：
+
 ```bash
 [sslinux@localhost ~]$ vim ~/.bash_profile   # 仅对当前用户有效；
 export PATH="/home/sslinux/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
+
 所有用户有效：
+
 ```bash
 [sslinux@localhost ~]$ cat /etc/profile.d/pyenv.sh
 export PATH="/home/sslinux/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
+
 更新pyenv：
+
 ```bash
 pyenv update
 ```
 
 **卸载pyenv**
-pyenv 默认安装在环境变量$PYENV_ROOT所指定的目录下(默认为:~/.pyenv)
+pyenv 默认安装在环境变量$PYENV\_ROOT所指定的目录下\(默认为:~\/.pyenv\)
+
 ```bash
 $ rm -rf ~/.pyenv
 # 将配置文件中的相关配置删除掉；
@@ -62,22 +74,28 @@ eval "$(pyenv virtualenv-init -)"
 ```
 
 ### 通过PyPi的方式安装pyenv：
+
 ```bash
 $ pip install --egg pyenv
 ```
 
 ## 3、安装Python：
+
 **安装编译工具:**
+
 ```bash
 [sslinux@localhost ~]$ sudo yum -y install gcc make patch
 ```
 
 **安装依赖包：**
+
 ```bash
 [sslinux@localhost ~]$ sudo yum -y install gdbm-devel openssl-devel \
 sqlite-devel readline-devel zlib-devel bzip2-devel
 ```
+
 **安装python 3.5.2**
+
 ```bash
 [sslinux@localhost ~]$ pyenv install 3.5.2
 ```
@@ -113,10 +131,13 @@ local命令切换当前目录及子目录的Python版本，可以通过删除'.p
 global切换全局默认Python版本，不建议这么使用；
 
 #### virtualenv命令：
-创建虚拟环境：  
+
+创建虚拟环境：
+
 ```bash
 pyenv virtualenv $python_version $name
 ```
+
 ```bash
 [sslinux@localhost .pyenv]$ pyenv help virtualenv
 Usage: pyenv virtualenv [-f|--force] [VIRTUALENV_OPTIONS] [version] <virtualenv-name>
@@ -125,6 +146,7 @@ Usage: pyenv virtualenv [-f|--force] [VIRTUALENV_OPTIONS] [version] <virtualenv-
 
   -f/--force       Install even if the version appears to be installed already
 ```
+
 **install命令**
 安装指定版本，后面直接跟版本号即可；
 
@@ -135,6 +157,7 @@ python的环境是基于site的，即整个机器的python环境是一样的；
 java是基于project的，每个项目可以使用不同的java环境；
 
 ### pyenv virtualenv 命令：
+
 ```bash
 [sslinux@localhost ~]$ pyenv virtualenv 3.5.2 py2go    # 创建一个虚拟环境，名叫py2go
 Ignoring indexes: https://pypi.python.org/simple
@@ -148,7 +171,9 @@ Requirement already satisfied (use --upgrade to upgrade): pip in /home/sslinux/.
   py2go
   symbio
 ```
+
 切换到虚拟环境：
+
 ```bash
 [sslinux@localhost ~]$ pyenv local py2go  # 切换本地python环境为指定虚拟环境
 (py2go) [sslinux@localhost ~]$ python -V
@@ -156,16 +181,18 @@ Python 3.5.2
 (py2go) [sslinux@localhost ~]$ pyenv version
 py2go (set by /home/sslinux/.python-version)
 ```
-所有使用pyenv创建的python版本，都在~/.pyenv/versions/目录下；
+
+所有使用pyenv创建的python版本，都在~\/.pyenv\/versions\/目录下；
 
 ### python IDE
+
 Pycharm
 IDEA
 Atom
 vscode
 
-
 ## pip命令
+
 ```
 [sslinux@localhost ~]$  pyenv versions
 * system (set by /home/sslinux/.python-version)
@@ -177,6 +204,7 @@ vscode
 (py2go) [sslinux@localhost ~]$ vim ~/.pip/pip.conf
 (py2go) [sslinux@localhost ~]$ cat ~/.pip/pip.conf   # 为提高下载速度设置；
 ```
+
 ```ini
 [global]
 index-url = http://mirrors.aliyun.com/pypi/simple/
@@ -184,12 +212,13 @@ trusted-host = mirrors.aliyun.com
 ```
 
 在虚拟环境中，使用pip安装ipython，安装其他模块和包也是一样的；
+
 ```bash
 (py2go) [sslinux@localhost ~]$ pip install ipython
 ```
 
 **pip 安装jupyter:**
-安装文档：http://jupyter.org/install.html
+安装文档：[http:\/\/jupyter.org\/install.html](http://jupyter.org/install.html)
 
 ```bash
 pip3 install --upgrade pip
@@ -222,12 +251,10 @@ notebook qtconsole serverextension troubleshoot trust
 ```
 
 启动jupyter：
+
 ```bash
 (py2go) [sslinux@localhost ~]$ jupyter notebook --no-browser --ip=0.0.0.0
 ```
+
 此时便可以在本地的浏览器中使用ip加端口进行访问了；
-
-
-
-
 
