@@ -129,10 +129,12 @@ See `pyenv help <command>' for information on a specific command.
 For full documentation, see: https://github.com/yyuu/pyenv#readme
 ```
 
-**local命令**  
+**local命令:**  
+
 local命令切换当前目录及子目录的Python版本，可以通过删除'.python-version'恢复默认Python版本；
 
-**global命令**
+**global命令:**
+
 global切换全局默认Python版本，不建议这么使用；
 
 #### virtualenv命令：
@@ -152,13 +154,17 @@ Usage: pyenv virtualenv [-f|--force] [VIRTUALENV_OPTIONS] [version] <virtualenv-
   -f/--force       Install even if the version appears to be installed already
 ```
 
-**install命令**
+**install命令:**
+
 安装指定版本，后面直接跟版本号即可；
 
-**Uninstall命令**
+**Uninstall命令:**
+
 卸载某个版本，包括虚拟环境；
 
+环境配置情况：
 python的环境是基于site的，即整个机器的python环境是一样的；
+
 java是基于project的，每个项目可以使用不同的java环境；
 
 ### pyenv virtualenv 命令：
