@@ -30,6 +30,7 @@ cd idea
 ```
 
 **安装pyenv**:
+
 为了安装pyenv方便，作者开发了另一个项目：pyenv-installer来帮助广大劳苦大众安装pyenv；
 
 pyenv：[https:\/\/github.com\/yyuu\/pyenv\/](https://github.com/yyuu/pyenv/)
@@ -128,7 +129,7 @@ See `pyenv help <command>' for information on a specific command.
 For full documentation, see: https://github.com/yyuu/pyenv#readme
 ```
 
-**local命令**
+**local命令**  
 local命令切换当前目录及子目录的Python版本，可以通过删除'.python-version'恢复默认Python版本；
 
 **global命令**
