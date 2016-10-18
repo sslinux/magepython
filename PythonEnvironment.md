@@ -164,9 +164,9 @@ Usage: pyenv virtualenv [-f|--force] [VIRTUALENV_OPTIONS] [version] <virtualenv-
 
 **环境配置原理：**
 
-python的环境是基于site的，即整个机器的python环境是一样的；
+    python的环境是基于site的，即整个机器的python环境是一样的；
 
-java是基于project的，每个项目可以使用不同的java环境；
+    java是基于project的，每个项目可以使用不同的java环境；
 
 ### pyenv virtualenv 命令：
 
@@ -197,11 +197,10 @@ py2go (set by /home/sslinux/.python-version)
 所有使用pyenv创建的python版本，都在~\/.pyenv\/versions\/目录下；
 
 ### python IDE
-
-Pycharm
-IDEA
-Atom
-vscode
+- Pycharm
+- IDEA
+- Atom
+- vscode
 
 ## pip命令
 
@@ -230,6 +229,7 @@ trusted-host = mirrors.aliyun.com
 ```
 
 **pip 安装jupyter:**
+
 安装文档：[http:\/\/jupyter.org\/install.html](http://jupyter.org/install.html)
 
 ```bash
@@ -262,7 +262,7 @@ Available subcommands: console kernelspec migrate nbconvert nbextension
 notebook qtconsole serverextension troubleshoot trust
 ```
 
-启动jupyter：
+**启动jupyter：**
 
 ```bash
 (py2go) [sslinux@localhost ~]$ jupyter notebook --no-browser --ip=0.0.0.0
