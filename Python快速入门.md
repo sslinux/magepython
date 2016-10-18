@@ -1,8 +1,11 @@
 # Python快速入门
 
-[Python官网](https://www.python.org/)    
+[Python官网](https://www.python.org/)
+    
 [Python解释器下载](https://www.python.org/downloads/)  
+
 [Python官方文档](https://www.python.org/doc/)  
+
 [Python第三方库](https://pypi.python.org/pypi)  
 
 编程语言：
