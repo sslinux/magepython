@@ -7,12 +7,16 @@
 ## 1、安装IDEA
 
 下载地址：[https:\/\/download.jetbrains.8686c.com\/idea\/ideaIU-2016-2.4.tar.gz](https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz)
-
-tar xf ideaIU-2016.2.4.tar.gz  
+```bash
+tar xf ideaIU-2016.2.4.tar.gz 
+ 
 ln -sv idea-IU-162.2032.8 idea
-cd idea
-.\/bin\/idea.sh     \# 因为我下的版本是包含了JDK的，所以不需要单独安装JDK，否则需要安装并配置JDK；
 
+cd idea
+
+./bin/idea.sh     
+# 因为我下的版本是包含了JDK的，所以不需要单独安装JDK，否则需要安装并配置JDK；
+```
 上述命令启动了安装界面，顺着界面就可以完成安装了，可以为所有用户创建一个快捷图标；
 
 然后在初始界面点击configure --&gt; 并安装plugins --&gt; python  --&gt; Install
