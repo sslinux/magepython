@@ -375,29 +375,40 @@ mod.printName("SSLinux")
 
 ### 标识符：
 标识符是计算机语言中语序作为名字的有效字符串集合；
-	其中有一部分是关键字，它们是语言的标识符，因此是保留字，不能用于其它用途；
-	python还有称为"内建"的标识符集合，虽不是保留字，仍不推荐使用这些特别的名字；
 
-Python标识符：
-	第一个字符只能使用字母或下划线；
-	余下的字符可以使用字母、数字或下划线；
-	区分字母大小写；
+其中有一部分是关键字，它们是语言的标识符，因此是保留字，不能用于其它用途；
+
+python还有称为"内建"的标识符集合，虽不是保留字，仍不推荐使用这些特别的名字；
+
+### Python标识符：
+第一个字符只能使用字母或下划线；
+
+余下的字符可以使用字母、数字或下划线；
+
+区分字母大小写；
+
 ![Python3_key_words](/images/python3_key_words.png)
+
 
 ### 注释：
 注释：既不能缺少注释，亦要避免过度注释；
 
 文档：
 	Python允许通过__doc__动态获得文档字符串；
+
 	print str.__doc__   获取简要文档帮助；
 
 缩进：
+
 	统一缩进4个字符串；
-标识符名称：
-	见名知意；
+
+标识符名称要求：见名知意；
+
 Python风格指南：
-	https://code.google.com/p/soc/wiki/PythonStyleGuide
-	译文：http://www.elias.cn/Python/PythonStyleGuide
+
+https://code.google.com/p/soc/wiki/PythonStyleGuide
+
+译文：http://www.elias.cn/Python/PythonStyleGuide
 
 ### Python命名惯例：
 以单一下划线开头的变量名(_x)不会被from module import * 语句导入；
