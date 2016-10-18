@@ -411,15 +411,20 @@ https://code.google.com/p/soc/wiki/PythonStyleGuide
 译文：http://www.elias.cn/Python/PythonStyleGuide
 
 ### Python命名惯例：
-以单一下划线开头的变量名(_x)不会被from module import * 语句导入；
-前后有双下划线的变量名(__x__)是系统变量名，对解释器有特殊意义；
-以两个下划线开头、但结尾没有下划线的变量名(__x)是类的本地变量；
-交互式模式下，只有单个下划线的变量名(_)用于保存最后一个表达式的结果；
+
+- 以单一下划线开头的变量名(_x)不会被from module import * 语句导入；
+
+- 前后有双下划线的变量名(__x__)是系统变量名，对解释器有特殊意义；
+
+- 以两个下划线开头、但结尾没有下划线的变量名(__x)是类的本地变量；
+
+- 交互式模式下，只有单个下划线的变量名(_)用于保存最后一个表达式的结果；
 
 ![Python_Structure](/images/python_structure.png)
 
-
+```
 a = 'xyz'   <==> 实质相当于 a = str('xyz'):
+```
 	str是python内置的一个类，上述过程相当于使用str类实例化了一个对象(instance).
 	其他内置数据类型也是一样的，但内置数据类型的定义一般不使用"a = str('xyz')的方式定义；"
 
