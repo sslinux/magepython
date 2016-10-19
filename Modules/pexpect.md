@@ -13,7 +13,7 @@ pip install pexpect
 ```
 Or:  
 
-``bash
+```bash
 easy_install pexpect
 ```
 This version of Pexpect requires Python 3.3 or above, or Python 2.7.
