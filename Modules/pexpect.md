@@ -12,6 +12,7 @@ pexpect作为python的一个普通模块，支持pip、easy_install或源码安�
 pip install pexpect
 ```
 Or:  
+
 ``bash
 easy_install pexpect
 ```
