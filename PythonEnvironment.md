@@ -29,8 +29,6 @@ cd idea
 [sslinux@localhost ~]$ sudo yum -y install git
 ```
 
-[git的详细说明](/AttachFile/progit-en.1084.pdf)
-
 **安装pyenv**:
 
 为了安装pyenv方便，作者开发了另一个项目：pyenv-installer来帮助广大劳苦大众安装pyenv；
