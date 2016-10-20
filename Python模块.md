@@ -715,6 +715,8 @@ print(new_date)
 
 
 ### 7、Logging日志模块
+[logging模块详解](http://www.cnblogs.com/darkpig/p/5924820.html)
+
 1、简单日志打印：
 ```python
 
