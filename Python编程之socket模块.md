@@ -22,10 +22,13 @@ In [7]: import re
 ### socket.socket(family,type)
 
 - family:
-    AF\_INET   \# 表示使用TCP\/UDP套接字；
-    AF\_UNIX   \# 表示使用UNIX套接字；
+
+    AF_INET   # 表示使用TCP\/UDP套接字；
+
+    AF_UNIX   # 表示使用UNIX套接字；
 
 - type:
+
     STREAM:tcp
 
     SOCK_DGRAM:udp
