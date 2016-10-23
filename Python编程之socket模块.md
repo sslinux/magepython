@@ -15,21 +15,20 @@
 
 ```python
 In [5]: import socket
-
 In [6]: import os
-
 In [7]: import re
 ```
 
-socket.socket(family,type)
+### socket.socket(family,type)
 
-family:
+- family:
     AF\_INET   \# 表示使用TCP\/UDP套接字；
     AF\_UNIX   \# 表示使用UNIX套接字；
 
-type:
+- type:
     STREAM:tcp
-    SOCK\_DGRAM:udp
+
+    SOCK_DGRAM:udp
 
 tcpconn = socket.socket\(socket.AF\_INET,socket.SOCK\_STREAM\)
 
