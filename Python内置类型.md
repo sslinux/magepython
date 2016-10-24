@@ -215,24 +215,20 @@ Out[21]: 'www.sslinux.com'
 
 - s.lower()				转换为小写形式；
 - s.replace(old,new [,maxreplace]) 	替换一个子字符串；
-- s.split([sep [,maxaplit]])  	使用sep作为分隔符对一个字符串进行划分。maxsplit是划分的最大次数；
+- s.split([sep [,maxaplit]])  	 使用sep作为分隔符对一个字符串进行划分。maxsplit是划分的最大次数；
 - s.strip([chrs])			删掉chrs开头和结尾的空白或字符；
 - s.upper()				将一个字符串转换为大写形式；
-
-
-
-
 
 ### 适用于可变序列的操作：
 - s[i] = v   			元素赋值；
 - s[i:j] = t 			切片赋值；
-- s[i:j:stride] = t   扩展切pain赋值；
+- s[i:j:stride] = t            扩展切pain赋值；
 - del s[i]			元素删除；
 - del s[i:j]			切片删除；
-- del s[i:j:stride]	扩展切片删除；
+- del s[i:j:stride]	        扩展切片删除；
 
 ### 适用于列表的方法：
-	容器类型：
+容器类型：
 		任意对象的有序集合，通过索引访问其中的元素，可变对象；
 		异构，任意嵌套；
 			l2 = [1,'b']
