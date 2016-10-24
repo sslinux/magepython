@@ -152,7 +152,7 @@ if type(a) is type(b):
 - 字符和元组属于不可变序列，而列表则支持插入、删除和替换元素；
 - 所有序列都支持迭代；
 
-- 字符类型：
+### 字符类型：
 
 ```python
 字符串字面量：把文本放入单引号、双引号、三引号中；三(单|双)引号可以实现跨行定义；
@@ -195,9 +195,10 @@ Out[17]: 'test function'
 
 ### 适用于字符串的操作：
 Python2 提供两种字符串对象类型：
-	字节字符串：字节(8bit数据)序列；
-	Unicode字符串：Unicode字符(16bit数据)序列；
-		Python可以使用32 bit整数保存Unicode字符，但此为可选特性；
+- 字节字符串：字节(8bit数据)序列；
+- Unicode字符串：Unicode字符(16bit数据)序列；
+	
+Python可以使用32 bit整数保存Unicode字符，但此为可选特性；
 - s.captitalize()			首字符变大写；
 - s.index(sub [, start [,end]])	找到指定字符串sub首次出现的位置，否则报错；
 - s.join(t)				使用s作为分隔符,连接序列t中的字符串；
