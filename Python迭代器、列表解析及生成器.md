@@ -115,19 +115,22 @@ for循环中无需手动创建迭代器，因为for可以自动实现对可迭�
 - 使用iter()可从任何序列对象中得到迭代器；
 - 若要实现迭代器，需要在类中定义next()方法(Python 3中是__next__())
 - 要使得迭代器指向下一个元素，则使用成员函数next(),
+
 	在python中，是函数next(),而非成员函数；
 - 当没有元素时，则引发StopIteration异常；
 
-for循环可用于任何可迭代对象；
+- for循环可用于任何可迭代对象；
 	for循环开始时，会通过迭代协议传递给iter()内置函数，从而能够从可迭代对象中获得一个迭代器，返回的对象含有需要的next方法；
 
 
 ### python的列表解析：
-列表解析式python迭代机制的一种应用，它常用语实现创建新的列表，因此要放置于[]中；
+列表解析是python迭代机制的一种应用，它常用于实现创建新的列表，因此要放置于[]中；
 
 语法：
+```python
 	[expression for iter_var in iterable]
 	[expression for iter_var in iterable if cond_expr]
+```
 
 ```python
 In [58]: l1 = [1,2,3,4,5]
