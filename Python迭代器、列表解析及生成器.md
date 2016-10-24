@@ -73,20 +73,22 @@ for i in l1:
        l3.append(i)
 ```
 
-完备遍历：for
+完备遍历：for。
+
 非完备遍历： 使用非完全索引的方式来遍历；
 
-
-python迭代：
+#### python迭代：
 
 迭代：重复做一件事
+
 iterable(可迭代)对象；
+```python
 	支持每次返回自己所包含的一个成员的对象；
 	对象实现类__iter__方法
 		序列类型：如:list,str,tuple
 		非序列类型：如:dict,file
 		用户自定义的一些包含了__ter__()或__getitem__()方法的类;
-
+```
 list.__iter__()
 i1 = l1.__iter__()
 i1.next()
