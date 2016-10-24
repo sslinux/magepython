@@ -172,7 +172,7 @@ In [14]: def printName():
 In [15]: printName()     #使用括号()运算符，表示调用函数；
 Hello,sslinux.com
 
-In [16]: printName().__doc__  
+In [16]: printName().__doc__    # 函数的内置属性，调用函数的开头说明文档；
 Hello,sslinux.com
 
 In [17]: printName.__doc__     #不适用括号运算符()表示调用函数对象本身；
