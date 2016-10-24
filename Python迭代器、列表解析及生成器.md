@@ -200,12 +200,13 @@ In [75]: print(l3)
 l3 = [ (i,j) for i in l1 for j in l2 if j != 1 ]
 
 
-生成器：
+#### 生成器：
 生成器表达式并不真正创建数字列表，而是返回一个生成器对象，此对象在每次计算出一个条目后，把这个条目"产生"(yield)出来；
+```
 	生成器表达式使用类"惰性计算"或称作"延迟求值"的机制；
-序列过长，并且每次只需要获取一个元素时，应当考虑使用生成器表达式而不是列表解析；
+        序列过长，并且每次只需要获取一个元素时，应当考虑使用生成器表达式而不是列表解析；
 	生成器表达式于python2.4引入；
-
+```
 语法：
 	(expression for iter_ver in iterable)
 	(expression for iter_var in iterable if cond_expr)
