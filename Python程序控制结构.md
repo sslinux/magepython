@@ -52,16 +52,17 @@
 
 **注意：**
 
-	Python中，and和or运算会返回真或加的对象，而不是True或False；
+	Python中，and和or运算会返回真或假的对象，而不是True或False；
 
 	对象在本质上不是"真",就是"假"
+
 and和or是短路操作符；
 
 
-条件测试：
+#### 条件测试：
 
 if测试的语法结构：
-```
+```python
 if boolean_expression1:
     suit1
 elif boolean_expression2:
@@ -70,9 +71,10 @@ elif boolean_expression2:
 else:
     else_suite
 ```
-elif语句是可选的，仅用于占位，而后再填充相关语句时，可以使用pass；
+elif语句是可选的；
+pass：仅用于占位，而后再填充相关语句时，可以使用pass；
 
-```
+```python
 x = 1 
 y = 2
 if x > y:
