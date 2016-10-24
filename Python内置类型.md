@@ -483,7 +483,8 @@ s.intersection(t)	求交集。返回所有同时在s和t中的项目；
 s.isdisjoint(t)		如果s和t没有相同项，则返回True；
 s.issubset(t)		如果s是t的一个子集，则返回True；
 s.issuperset(t)		如果s是t的一个超集，则返回True；
-s.symmetric_difference(t)	求对称差集。返回所有在s或t中，但又不同时在这两个集合中的项求并集。返回所有在s或t中的项；
+s.symmetric_difference(t)	
+# 求对称差集。返回所有在s或t中，但又不同时在这两个集合中的项求并集。返回所有在s或t中的项；
 s.union(t) 			求并集。返回所有在s或t中的项；
 s.pop()				弹出元素；
 s.update(s3) 		将可hash对象合并为一个集合；
@@ -491,6 +492,7 @@ s.add() 			往集合中加入一个元素；
 ```
 
 ### 集合操作：
+```python
 s | t 		s和t的并集
 s & t 		s和t的交集
 s - t  		求差集；
@@ -498,7 +500,7 @@ s ^ t 		求对称差集；
 len(s) 		集合中项数
 max(s) 		最大值
 min(s)		最小值；
-
+```
 
 frozenset(): 冻结集合，不可变集合；与set()类似，但修改操作无效；
 
