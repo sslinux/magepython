@@ -237,9 +237,11 @@ In [78]: for j in (i**2 for i in range(1,11)): print(j/2)
 
 ### 产生偏移和元素：
 enumerate：
+
 	range可在非完备遍历中用于生成索引偏移，而非偏移处的元素；
 	如果同时需要偏移索引和偏移元素，则可以使用enumerate()函数；
 	此内置函数返回一个生成器对象；
+
 ```python
 In [83]: url = 'www.sslinux.com'
 
