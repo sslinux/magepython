@@ -146,9 +146,11 @@ In [61]: print(l2)
 ```
 
 列表解析根据已有列表，高效生成新列表的方式就是列表解析；
+```python
 l3 = [i**2 for i in l1]   # 比上述通过for完成的要高效；
 
 l4 = [i ** 2 for i in l1 if i >= 3]
+```
 
 ```python
 In [66]: for i in [ i**2 for i in range(1,11) ]: print(i/2)
