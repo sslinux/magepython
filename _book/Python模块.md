@@ -715,5 +715,213 @@ print(new_date)
 
 
 ### 7、Logging日志模块
+1、简单日志打印：
+```python
+
+#导入日志模块
+import logging
+#简单级别日志输出
+logging.debug('[debug 日志]')
+logging.info('[info 日志]')
+logging.warning('[warning 日志]')
+logging.error('[error 日志]')
+logging.critical('[critical 日志]')
+```
+
+输出：
+```python
+WARNING:root:[warning 日志]
+ERROR:root:[error 日志]
+CRITICAL:root:[critical 日志]
+```
+
+可见，默认情况下python的logging模块将日志打印到了标准输出中，且只显示了大于等于WARNING级别的日志，  
+这说明默认的日志级别设置为WARNING（日志级别等级CRITICAL > ERROR > WARNING > INFO > DEBUG > NOTSET）  
+
+默认的日志格式为:  
+     日志级别：Logger名称：用户输出消息。  
+
+
+2、灵活配置日志级别，日志格式，输出位置
+```python
+(py2go) [sslinux@pythonenv python]$ cat log_test.py 
+#!/usr/bin/env python3
+
+import logging
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                    datefmt='%a, %d %b %Y %H:%M:%S',
+                    filename='log.log',
+                    filemode='w')
+ 
+logging.debug('debug message')
+logging.info('info message')
+logging.warning('warning message')
+logging.error('error message')
+logging.critical('critical message')
+```
+
+```bash
+(py2go) [sslinux@pythonenv python]$ cat log.log 
+Mon, 17 Oct 2016 18:34:46 log_test.py[line:11] DEBUG debug message
+Mon, 17 Oct 2016 18:34:46 log_test.py[line:12] INFO info message
+Mon, 17 Oct 2016 18:34:46 log_test.py[line:13] WARNING warning message
+Mon, 17 Oct 2016 18:34:46 log_test.py[line:14] ERROR error message
+Mon, 17 Oct 2016 18:34:46 log_test.py[line:15] CRITICAL critical message
+```
+
+### 在logging.basicConfig()函数中可通过具体参数来更改logging模块默认行为，可用参数有
+
+- filename：   用指定的文件名创建FiledHandler（后边会具体讲解handler的概念），这样日志会被存储在指定的文件中。
+
+- filemode：   文件打开方式，在指定了filename时使用这个参数，默认值为“a”还可指定为“w”。
+
+- format：     指定handler使用的日志显示格式。
+
+- datefmt：    指定日期时间格式。（datefmt='%a, %d %b %Y %H:%M:%S',%p）
+
+- level：      设置rootlogger（后边会讲解具体概念）的日志级别
+
+- stream：     用指定的stream创建StreamHandler。可以指定输出到sys.stderr,sys.stdout或者文件，默认为sys.stderr。
+
+若同时列出了filename和stream两个参数，则stream参数会被忽略。
+
+### format参数中可能用到的格式化串：
+- %(name)s             Logger的名字
+- %(levelno)s          数字形式的日志级别
+- %(levelname)s     文本形式的日志级别
+- %(pathname)s     调用日志输出函数的模块的完整路径名，可能没有
+- %(filename)s        调用日志输出函数的模块的文件名
+- %(module)s          调用日志输出函数的模块名
+- %(funcName)s     调用日志输出函数的函数名
+- %(lineno)d           调用日志输出函数的语句所在的代码行
+- %(created)f          当前时间，用UNIX标准的表示时间的浮 点数表示
+- %(relativeCreated)d    输出日志信息时的，自Logger创建以 来的毫秒数
+- %(asctime)s                 字符串形式的当前时间。默认格式是 “2003-07-08 16:49:45,896”。逗号后面的是毫秒
+- %(thread)d                  线程ID。可能没有
+- %(threadName)s         线程名。可能没有
+- %(process)d               进程ID。可能没有
+- %(message)s             用户输出的消息
+
+3、Logger，Handler，Formatter，Filter的概念
+
+logging.basicConfig()（用默认日志格式（Formatter）为日志系统建立一个默认的流处理器（StreamHandler），
+设置基础配置（如日志级别等）并加到root logger（根Logger）中）这几个logging模块级别的函数，
+另外还有一个模块级别的函数是logging.getLogger([name])（返回一个logger对象，如果没有指定名字将返回root logger）
+
+1).logging库提供了多个组件：Logger、Handler、Filter、Formatter。
+
+Logger       对象提供应用程序可直接使用的接口，
+Handler      发送日志到适当的目的地，
+Filter          提供了过滤日志信息的方法，
+Formatter   指定日志显示格式。
+
+```python
+# 创建一个logger
+logger = logging.getLogger()
+#创建一个带用户名的logger
+logger1 = logging.getLogger('liuyao')
+#设置一个日志级别
+logger.setLevel(logging.INFO)
+logger1.setLevel(logging.INFO)
+#创建一个handler，用于写入日志文件
+fh = logging.FileHandler('log.log')
+# 再创建一个handler，用于输出到控制台
+ch = logging.StreamHandler()
+# 定义handler的输出格式formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+# 给logger添加handler
+#logger.addFilter(filter)
+logger.addHandler(fh)
+logger.addHandler(ch)
+# 给logger1添加handler
+#logger1.addFilter(filter)
+logger1.addHandler(fh)
+logger1.addHandler(ch)
+#给logger添加日志
+logger.info('logger info message')
+logger1.info('logger1 info message')
+```
+输出：
+```
+2016-02-03 21:11:38,739 - root - INFO - logger info message
+2016-02-03 21:11:38,740 - liuyao - INFO - logger1 info message
+2016-02-03 21:11:38,740 - liuyao - INFO - logger1 info message
+```
+
+对于等级：
+```
+CRITICAL = 50
+FATAL = CRITICAL
+ERROR = 40
+WARNING = 30
+WARN = WARNING
+INFO = 20
+DEBUG = 10
+NOTSET = 0
+```
+
+## 8.json和pickle模块
+用于序列化的两个模块
+-    json，用于字符串 和 python数据类型间进行转换
+
+-    pickle，用于python特有的类型 和 python的数据类型间进行转换
+
+
+Json模块提供了四个功能：dumps、dump、loads、load
+
+pickle模块提供了四个功能：dumps、dump、loads、load
+
+```python
+#!/usr/bin/env python3
+
+import pickle
+
+data = {'k1':123,'k2':'Hello'}
+
+# pickle.dumps 将数据通过特殊的形式转换为只有python语言识别的字符串；
+p_str = pickle.dumps(data)
+print(p_str)
+
+# pickle.dump 将数据通过特殊的形式转换为只有python语言认识的字符串，并写入文件
+with open('result.pk','w') as fp:
+    pickle.dump(data,fp)
+
+import json
+
+# json.dumps 将数据通过特殊的形式转换为所有程序语言都认识的字符串
+j_str = json.dumps(data)
+print(j_str)
+
+# json.dump 将数据通过特殊的形式转换为所有程序语言都认识的字符串，并写入文件；
+with open('result.json','w') as fp:
+    json.dump(data,fp)
+```
+
+### json模块：
+    四个功能： dumps、dump、loads，load
+1). dumps
+```python
+
+name = {'liuyao':'["age",12]',
+        'yaoyai':'["age",21]'}
+print(name)
+print(type(name))
+a = json.dumps(name)
+print(a)
+print(type(a))
+```
+
+```python
+{'yaoyai': '["age",21]', 'liuyao': '["age",12]'}
+<class 'dict'>
+{"yaoyai": "[\"age\",21]", "liuyao": "[\"age\",12]"}
+<class 'str'>
+```
+
+
 
 

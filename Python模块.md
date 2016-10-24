@@ -715,6 +715,8 @@ print(new_date)
 
 
 ### 7、Logging日志模块
+[logging模块详解](http://www.cnblogs.com/darkpig/p/5924820.html)
+
 1、简单日志打印：
 ```python
 
@@ -922,6 +924,152 @@ print(type(a))
 <class 'str'>
 ```
 
+## shelve 模块 
 
+shelve模块是一个简单的k,v将内存数据通过文件持久化的模块，可以持久任何pickle可支持的python数据格式；
+```python
+#!/usr/bin/env python3
 
+# shelve模块简介：
+
+import shelve
+
+d = shelve.open('shelve_test')   # 打开一个文件；
+
+class Test(object):
+    def __init__(self,n):
+        self.n = n
+
+t = Test(123)
+t2 = Test(123334)
+
+name = ['alex','rain','test']
+
+d["test"] = name   #持久化列表
+d["t1"] = t        #持久化类
+d["t2"] = 52
+
+d.close()
+```
+
+## random模块
+
+random模块是专门用来生成随机数的。
+
+1）random.random 
+random.random() 用于生成一个0到1的随机浮点数：0 <= n < 1.0
+
+例： 
+```python
+>>> import random
+>>> print(random.random)
+<built-in method random of Random object at 0x17f4388>
+>>> print(random.random())
+0.5438051254769491
+```
+
+2) random.uniform
+random.uniform的函数原型为：random.uniform(a,b),用于生成一个指定范围内的随机浮点数，两个参数其中一个是上限，一个是下限。
+
+如果a>b,则生成的随机数n: a <= n <= b
+如果a<b,则b <= n <= b
+```python 
+>>> random.uniform(5,10)
+5.930611332627718
+>>> random.uniform(10,10)
+10.0
+>>> random.uniform(10,5)
+5.772749826995059
+```
+
+3) random.randint
+random.randint()的函数原型为：random.randint(a,b),用于生成一个指定范围内的整数。其中参数a是下限，参数b是上限，生成的随机数n: a <= n <= b,下限必须小于上限；
+```python
+>>> random.randint(10,20)
+14
+>>> random.randint(10,20)
+19
+```
+
+4) random.randrange
+random.randrange的函数原型为： random.randrange([start],stop[,step]),从指定的范围内，按指定的基数递增的集合中获取一个随机数；
+如：random.randrange(10, 100, 2)，结果相当于从[10, 12, 14, 16, ... 96, 98]序列中获取一个随机数。random.randrange(10, 100, 2)在结果上与 random.choice(range(10, 100, 2) 等效。
+
+例：
+```python
+>>> random.randrange(1,37,2)
+1
+>>> random.randrange(1,37,2)
+17
+>>> random.randrange(1,37,2)
+35
+>>> random.randrange(1,37,2)
+33
+```
+
+5) random.choice
+random.choice从序列中获取一个随机元素。其函数原型为：random.choice(sequence)。参数sequence表示一个有序类型。
+
+sequence在python中不是一种特定的数据类型，而是泛指一系列的类型。
+
+list、tuple、字符串都属于sequence。
+
+例：
+```python
+>>> random.choice('SsLinux')
+'L'
+>>> random.choice('SsLinux')
+'u'
+>>> random.choice('SsLinux')
+'i'
+>>> random.choice('SsLinux')
+'s'
+```
+
+6) random.shuffle
+random.shuffle的函数原型为：random.shuffle(x[,random]),用于就爱你个一个列表中的元素打乱，
+
+例如：
+```python
+>>> l = ["Python","is","simple","and so on..."]
+>>> random.shuffle(l)
+>>> print(l)
+['and so on...', 'Python', 'simple', 'is']
+```
+
+7）random.sample
+random.sample的函数原型为： random.sample(sequence,k),从指定序列中随机获取指定长度的片段；sample函数不会修改原有序列；
+```python
+>>> li = [1,2,3,4,5,6,7,8,9,10]
+>>> slice = random.sample(li,5)
+>>> print(slice)
+[5, 4, 9, 8, 6]
+>>> print(li)
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+**随机码验证实例：**
+```python
+#!/usr/bin/env python3
+
+import random
+checkcode = ''
+for i in range(4):
+    current = random.randrange(0,4)
+    if current != i:
+        temp = chr(random.randint(65,90))   #chr(i, /)  Return a Unicode string of one character with ordinal i;
+    else:
+        temp = random.randint(0,9)
+    checkcode += str(temp)
+
+print(checkcode)
+```
+
+# 开源模块：
+## 1、pexpect
+[系统批量运维管理器pexpect详解](Modules/pexpect.md)
+## 2、paramiko
+[系统批量运维管理器paramiko详解](Modules/paramiko.md)
+## 3、Fabric
+[系统批量运维管理器fabric详解](Modules/fabric.md)
 

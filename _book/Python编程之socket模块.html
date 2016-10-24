@@ -100,7 +100,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="Python快速入门.html">
+        <li class="chapter " data-level="1.2" data-path="PythonEnvironment.html">
+            
+                <a href="PythonEnvironment.html">
+            
+                    
+                    python编程环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Python快速入门.html">
             
                 <a href="Python快速入门.html">
             
@@ -113,7 +126,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="Python内置类型.html">
+        <li class="chapter " data-level="1.4" data-path="Python内置类型.html">
             
                 <a href="Python内置类型.html">
             
@@ -126,7 +139,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="字典、表达式和语句.html">
+        <li class="chapter " data-level="1.5" data-path="字典、表达式和语句.html">
             
                 <a href="字典、表达式和语句.html">
             
@@ -139,7 +152,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="Python程序控制结构.html">
+        <li class="chapter " data-level="1.6" data-path="Python程序控制结构.html">
             
                 <a href="Python程序控制结构.html">
             
@@ -152,7 +165,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="Python迭代器、列表解析及生成器.html">
+        <li class="chapter " data-level="1.7" data-path="Python迭代器、列表解析及生成器.html">
             
                 <a href="Python迭代器、列表解析及生成器.html">
             
@@ -165,7 +178,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="Python文件对象及os、os.path和pickle模块.html">
+        <li class="chapter " data-level="1.8" data-path="Python文件对象及os、os.path和pickle模块.html">
             
                 <a href="Python文件对象及os、os.path和pickle模块.html">
             
@@ -178,7 +191,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="Python中的正则表达式.html">
+        <li class="chapter " data-level="1.9" data-path="Python中的正则表达式.html">
             
                 <a href="Python中的正则表达式.html">
             
@@ -191,7 +204,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="Python函数详解.html">
+        <li class="chapter " data-level="1.10" data-path="Python函数详解.html">
             
                 <a href="Python函数详解.html">
             
@@ -204,7 +217,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="Python中的类详解.html">
+        <li class="chapter " data-level="1.11" data-path="Python中的类详解.html">
             
                 <a href="Python中的类详解.html">
             
@@ -217,7 +230,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="Python模块和包.html">
+        <li class="chapter " data-level="1.12" data-path="Python模块和包.html">
             
                 <a href="Python模块和包.html">
             
@@ -230,7 +243,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="Python异常.html">
+        <li class="chapter " data-level="1.13" data-path="Python异常.html">
             
                 <a href="Python异常.html">
             
@@ -243,7 +256,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="Python编程之MySQLdb模块.html">
+        <li class="chapter " data-level="1.14" data-path="Python编程之MySQLdb模块.html">
             
                 <a href="Python编程之MySQLdb模块.html">
             
@@ -256,7 +269,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.14" data-path="Python编程之socket模块.html">
+        <li class="chapter active" data-level="1.15" data-path="Python编程之socket模块.html">
             
                 <a href="Python编程之socket模块.html">
             
@@ -314,7 +327,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;">Python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;</h1>
+                                <h1 id="python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;">Python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;</h1><h2 id="python&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#xFF1A;">python&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#xFF1A;</h2><p>&#x5206;&#x5C42;&#x6A21;&#x578B;&#xFF1A;</p><p><img alt="network_layer" src="images/network_layer.png"></p><p>&#x8DE8;Inter&#x7684;&#x4E3B;&#x673A;&#x95F4;&#x901A;&#x8BAF;&#xFF1A;
+<img alt="hosts_comminication" src="images/hosts_comminication.png"></p><p>&#x57FA;&#x4E8E;TCP&#x5BA2;&#x6237;/&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x51FD;&#x6570;&#xFF1A;</p><p><img alt="socket_function" src="images/socket_function.png"></p><p>In [5]: import socket</p><p>In [6]: import os</p><p>In [7]: import re</p><p>socket.socket(family,type)</p><p>family:
+    AF_INET   # &#x8868;&#x793A;&#x4F7F;&#x7528;TCP/UDP&#x5957;&#x63A5;&#x5B57;&#xFF1B;
+    AF_UNIX   # &#x8868;&#x793A;&#x4F7F;&#x7528;UNIX&#x5957;&#x63A5;&#x5B57;&#xFF1B;</p><p>type:
+    STREAM:tcp
+    SOCK_DGRAM:udp</p><p>tcpconn = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</p><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7ED1;&#x5B9A;&#x5730;&#x5740;&#xFF1B;
+    &#x4F7F;&#x7528;&#x5957;&#x63A5;&#x5B57;&#x5BF9;&#x8C61;&#x7684;bind&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#x4E0E;&#x67D0;&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#xFF1B;</p><pre><code>tcpconn.bind((&apos;ip&apos;,port))   # &#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;ip&#x548C;port&#x7684;&#x5143;&#x7EC4;
+tcpconn.bind((&apos;192.168.0.100&apos;,8023))</code></pre>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x4F7F;&#x7528;listen&#x65B9;&#x6CD5;&#x8FDB;&#x5165;&#x76D1;&#x542C;&#x72B6;&#x6001;&#xFF1B;
+    tcpconn.listen(backlog)   # backlog&#xFF1A; &#x7B49;&#x5F85;&#x961F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#xFF1B;</p><pre><code>tcpconn.listten(100)</code></pre>
+<p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x5FAA;&#x73AF;&#x76D1;&#x542C;&#x72B6;&#x6001;&#xFF1A;
+    &#x4F7F;&#x7528;&#x5957;&#x63A5;&#x5B57;&#x5BF9;&#x8C61;&#x7684;accept&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#xFF1B;
+    accepte()  --&gt; (socket object,address info)</p><h2 id="&#x7F16;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#xFF1A;">&#x7F16;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#xFF1A;</h2><pre><code>import socket
+&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;socket&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF1A;
+    clientsock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+&#x7B2C;&#x4E8C;&#x90E8;&#xFF1A;&#x8FDE;&#x63A5;&#x81F3;&#x670D;&#x52A1;&#x5668;&#xFF1B;
+    clientsock.connect((&apos;server_ip&apos;,server_port))
+    clientsock.connect((&apos;10.60.4.167&apos;,8023))
+
+&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF1A;
+    clientsock.send(&quot;hello world&quot;)
+
+clientsock.recv() # &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1B;</code></pre>
+<p>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B8C;&#x6574;&#x811A;&#x672C;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+sa = (<span class="hljs-string">&apos;172.27.100.7&apos;</span>,<span class="hljs-number">8023</span>)
+s.bind(sa)
+s.listen(<span class="hljs-number">20</span>)
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    cinfo,caddr = s.accept()
+    print(<span class="hljs-string">&quot;Got a connection from %s&quot;</span> % caddr[<span class="hljs-number">0</span>])
+    data = cinfo.recv(<span class="hljs-number">1024</span>)
+    print(<span class="hljs-string">&quot;Recv data: %s&quot;</span> % data)
+    cinfo.send(<span class="hljs-string">&quot;echo:&quot;</span> + data)
+    cinfo.close()</code></pre>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+c = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+saddr = (<span class="hljs-string">&apos;192.168.0.100&apos;</span>,<span class="hljs-number">8023</span>)
+c.connect(saddr)
+c.send(<span class="hljs-string">&quot;hello server&quot;</span>)
+data = c.recv(<span class="hljs-number">1024</span>)
+print(<span class="hljs-string">&quot;Reply from server %s&quot;</span> % data)</code></pre>
+<p>Web&#x6846;&#x67B6;&#xFF1A;
+    Django
+    Flask
+    Web2py
+    TuborGears</p><p>sys&#x6A21;&#x5757;&#xFF1A;
+    sys.ext()
+    sys.argv()   # &#x4F7F;python&#x811A;&#x672C;&#x80FD;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#xFF1B;</p><p>&#x591A;&#x8BFB;&#x4EE3;&#x7801;&#x5427;&#xFF0C;&#x9A9A;&#x5E74;!</p>
                                 
                                 </section>
                             
@@ -353,7 +415,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python编程之socket模块","level":"1.14","depth":1,"previous":{"title":"Python编程之MySQLdb模块","level":"1.13","depth":1,"path":"Python编程之MySQLdb模块.md","ref":"Python编程之MySQLdb模块.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python编程之socket模块.md","mtime":"2016-10-06T05:27:36.824Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-16T10:58:10.396Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python编程之socket模块","level":"1.15","depth":1,"previous":{"title":"Python编程之MySQLdb模块","level":"1.14","depth":1,"path":"Python编程之MySQLdb模块.md","ref":"Python编程之MySQLdb模块.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python编程之socket模块.md","mtime":"2016-10-16T15:14:35.345Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-17T12:38:59.383Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
