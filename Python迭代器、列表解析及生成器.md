@@ -208,14 +208,18 @@ l3 = [ (i,j) for i in l1 for j in l2 if j != 1 ]
 	生成器表达式于python2.4引入；
 ```
 语法：
+```python
 	(expression for iter_ver in iterable)
 	(expression for iter_var in iterable if cond_expr)
+```
 
-[ i**2 for i in range(1,11) ]
+```python
+[ i**2 for i in range(1,11) ]   # 列表解析；
 
-g1 = ( i ** 2 for i in range(1,11) )
+g1 = ( i ** 2 for i in range(1,11) )    # 生成器表达式；
 g1.next()
 g1.next()
+```
 
 ```python
 In [78]: for j in (i**2 for i in range(1,11)): print(j/2)
