@@ -1,22 +1,24 @@
 # Python迭代器、列表解析及生成器
 
- 
- 动态语言：
- 	sys.getrefcount() 获取对象引用计数；
-	 增加对象的引用计数：
-	 	变量名创建并指向对象时，赋值；
-	 	将对象添加进容器时；类似list.append()
-	 	当对象被当作参数传递给函数时；
-	 	多重目标赋值(为对象创建另外的变量名)：s1 = 'abc'   s4 = s3
 
-	减少引用次数：
-		引用此对象的变量名被显式销毁： del x
-		引用此对象的某变量名重新赋值；
-		从容器中移除对象时，类似list.pop()
-		容器本身被销毁；容器中所有引用的对象的引用计数减少；
+sys.getrefcount() 获取对象引用计数；
+
+ #### 动态语言：
+- 增加对象的引用计数：
+    - 变量名创建并指向对象时，赋值；
+    - 将对象添加进容器时；类似list.append()
+    - 当对象被当作参数传递给函数时；
+    - 多重目标赋值(为对象创建另外的变量名)：s1 = 'abc'   s4 = s3
+
+- 减少对象的引用次数：
+    - 引用此对象的变量名被显式销毁： del x
+    - 引用此对象的某变量名重新赋值；
+    - 从容器中移除对象时，类似list.pop()
+    - 容器本身被销毁；容器中所有引用的对象的引用计数减少；
 
 2、if：
 
+```python
 if boolean_expression:
    if_suit
 elif boolean_expression:
@@ -24,24 +26,26 @@ elif boolean_expression:
 ....
 else:
    suit X
+```
 
 3、while
-
+```python
 while boolean_expression:
     while_suite
     if boolean_expression2: continue
     if boolean_expression3: break
 else:
     else_suite
-
-4、 for
-
+```
+4、 for:
+```python
 for expression in object:
     for_suit
     if boolean_expression2: continue
     if boolean_expression3: break
 else:
     else_suite
+```
 
 ```python
 In [42]:
