@@ -70,7 +70,7 @@ pyenv update
 ```
 
 **卸载pyenv**
-pyenv 默认安装在环境变量$PYENV\_ROOT所指定的目录下\(默认为:~\/.pyenv\)
+pyenv 默认安装在环境变量$PYENV\_ROOT所指定的目录下\(默认为:~/.pyenv\)
 
 ```bash
 $ rm -rf ~/.pyenv
