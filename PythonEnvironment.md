@@ -6,7 +6,7 @@
 
 ## 1、安装IDEA
 
-下载地址：[https:\/\/download.jetbrains.8686c.com\/idea\/ideaIU-2016-2.4.tar.gz](https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz)
+下载地址：[https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz](https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz)
 ```bash
 tar xf ideaIU-2016.2.4.tar.gz 
  
