@@ -16,6 +16,8 @@ cd idea
 
 ./bin/idea.sh     
 # 因为我下的版本是包含了JDK的，所以不需要单独安装JDK，否则需要安装并配置JDK；
+
+ln -sv ./bin/idea.sh /usr/bin/idea   # 为了方便，创建一个软链接；
 ```
 上述命令启动了安装界面，顺着界面就可以完成安装了，可以为所有用户创建一个快捷图标；
 
@@ -37,7 +39,7 @@ pyenv：[https://github.com/yyuu/pyenv/](https://github.com/yyuu/pyenv/)
 
 pyenv-installer：[https://github.com/yyuu/pyenv-installer](https://github.com/yyuu/pyenv-installer)
 
-使用pyenv-install安装pyenv：
+使用pyenv-installer安装pyenv：
 
 ```bash
 $ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash  
@@ -68,7 +70,7 @@ pyenv update
 ```
 
 **卸载pyenv**
-pyenv 默认安装在环境变量$PYENV\_ROOT所指定的目录下\(默认为:~\/.pyenv\)
+pyenv 默认安装在环境变量$PYENV\_ROOT所指定的目录下\(默认为:~/.pyenv\)
 
 ```bash
 $ rm -rf ~/.pyenv
