@@ -103,12 +103,13 @@ dir(platform),查看该对象包含的方法、属性等；
 ```bash
     下载python源代码；
     下载ipython；
-    解压缩；
+    tar xf python*.tar.gz
     ./config --help | more                # 自行查看帮助信息；
     yum install readline-devel readline    # 安装依赖；
     ./config --prefix=/usr/local/python27
     make && make install
     /usr/local/python27/bin/python2.7
+    ln -sv /usr/local/python27/bin/python2.7 /usr/bin/python27 #创建软链接；
 ```
 - 安装ipython：
 
