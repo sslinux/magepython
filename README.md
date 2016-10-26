@@ -1,7 +1,6 @@
 人生苦短，我用Python！
 学习的过程是痛苦的，为了以后不会因为同一件事情痛苦两回，今日记下笔记；
 
-* [Introduction](README.md)
 * [python编程环境准备](PythonEnvironment.md)
 * [Python快速入门](Python快速入门.md)
 * [Python内置类型](Python内置类型.md)
@@ -16,3 +15,4 @@
 * [Python异常](Python异常.md)
 * [Python编程之MySQLdb模块](Python编程之MySQLdb模块.md)
 * [Python编程之socket模块](Python编程之socket模块.md)
+
