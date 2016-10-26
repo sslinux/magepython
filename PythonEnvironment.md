@@ -6,7 +6,7 @@
 
 ## 1、安装IDEA
 
-下载地址：[https:\/\/download.jetbrains.8686c.com\/idea\/ideaIU-2016-2.4.tar.gz](https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz)
+下载地址：[https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz](https://download.jetbrains.8686c.com/idea/ideaIU-2016-2.4.tar.gz)
 ```bash
 tar xf ideaIU-2016.2.4.tar.gz 
  
@@ -33,9 +33,9 @@ cd idea
 
 为了安装pyenv方便，作者开发了另一个项目：pyenv-installer来帮助广大劳苦大众安装pyenv；
 
-pyenv：[https:\/\/github.com\/yyuu\/pyenv\/](https://github.com/yyuu/pyenv/)
+pyenv：[https://github.com/yyuu/pyenv/](https://github.com/yyuu/pyenv/)
 
-pyenv-installer：[https:\/\/github.com\/yyuu\/pyenv-installer](https://github.com/yyuu/pyenv-installer)
+pyenv-installer：[https://github.com/yyuu/pyenv-installer](https://github.com/yyuu/pyenv-installer)
 
 使用pyenv-install安装pyenv：
 
@@ -194,7 +194,7 @@ Python 3.5.2
 py2go (set by /home/sslinux/.python-version)
 ```
 
-所有使用pyenv创建的python版本，都在~\/.pyenv\/versions\/目录下；
+所有使用pyenv创建的python版本，都在~/.pyenv/versions/目录下；
 
 ### python IDE
 - Pycharm
@@ -230,7 +230,7 @@ trusted-host = mirrors.aliyun.com
 
 **pip 安装jupyter:**
 
-安装文档：[http:\/\/jupyter.org\/install.html](http://jupyter.org/install.html)
+安装文档：[http://jupyter.org/install.html](http://jupyter.org/install.html)
 
 ```bash
 pip3 install --upgrade pip
