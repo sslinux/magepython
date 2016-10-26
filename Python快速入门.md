@@ -21,7 +21,7 @@
 
 高级和低级：指的是是否离人类语言或思维方式接近；越高级的语言，离人类越近，人类编程容易，机器理解困难，执行效率低；
 
-Python语言的三种应用场景：
+### Python语言的三种应用场景：
 
 - shell编程，不建议使用；此种应用场景建议使用bash；文本处理方面的能力是shell无法比拟的；
 
@@ -29,7 +29,7 @@ Python语言的三种应用场景：
 
 - 框架: web开发(Django、Flask等)
 
-Python语言的缺点：
+### Python语言的缺点：
 
 - 字节码: bytecode
 
@@ -38,9 +38,11 @@ Python语言的缺点：
 ### python语言执行流程：
 ![Python_Interpreter](/images/Python_Interpreter.png)	
 	
-python解释器：
+### python解释器：
 
-    CPython： 原始、标准的实现；
+- CPython： 原始、标准的实现；
+- Jython： Java实现的Python解释器；
+- IronPython： .Net实现的Python解释器；
 
 ### python性能优化工具：
 - PyPy，用python实现的python语言的动态编译器；执行效率极高；
