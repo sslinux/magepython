@@ -109,10 +109,9 @@ dir(platform),查看该对象包含的方法、属性等；
     ./config --prefix=/usr/local/python27
     make && make install
     /usr/local/python27/bin/python2.7
-    ln -sv /usr/local/python27/bin/python2.7 /usr/bin/python27 #创建软链接；
 ```
-- 安装ipython：
 
+- 安装ipython：
 ```
     下载源码；
     解压；
