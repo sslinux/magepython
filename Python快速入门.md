@@ -89,13 +89,15 @@
 ### 内置函数：
 dir(platform),查看该对象包含的方法、属性等；
 
-在Linux上使用新版本的python，但切忌卸载原有版本；系统部分组件依赖于系统自带的python解释器 ；
+- 在Linux上使用新版本的python：
+
+    但切忌卸载原有版本；系统部分组件依赖于系统自带的python解释器 ；
 
 - 简单方法：
 
 	1、编译安装新版本至某特定路径；
 
-	2、pyenv；
+	2、使用pyenv管理多版本并存，详见[python编程环境准备](PythonEnvironment.md)；
 
 - 编译安装Python:  需先安装gcc编译器；
 ```bash
