@@ -93,6 +93,8 @@ if type(a) is type(b):    # 类型比较；
 	编译的代码堆栈跟踪；
 - 其他文件类工具：pipes,fifos,sockets
 
+---
+
 ### 类型转换：
 - str(),repr()或format()：将非字符型数据转换为字符；
 	str1 = repr(num1)
