@@ -252,9 +252,9 @@ Out[21]: 'www.sslinux.com'
 	修改指定的索引元素，修改指定的分片，删除语句，内置方法；
 			l2[1:3] = []  # 指定分片的元素将会被删除；
 
-list(s)可将任意可迭代类型转换为列表，而如果s已经是一个列表，则该函数构造的新列表是s的一个**浅复制**；
+**list(s)**可将任意可迭代类型转换为列表，而如果s已经是一个列表，则该函数构造的新列表是s的一个**浅复制**；
 
-- list(s)			将s转换为一个列表；
+- list(s)		将s转换为一个列表；
 - s.append(x)		将一个新元素x追加到s末尾；
 - s.extend(t)		将一个新列表t追加到s末尾；合并两个列表中的元素；
 - s.count(x)		计算s中元素x的出现次数；
@@ -293,6 +293,8 @@ In [6]: print(l2)
 
 	相当于将l1的所有元素复制了一份给l3,深复制(copy.deepcopy)；
 
+---
+
 ### python内置库copy：
 import copy
 
@@ -302,7 +304,7 @@ import copy
 	l2 = l1
 
 	import copy
-	l2 = copy.deepcopy(l1)
+	l2 = copy.deepcopy(l1)   # 深复制；
 
 	l2 = l1[:]
 ```
