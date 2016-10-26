@@ -388,12 +388,12 @@ Out[21]: 70619904
 
 	包含可变对象的列表、字典和元组不能用作键；
 
-m[k]运算符用于选择映射对象中的一项，其中'k'是一个键：
+- m[k]运算符用于选择映射对象中的一项，其中'k'是一个键：
 
 	引用不存在的键会引发KeyError异常；
 
 
-### 字典：dict
+#### 字典：dict
 字典在其他编程语言中又称作关联数组或散列表；
 
 dict特性：
@@ -408,28 +408,29 @@ len(d1):返回字典元素个数；
 ```
 
 字典内置方法：
-```
-d1.clear: 清除其中的所有元素；
-d2 = d1.copy(): 字典复制；深复制；
-dict.get() : 返回指定键的值；
-dict.haskey(): 判断字典是否有指定键；
-dict.items():  将字典转换为元组列表的形式；
-dict.keys():   返回键列表；
-dict.values(): 返回值列表；
-dict.pop(): 随机弹出指定键的元素，并返回该元素；
-dict.popitem(): 随机弹出键值映射；
-dict.update(d1): 合并两个字典，若两个字典中键有重复，以d1为结果；
-dict.iteritem: 返回一个键值对迭代器对象；可以使用next()
-dict.iterkeys: 返回一个键迭代器对象；
-dict.itervalue: 返回一个值的迭代器对象；
-dict.viewitems: 返回键值对所拆分的元组；
-dict.viewkeys:  返回键列表；
-dict.viewvalues: 返回值列表；
+```python
+d1.clear: #清除其中的所有元素；
+d2 = d1.copy(): #字典复制；深复制；
+dict.get() : #返回指定键的值；
+dict.haskey(): #判断字典是否有指定键；
+dict.items():  #将字典转换为元组列表的形式；
+dict.keys():   #返回键列表；
+dict.values(): #返回值列表；
+dict.pop(): #随机弹出指定键的元素，并返回该元素；
+dict.popitem(): #随机弹出键值映射；
+dict.update(d1): #合并两个字典，若两个字典中键有重复，以d1为结果；
+dict.iteritem: #返回一个键值对迭代器对象；可以使用next()
+dict.iterkeys: #返回一个键迭代器对象；
+dict.itervalue: #返回一个值的迭代器对象；
+dict.viewitems: #返回键值对所拆分的元组；
+dict.viewkeys:  #返回键列表；
+dict.viewvalues: #返回值列表；
 ```
 
 ![Dict_Method](/images/dict_method.png)
 
 - zip()函数：返回以元组为元素的列表；
+
 	可以使用zip()帮助生成dict；
 
 ```python
@@ -448,7 +449,7 @@ Out[23]: {'x': '1', 'y': '2', 'z': '3'}
 ```
 列表和字典：
 	变量名：仅仅是指向对象的引用；
-	对象：
+	对象：实际存储在内存中；
 ```
 
 ```
