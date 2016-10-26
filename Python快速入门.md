@@ -150,7 +150,7 @@ dir(platform),查看该对象包含的方法、属性等；
 ### 内置函数
 - id(Var);
 - type(Var);
-- dir(Var);
+- dir(Module);
 
 ### 基本数据类型：
 - Integral类型：
