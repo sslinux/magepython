@@ -266,17 +266,19 @@ python的print语句实现打印————一个对程序员友好的标准输
 - print接受一个逗号分隔的对象列表，并为行尾自动添加一个换行符，如果不需要换行，则在最后一个元素后添加逗号；
 
 ### print格式化输出：
+
 ```python
 #python2:
 print "String %format1 %format2 ..." % (variable1,variable2,...)
 ```
+
 ![Print_Format](images/Print_Format.png)
 
 ### 数据类型转换：
 - 隐式；
 - 显式：
 
-dir(__builtins__): 查看所有的内置数据类型；
+dir(\_\_builtins\_\_): 查看所有的内置数据类型；
 
 help(str): 获取帮助；
 
@@ -321,7 +323,7 @@ def语句会创建一个函数对象，并同时创建一个指向该函数的�
 
 函数也是对象，可以存储在组合数据类型中，也可以作为参数传递给其他函数；
 
-**callable()可用于测试对象是否可调用；**
+**内置函数callable()可用于测试对象是否可调用；**
 
 ### python有众多内置函数；
 	列出所有内置函数：In [6]: dir(__builtin__)
