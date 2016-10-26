@@ -68,6 +68,8 @@ if type(a) is type(b):    # 类型比较；
 -	2、身份比较：两个变量名引用是否为同一对象；  num1 is num2
 -	3、类型比较：两个对象的类型是否相同；   type(num1) is type(num2)
 
+---
+
 ### Python核心数据类型：
 - 数字：int,long,float,complex,bool
 	3077，3.14，300000
