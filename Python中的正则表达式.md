@@ -98,10 +98,10 @@ In [16]: match. 					# match对象支持的方法和属性；
 match.string      # 匹配的字符串本身；
 match.re          # 匹配时使用的条件；
 match.group()     # 返回此次模式匹配到的结果；
-	In [21]: match = re.match('a.','abc')
+In [21]: match = re.match('a.','abc')
 
-	In [22]: match.group()
-	Out[22]: 'ab'
+In [22]: match.group()
+Out[22]: 'ab'
 
 match.groups([index])    # 返回匹配到的结果组成的元组；
 match.pos                # 指定match开始匹配的位置；
