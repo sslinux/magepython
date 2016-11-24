@@ -1,5 +1,0 @@
-ERROR:root:Traceback (most recent call last):
-  File "H:/Python(Âí¸ç2015)/PPT/MagePython/Selenium_Test/grafana_monitor.py", line 23, in work
-    time.sleep()
-TypeError: sleep() takes exactly one argument (0 given)
-
