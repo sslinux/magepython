@@ -604,25 +604,28 @@ In [92]: f19(m,n,o,key1='v1',key2='v2')
 ### 匿名函数：
 
 lambda运算符：
-	lambda args: expression
-	  args: 以都好分隔的参数列表；
-	  expression：用到args中各参数的表达式；
-	lambda语句定义的代码必须是合法的表达式，不能出现多条件语句(可使用if的三元表达式)和其他非表达式语句，如for和while等；
-	lambda的首要用途是指定短小的回调函数；
-	lambda将返回一个函数而不是将函数赋值给某变量名；
 
-注意：
-	lambda是一个表达式而非语句；
-	lambda是一个单个表达式，而不是一个代码块；
+-	lambda args: expression
+            args: 以都好分隔的参数列表；
+            expression：用到args中各参数的表达式；
+-	lambda语句定义的代码必须是合法的表达式，不能出现多条件语句(可使用if的三元表达式)和其他非表达式语句，如for和while等；
+
+-	lambda的首要用途是指定短小的回调函数；
+-	lambda将返回一个函数而不是将函数赋值给某变量名；
+
+#### 注意：
+-	lambda是一个表达式而非语句；
+-	lambda是一个单个表达式，而不是一个代码块；
 
 ```python
-In [1]: lambda x,y: pring(x,y)             # python2中会报错，要求lambda函数中只能是表达式，而不能是语句；
+In [1]: lambda x,y: pring(x,y)   # python2中会报错，要求lambda函数中只能是表达式，而不能是语句；
 Out[1]: <function __main__.<lambda>>
 
 In [2]: lambda x,y: x+y
 Out[2]: <function __main__.<lambda>>
 
-In [3]: f20 = lambda x,y: x + y    # lambda定义的函数没有名称，所以需要将其赋值给一个变量，以方便调用；
+In [3]: f20 = lambda x,y: x + y    
+# lambda定义的函数没有名称，所以需要将其赋值给一个变量，以方便调用；
 
 In [4]: f20(3,4)
 Out[4]: 7
@@ -641,7 +644,8 @@ In [7]: f20(3,4)         # 此处是返回值，而不是函数输出；
 Out[7]: 7
 ```
 
-匿名函数lambda：
+#### 匿名函数lambda：
+
 def语句创建的函数将赋值给某变量名，而lambda表达式则直接返回函数；
 
 lambda也支持使用默认参数：
@@ -663,7 +667,7 @@ In [13]: f2(4,5)            # 调用是默认参数，可以不传递；
 Out[13]: 19
 ```
 
-lambda，起到的是函数速写的作用；
+lambda，起到的是**函数速写**的作用；
 
 ```python
 In [14]: l3 = [ (lambda x: x*2),(lambda y: y*3) ]   # 用两个匿名函数组成的列表；列表的元素是函数；
@@ -681,8 +685,11 @@ In [17]: for i in l3:            # 使用for遍历匿名函数列表，并对列
 
 ### python函数式编程：
 函数式编程： 把函数当作参数传递给其他函数；
+
 	也称作泛函编程，是一种编程范例；
+
 	它将电脑运算视为科学上的函数计算，并且避免状态以及可变数据；
+
 	函数式编程语言最重要的基础是lambda演算，而且lambda演算的函数可以接收函数当作输入和输出；
 
 ### python支持有限的函数式编程功能：
