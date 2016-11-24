@@ -67,6 +67,7 @@ f1 = open('passwd.txt','w+')
 ```
 
 方法：
+```python
 	f1.next()  # 迭代器的next()
 	f1.close() # 关闭文件，有打开一定要有关闭；
 	In [14]: f1.fileno()   # 文件描述符；
@@ -87,6 +88,7 @@ f1 = open('passwd.txt','w+')
 	f1.write()  # 写入
 		f1.write('new line.\n')
 	f1.flush()  # 刷写缓冲区，将缓冲区中的数据手动写入到磁盘上的文件中；
+```
 
 ### 打开不存在的文件：
 1、以读模式打开不存在的文件，会报IOError错误；
