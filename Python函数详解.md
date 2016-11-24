@@ -904,7 +904,8 @@ The old position is (9,13),and the new position is (10,10).
 
 ```
 
-参数传递；
+参数传递:
+
 	位置参数；
 	关键字参数；
 	可变参数；
@@ -927,8 +928,9 @@ In [30]: list((i**2 for i in range(1,11)))
 Out[30]: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 
-```python
 函数内部使用yield,使其成为生成器对象；
+
+```python
 # 函数中使用yield，会返回一个生成器对象；
 In [31]: def genNum(x):
     ...:     y = 0
