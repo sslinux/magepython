@@ -206,10 +206,12 @@ finally:
 	suite_finally
 ```
 
-
 ### 自定义异常：
+
 raise语句可显式触发异常：
+
 raise [SomeException [, args [, traceback]]]
+
 - SomeException: 可选，异常的名字，仅能使用字符串、类或实例；
 - args：可选，以元组的形式传递给异常的参数；
 - traceback：可选，异常触发时新生成的一个用于异常-正常化的跟踪记录，多用于重新引发异常时；
@@ -252,18 +254,21 @@ ValueError                                Traceback (most recent call last)
       4     return [(x1,x2) for x1 in seq1 for x2 in seq2 ]
 
 ValueError: Seq must not be empty.
-
 ```
 
 ### raise语句的用法大全；
+
 ![raise_usage](/images/raise_usage.png)
 
 ### 异常对象：
+
 Python异常时内置的经典类Exception的子类的实例：
+
 	为了向后兼容，Python还允许使用字符串或任何经典类实例；
 	Python2.5之后，Exception是从BaseException继承的新式类；
 
 Python自身引发的所有异常都是Exception的子类的实例；
+
 大多的标准异常都是由StandardError派生的，其有3个抽象的子类；
 - ArithmeticError
 	由于算术错误而引发的异常基类；
@@ -326,28 +331,38 @@ Python自身引发的所有异常都是Exception的子类的实例；
 ### 自定义异常类
 #### 自定义异常和多重继承
 较有效的方法是从自定义异常类和标准异常类进行多重继承，例如：
+
+```python
 class CustomAttributeError(CustomException,AttributeError):
 	pass
+```
 
 #### 标准库中使用的其他异常
 python标准库中的许多模块都定义了自己的异常类，如socket中的socket error
+
 	等同于自定义的异常类；
 
 
 ### assert语句
+
 assert语句用于在程序中引入调试代码
+
 assert condition[,expression]
+
 	如果condition条件满足，则assert不做任何操作；
 	如果condition条件不满足，则assert使用expression作为参数实例化，AssertionError并引发结果实例；
 
-注意：如果运行Python是使用了-O优化选项，则assert将是一个空操作：编译器不为assert语句生成代码；
+#### 注意：
+    如果运行Python是使用了-O优化选项，则assert将是一个空操作：编译器不为assert语句生成代码；
 
-运行Python是不使用-O选项，则__debug__内置变量为True，否则其值为False；
+运行Python时不使用-O选项，则__debug__内置变量为True，否则其值为False；
 
 assert语句相当于下面的代码：
+```python
 if __debug__:
     if not condition:
         raise AssertionError,<expression>
+```
 
 assert实现:	手动触发异常；
 	assert condition[,expression]
