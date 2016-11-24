@@ -6,6 +6,7 @@ Python的运行时错误称作异常：
 - 语法错误：软件的结构上有错误而导致不能被解释器解释或不能被编译器编译；
 
 - 逻辑错误：由于不完整或不合法的输入导致，也可以是逻辑无法生成、计算或者输出结果需要的过程无法执行等。
+
 ```python
 In [1]: f1 = open('/tmp/a.txt')
 ---------------------------------------------------------------------------
@@ -25,11 +26,15 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: Can't convert 'int' object to str implicitly
 ```
+
 异常的发生，会导致程序执行终止；
 
 ### python异常：
+
 python异常是一个对象，表示错误或意外情况；
+
 在python检测到一个错误时，将触发一个异常；
+
 - python可以通过异常传导机制传递一个异常对象，发出一个异常情况出现的信号；
 - 程序员也可以在代码中手动触发异常；
 
@@ -107,19 +112,28 @@ else:
 ```
 
 except分句个数没有限制，但else只能有一个；
+
 没有异常发生时，else分句才会执行；
+
 没有符合的except分句时，异常会向上传递到程序中的之前进入的try语句中或者到进程的顶层(解释器)；
 
+
 ### try-finally语句
+
 无论异常是否发生，finally子句都会执行；
+
 	常用语定义必须进行的清理动作，如关闭文件或断开服务器连接等；
+
 finally中的所有代码执行完毕后会继续向上一层引发异常；
 
 语法：
+
+```python
 try:
     try_suite
 finally:
     finally_suite
+```
 
 ```python
 In [5]: try:
@@ -131,7 +145,8 @@ In [5]: try:
    ...:     f1.close()
    ...:     
    ...:     
-('There is some problem for write statement to file /tmp/a.txt.', IOError(2, 'No such file or directory'))
+('There is some problem for write statement to file /tmp/a.txt.',
+ IOError(2, 'No such file or directory'))
 ---------------------------------------------------------------------------
 NameError                                 Traceback (most recent call last)
 <ipython-input-5-04febf19ca2a> in <module>()
@@ -180,6 +195,7 @@ finally:
 可以替换为在try-finally语句中嵌套try-except语句的形式；
 
 ### try语句嵌套：
+```python
 try:
     try:
         try_suite
@@ -188,6 +204,7 @@ try:
     else:
 finally:
 	suite_finally
+```
 
 
 ### 自定义异常：
