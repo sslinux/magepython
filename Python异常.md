@@ -365,16 +365,21 @@ if __debug__:
 ```
 
 assert实现:	手动触发异常；
+```python
 	assert condition[,expression]
 
 	if __debug__:
 	    if not condition:
 	        raise AssertionError,expression
-
+```
 Python异常对象：
+
 	BaseException：
+
 		三个基本抽象类；
+
 raise手动触发异常；
+
 assert断言(raise的特殊表现)
 
 
