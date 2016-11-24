@@ -41,8 +41,8 @@ open方法可以接收三个参数：文件名、模式和缓冲区参数；
 		负数表示使用系统默认设置；
 		正数表示使用近似指定大小的缓冲；
 
-```python 
 var_name = open(filename[mode,[bufsize]])
+```python 
 	mode:
 		r
 		w
