@@ -1,0 +1,14 @@
+ERROR:root:Traceback (most recent call last):
+  File "H:/Python(Âí¸ç2015)/PPT/MagePython/Selenium_Test/grafana_monitor.py", line 34, in work
+    browser.find_element_by_link_text("Home").click()
+  File "C:\Program Files (x86)\Python35-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 77, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Program Files (x86)\Python35-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 494, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Program Files (x86)\Python35-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Program Files (x86)\Python35-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: 
+
+
