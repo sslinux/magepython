@@ -121,6 +121,7 @@ In [19]: match = pat.match('abcdefg')   # 使用手动编译的条件对象去�
 In [20]: match = re.match('bc','abcdefg')   # 二者是等价的；
 ```
 
+```python
 re.search()   # 匹配并返回match 对象；
 re.findall()  # 使用pattern匹配string，若匹配多次，则用列表的方式返回所有匹配对象；
 
@@ -144,12 +145,14 @@ iter1.next()
 
 re.split(pattern,string,maxsplit=0,flags=0)
 re.splite('\.',url)   # 把字符串url,按指定字符串或pattern进行切割；
+```
 
 ```python
 f1 = open('/etc/passwd','r')
 re.split(':'.reline())
 ```
 
+```python
 re.sub(pattern,repl,string,count,flags=0)
 查找替换，返回由replace替换后的字符；
 
@@ -157,9 +160,11 @@ url = 'www.magedu.com'
 re.sub('ma','MA',url)
 
 re.subn    # 返回元组，包含被pattern替换的次数；
+```
 
 
 总结：
+```python
 re.search ： 返回一个match对象；
 	match对象的；   # 应该对返回的值进行判断，否则容易引发异常；
 		属性：
@@ -178,6 +183,7 @@ re.sub:  查找替换，返回替换后的整个串；
 re.subn:　返回元组，替换后的串及替换次数；
 
 re.compile: 手动编译匹配条件；
+```
 
 思考： 复制/etc/passwd到/tmp,如何替换/tmp/passwd中的/bin/bash为/BIN/BASH?
 
@@ -214,6 +220,7 @@ Out[31]: [('op', 'p'), ('or', 'r')]
 ```
 
 flags: 标记：
+
 	I或IGNORECASE：忽略字符大小写；
 	M或MULTILINE：可以跨行匹配；
 	A或ASCII：仅执行8位ascii码匹配；
