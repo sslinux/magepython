@@ -2,13 +2,19 @@
 
 
 ## python执行环境：
+
 解释器环境与选项；
+
 python解释器启动：
+
 python [options] [-c cmd | filename | - ] [args]
 
 ![python_options](/images/python_options.png)
 
+---
+
 ## python解释器环境变量
+
 ![python_variables](/images/python_variables.png)
 
 ## python代码的测试、调试与探查
@@ -18,7 +24,7 @@ python [options] [-c cmd | filename | - ] [args]
 内置函数help()或对象的默认方法__doc__可以显示这些文档字符串；
 
 Example：
-
+```python
 In [22]: def Sum(num1,num2):
     ...:     """the sumary of num1 and num2.
     ...:     >>> Sum(2,5)
@@ -44,7 +50,9 @@ Out[24]: 'the sumary of num1 and num2.\n    >>> Sum(2,5)\n    7\n    >>> Sum(12,
 ```
 
 ## doctest模块：
+
 doctest模块允许在文档字符串内潜入注释以显示各种语句的期望行为，尤其是函数和方法的结果。
+
 - 此处的文档字符串看起来如同一个交互式shell会话；
 - 可用于测试文档是否与程序主体保持同步，或基于文档对程序本身做测试；
 
@@ -110,12 +118,14 @@ Out[3]: TestResults(failed=1, attempted=2)
 ```
 
 创建可自测试的模块：
+
 	在模块的尾部添加如下代码即可：
 	if __name__ == '__main__':
 	    import doctest
 	    doctest.testmod()
 
 此类模块在python解释器中直接运行时即能进行自我测试；
+
 ```python
 sslinux@sslinux-pygo:~$ python test.py 
 **********************************************************************
@@ -133,14 +143,17 @@ Got:
 ```
 
 python：
+
 	unitest 统一测试框架
 
 
 ## Python访问MariaDB
 
 依赖于模块：MySQLdb  --依赖于--> easy_install
+
 编译、安装；
 
+```bash
 setuptools.1.1.1.tar.gz
 tar xf setuptools.1.1.1.tar.gz
 cd setuptools
@@ -156,14 +169,18 @@ python setup.py install
 vim /etc/ld.so.conf.d/mysql.conf
 	# 添加MySQL或MariaDB的库文件目录；
 ldconfig  # 使其生效；
+```
+
 
 ```python
 import MySQLdb as mysql
 ```
+
 ### 创建MySQL连接：
+
 ![MySQL_Connections](/images/mysql_connections.png)
 
-
+```python
 conn = mysql.connect(host='10.60.4.167',user='sslinux',passwd='sslinux',db='mydb')
 conn.stat()   # 获取服务器状态；
 conn.ping()   # 测试连通性；
@@ -192,8 +209,13 @@ cur.execute(sqlins)
 
 cur.execute('select * form t1')
 cur.fetchall()
+```
+
+---
 
 # 批量插入：
+
+```python
 sqlins = 'insert into t1 (name) value ("tom"),("stu1"),("stu2")'
 
 sqlins = 'insert into t1 (name) value (%s)'   # 无论数据类型为何，都用%s;
@@ -206,9 +228,10 @@ sqlins = 'insert into t2 (id,name,gerder,age) values (%s,%s,%s,%s)'
 cur.execute(sqlins,(0,'tom','male',30))
 cur.execute('select * from t2')
 cur.fetchall()
-
+```
 
 # 一次插入多行数据；
+```python
 datains = ((2,'str2','female',17),(3,'stu3','male',27))
 cur.executemany(sqlins,datains)
 
@@ -222,9 +245,12 @@ a[2][2]
 
 cur.close() #关闭游标；
 conn.close() # 关闭连接；
+```
 
+### 使用流程：
 
-使用流程：
+```python
+
 import MySQLdb as mysql
 
 建立连接:
@@ -251,7 +277,7 @@ cur = conn.curson()
 关闭：
 	cur.close()
 	conn.close()
-
+```
 
 ## 练习：
 把/etc/passwd文件中的内容的每一行存储在MariaDB的表中；
