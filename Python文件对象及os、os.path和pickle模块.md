@@ -92,6 +92,7 @@ f1 = open('passwd.txt','w+')
 
 ### 打开不存在的文件：
 1、以读模式打开不存在的文件，会报IOError错误；
+
 	r,r+,rb+
 2、以w或a模式打开不存在文件，则会创建；
 
@@ -157,11 +158,11 @@ In [23]: f4.writelines(l3)
 In [24]: f4.flush()
 ```
 
+```python
+In [26]: f4.isatty() # 判断是不是一个终端文件；
 
-In [26]: f4.isatty()		# 判断是不是一个终端文件；
 Out[26]: False
 
-```python
 In [27]: f4.truncate(100)   # 截取文件内容，只保留100个字节；
 
 In [28]: f4.flush()
@@ -201,6 +202,7 @@ In [36]: f4.readlines()
 Out[36]: ['X11\n', 'subuid\n']
 ```
 
+```python
 In [37]: f4.closed   # 属性，查看文件是否已经关闭；
 Out[37]: False
 
@@ -213,7 +215,7 @@ In [40]: f4.newlines  # 属性，返回换行符；
 
 In [41]: f4.softspace   # 属性，写入行时是否使用软空格；
 Out[41]: 0
-
+```
 
 ### 文件系统功能：os模块；
 
@@ -243,12 +245,15 @@ In [43]: os.abort
         os.error            os.execlpe          os.getcwdu          os.lchown   
 ```
 
+```python
 os.mkdir('/tmp/testdir1')    # 创建目录；
 os.getcwd()		# 获取当前工作目录；
 os.chdir('/tmp')		# 切换工作目录；
 os.stat('test2.txt')    # 查看当前目录test2.txt文件的元数据信息；
+```
 
 ### 目录：
+```python
 chdir() # 改变当前工作目录；
 fchdir() # 通过文件描述符，改变工作目录；不常用；
 chroot()  # 设定当前进程的根目录；
@@ -258,8 +263,10 @@ makedirs()  # 创建多级目录，若父目录不存在，则先创建父目录
 getcwd()    # 获取工作目录；
 rmdir()     # 删除空目录；
 removedirs() # 删除多级目录；
+```
 
 ### 文件:
+```python
 mkfifo()   # 创建先进先出管道；
 mknode()   # 创建设备文件；
 remove()   # 删除文件；
@@ -272,8 +279,10 @@ tmpfile()  # 创建并打开(w+b)一个新的临时文件
 walk()     # 目录树生成器；
 	g1 = os.walk('tmp')
 	g1.next()
+```
 
 ### 访问权限：
+```python
 access()   # 检验权限模式；
 	os.access('test2.txt',500)   # 数字是uid或gid
 chmod()    # 修改权限；
@@ -282,19 +291,24 @@ chmod()    # 修改权限；
 chown()    # 改变属主属组；
 	os.chown(path,uid,gid)
 umask()    # 设置默认权限遮罩码(模式)；
+```
 
 ### 文件描述符：
+```python
 open()     # 底层操作系统的open，for low level IO；不建议使用；
 read()     
 write()    
+```
 
 ### 设备文件：
+```python
 makedev()    # 创建设备；
 major()		 # 获取主设备号
 minor()      # 获取次设备号
-
+```
 
 ### 子模块: os.path
+```python
 import os.path    # 跟文件路径相关；
 
 basename()    # 文件基名
@@ -312,16 +326,18 @@ In [47]: print dir1,file1
 
 In [48]: os.path.join(dir1,file1)
 Out[48]: '/etc/sysconfig/network-scripts'
-```
+
 
 aplit()   # 返回dirname(),basename()结果的元组；
 splitext()  # 返回(filename,extension)元组；
-
+```
 #### 信息：
+```python
 getatime()    # 返回atime
 getctime()
 getmtime()
 getsize()     # 返回文件大小；
+```
 
 #### 查询：
 exists()      # 判断指定文件是否存在；
