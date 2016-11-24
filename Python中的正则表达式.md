@@ -3,6 +3,7 @@
 回顾：
 
 文件对象：
+
 	open('file','mode','bufsize')
 	read,readline,readlines,write,writelines,flush,seek,tell
 
@@ -21,47 +22,59 @@
 python本身不支持正则表达式，通过re模块实现；
 
 查看当前系统上有哪些模块可用：
+
 In [7]: help('modules')
 
 help支持交互式模式：help()
 
 
 python正则表达式：类似于扩展正则表达式；
+
 import re
 
 - 元字符：
+```
 	.       任意单个字符；
 	[...]   指定范围内的任意单个字符；
 	[^...]  指定范围外的任意单个字符；
+```
 
 - 次数：
+```
 	?: 0次或1次；
 	+: 1次或多次；
 	{m}: 指定次数；
 	{m,n}
 	{0,n}
 	{m,}
+```
 
 - 锚定：
+```
 	^   行首；
 	$   行尾
 	pat1|pat2
 	(...)  分组，方便后面引用；
 	\b   词首、词尾；
-
+```
 
 - 字符集：
+
+```
 	[0-9]: \d
 	[0-9a-zA-Z]: \w   <==取反==> \W
 	\s : 任意空白字符； <==>  [\n\t\f\v\r]   <==取反==> \S
 	\nn: 后向引用；引用后边()中匹配到的字符；
+```
 
 正常情况是工作在贪婪模式下的：
+
 要使用非贪婪模式，在指定次数的字符后加?
+
 (*|+|?|{})?:  表示使用非贪婪模式；
 
 
-match对象： 根据正则表达式匹配到的结果对象；
+#### match对象： 根据正则表达式匹配到的结果对象；
 
 match(pattern, string, flags=0)
 
@@ -81,6 +94,7 @@ In [16]: match. 					# match对象支持的方法和属性；
         match.expand    match.groups    match.pos       match.span  
 ```
 
+```python
 match.string      # 匹配的字符串本身；
 match.re          # 匹配时使用的条件；
 match.group()     # 返回此次模式匹配到的结果；
@@ -94,7 +108,7 @@ match.pos                # 指定match开始匹配的位置；
 match.endpos   			 # 使用match结束搜索位置；
 match.start()			 # 返回pattern所匹配到的字符串在原字符串中的起始位置；
 match.end()			     # 返回pattern所匹配到的字符串在原字符串中的结束位置；
-
+```
 
 ```python
 In [17]: match.re
