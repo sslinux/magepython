@@ -365,7 +365,18 @@ executed in the first suite skips the rest of the suite and goes back
 to testing the expression.
 ```
 
-- for...in
+- for...in 循环语句：
+
+```python
+The "for" statement
+*******************
+
+The "for" statement is used to iterate over the elements of a sequence
+(such as a string, tuple or list) or other iterable object:
+
+   for_stmt ::= "for" target_list "in" expression_list ":" suite
+                ["else" ":" suite]
+```
 - try
 
 ### 算术操作符：
