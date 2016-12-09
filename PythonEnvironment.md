@@ -127,7 +127,7 @@ Some useful pyenv commands are:
    which       Display the full path to an executable
    whence      List all Python versions that contain the given executable
 
-See `pyenv help <command>' for information on a specific command.
+See `pyenv help <command>` for information on a specific command.
 For full documentation, see: https://github.com/yyuu/pyenv#readme
 ```
 
