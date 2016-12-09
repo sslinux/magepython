@@ -289,7 +289,7 @@ In [11]: print(a)
 
 In [12]: 10 in a
 Out[12]: False
-
+# in 和 not in的结果是相反的；
 In [13]: 9 not in a
 Out[13]: False
 
