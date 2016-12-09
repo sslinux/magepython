@@ -322,9 +322,27 @@ b is lesser than 10
 控制流语句是过程式编程语言的基本控制机制；
 
 python的常见的控制流语句：
-- if
+- if分支语句
 
-- while
+```python
+The "if" statement
+******************
+
+The "if" statement is used for conditional execution:
+
+   if_stmt ::= "if" expression ":" suite
+               ( "elif" expression ":" suite )*
+               ["else" ":" suite]
+
+It selects exactly one of the suites by evaluating the expressions one
+by one until one is found to be true (see section *Boolean operations*
+for the definition of true and false); then that suite is executed
+(and no other part of the "if" statement is executed or evaluated).
+If all expressions are false, the suite of the "else" clause, if
+present, is executed.
+```
+
+- while循环语句
 
 ```python
 The "while" statement
