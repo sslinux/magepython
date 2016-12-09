@@ -250,9 +250,6 @@ In [9]: print(id(a),id(b))
 ```
 ```python
 In [12]: c = 15
-
-
-
 In [14]: def test1(n):
     ...:     if n == 1:
     ...:         return None
@@ -275,6 +272,8 @@ Out[18]: False
 - 比较操作符：
 
     < , > , <= , >= , != , == , <>
+
+
 
 - 成员操作符：
 
