@@ -35,6 +35,8 @@
 
 	如果与Java语言在类文件格式上统一的话，可以直接调用，或在JVM上执行；
 
+        因为不编译，在执行效率上低于C/C++等语言；
+
 ### python语言执行流程：
 ![Python_Interpreter](/images/Python_Interpreter.png)	
 	
