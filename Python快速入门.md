@@ -300,19 +300,10 @@ Out[14]: True
 - 逻辑运算符：
 
     and，or，not
+
 ```python
 In [16]: a = 3
-
 In [17]: b = 5
-
-In [18]: if b > a and b > 4:
-    ...:     print("b greater than 4")
-    ...: elif a > 4 or b > 4:
-    ...:     print("at least,one of a,b is greater than 4")
-    ...: elif not b > 10:
-    ...:     print("b is lesser than 10")
-    ...:     
-b greater than 4
 
 In [19]: if b > a and b > 4:
     ...:     print("b greater than 4")
