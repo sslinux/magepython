@@ -318,11 +318,35 @@ b is lesser than 10
 ```
 
 ### 控制流语句：
+
 控制流语句是过程式编程语言的基本控制机制；
 
 python的常见的控制流语句：
 - if
+
 - while
+
+```python
+The "while" statement
+*********************
+
+The "while" statement is used for repeated execution as long as an
+expression is true:
+
+   while_stmt ::= "while" expression ":" suite
+                  ["else" ":" suite]
+
+This repeatedly tests the expression and, if it is true, executes the
+first suite; if the expression is false (which may be the first time
+it is tested) the suite of the "else" clause, if present, is executed
+and the loop terminates.
+
+A "break" statement executed in the first suite terminates the loop
+without executing the "else" clause's suite.  A "continue" statement
+executed in the first suite skips the rest of the suite and goes back
+to testing the expression.
+```
+
 - for...in
 - try
 
