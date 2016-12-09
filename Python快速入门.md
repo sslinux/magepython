@@ -379,7 +379,21 @@ The "for" statement is used to iterate over the elements of a sequence
 ```
 
 - try语句：
+```python
+The "try" statement
+*******************
 
+The "try" statement specifies exception handlers and/or cleanup code
+for a group of statements:
+
+   try_stmt  ::= try1_stmt | try2_stmt
+   try1_stmt ::= "try" ":" suite
+                 ("except" [expression ["as" identifier]] ":" suite)+
+                 ["else" ":" suite]
+                 ["finally" ":" suite]
+   try2_stmt ::= "try" ":" suite
+                 "finally" ":" suite
+```
 
 ### 算术操作符：
 - python提供了完整的算术操作符；
