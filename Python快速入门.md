@@ -248,7 +248,29 @@ Out[8]: True
 In [9]: print(id(a),id(b))
 9169824 9169824
 ```
+```python
+In [12]: c = 15
 
+
+
+In [14]: def test1(n):
+    ...:     if n == 1:
+    ...:         return None
+    ...:     else:
+    ...:         return True
+    ...:     
+
+In [15]: result = test1(1)
+
+In [16]: print(id(c),id(result))
+9169984 8892416
+
+In [17]: print(c,result)
+15 None
+
+In [18]: c is result
+Out[18]: False
+```
 
 - 比较操作符：
 
