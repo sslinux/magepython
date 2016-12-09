@@ -377,7 +377,9 @@ The "for" statement is used to iterate over the elements of a sequence
    for_stmt ::= "for" target_list "in" expression_list ":" suite
                 ["else" ":" suite]
 ```
-- try
+
+- try语句：
+
 
 ### 算术操作符：
 - python提供了完整的算术操作符；
