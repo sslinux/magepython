@@ -35,7 +35,7 @@
 
 	如果与Java语言在类文件格式上统一的话，可以直接调用，或在JVM上执行；
 
-        因为不编译，在执行效率上低于C/C++等语言；
+        因为不编译，python在执行效率上低于C/C++等语言；
 
 ### python语言执行流程：
 ![Python_Interpreter](/images/Python_Interpreter.png)	
@@ -58,7 +58,7 @@
 
     写成程序文件的形式方便多次执行；
 
-    python的此类包含了一系列预编译好的语句的程序文件被称为“模块”
+    python的类包含了一系列预编译好的语句的程序文件被称为“模块”
 
     能够直接运行的模块文件通常被称为脚本，即程序的“顶层文件”。
 
@@ -86,10 +86,10 @@
 
 **python既可以面向过程，也可以面向对象，但python中的数据都存储为对象；**
 
----
-
-### 内置函数：
+#### 内置函数：
 dir(platform),查看该对象包含的方法、属性等；
+
+---
 
 - 在Linux上使用新版本的python：
 
@@ -102,12 +102,14 @@ dir(platform),查看该对象包含的方法、属性等；
 	2、使用pyenv管理多版本并存，详见[python编程环境准备](PythonEnvironment.md)；
 
 - 编译安装Python:  需先安装gcc编译器；
+
 ```bash
     下载python源代码；
     下载ipython；
     tar xf python*.tar.gz
     ./config --help | more                # 自行查看帮助信息；
     yum install readline-devel readline    # 安装依赖；
+
     ./config --prefix=/usr/local/python27
     make && make install
     /usr/local/python27/bin/python2.7
@@ -150,9 +152,9 @@ dir(platform),查看该对象包含的方法、属性等；
 - 函数的创建与调用；
 
 ### 内置函数
-- id(Var);
-- type(Var);
-- dir(Module);
+- id(Var);     查看该对象引用的对象地址；
+- type(Var);   返回指定对象的类型；
+- dir([object]);  --> list of strings;
 
 ### 基本数据类型：
 - Integral类型：
