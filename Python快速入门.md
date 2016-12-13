@@ -19,21 +19,23 @@
 
 把人类能表述的解决方案翻译为计算机能识别的解决方案的翻译官是：编译器或解释器；
 
-高级和低级：指的是是否离人类语言或思维方式接近；越高级的语言，离人类越近，人类编程容易，机器理解困难，执行效率低；
+高级和低级：指的是，是否离人类语言或思维方式接近；越高级的语言，离人类越近，人类编程容易，机器理解困难，执行效率低；
 
 ### Python语言的三种应用场景：
 
-- shell编程，不建议使用；此种应用场景建议使用bash；文本处理方面的能力是shell无法比拟的；
+- shell编程，不建议使用；此种应用场景建议使用bash；但python在文本处理方面的能力是shell无法比拟的；
 
 - 编程语言：用于实现多种编程语言的链接，表现得像控制语言(胶水语言)，一种完备的编程语言；
 
-- 框架: web开发(Django、Flask等)
+- Web开发: web框架(Django、Flask等)
 
 ### Python语言的缺点：
 
 - 字节码: bytecode
 
 	如果与Java语言在类文件格式上统一的话，可以直接调用，或在JVM上执行；
+
+        因为不编译，python在执行效率上低于C/C++等语言；
 
 ### python语言执行流程：
 ![Python_Interpreter](/images/Python_Interpreter.png)	
@@ -56,7 +58,7 @@
 
     写成程序文件的形式方便多次执行；
 
-    python的此类包含了一系列预编译好的语句的程序文件被称为“模块”
+    python的类包含了一系列预编译好的语句的程序文件被称为“模块”
 
     能够直接运行的模块文件通常被称为脚本，即程序的“顶层文件”。
 
@@ -84,10 +86,10 @@
 
 **python既可以面向过程，也可以面向对象，但python中的数据都存储为对象；**
 
----
-
-### 内置函数：
+#### 内置函数：
 dir(platform),查看该对象包含的方法、属性等；
+
+---
 
 - 在Linux上使用新版本的python：
 
@@ -100,12 +102,14 @@ dir(platform),查看该对象包含的方法、属性等；
 	2、使用pyenv管理多版本并存，详见[python编程环境准备](PythonEnvironment.md)；
 
 - 编译安装Python:  需先安装gcc编译器；
+
 ```bash
     下载python源代码；
     下载ipython；
     tar xf python*.tar.gz
     ./config --help | more                # 自行查看帮助信息；
     yum install readline-devel readline    # 安装依赖；
+
     ./config --prefix=/usr/local/python27
     make && make install
     /usr/local/python27/bin/python2.7
@@ -148,9 +152,9 @@ dir(platform),查看该对象包含的方法、属性等；
 - 函数的创建与调用；
 
 ### 内置函数
-- id(Var);
-- type(Var);
-- dir(Module);
+- id(Var);     查看该对象引用的对象地址；
+- type(Var);   返回指定对象的类型；
+- dir([object]);  --> list of strings;
 
 ### 基本数据类型：
 - Integral类型：
@@ -166,8 +170,8 @@ dir(platform),查看该对象包含的方法、属性等；
 
 ### 对象引用：
 - python将所有数据存储为对象；
-- python中，变量事实上是指向内存对象的引用；
-- 动态类型：在任何时刻，只要需要，某个对象引用都可以重新引用一个不同的对象(可以是不同的数据类型)
+- python中，**变量事实上是指向内存对象的引用**；
+- **动态类型**：在任何时刻，只要需要，某个对象引用都可以**重新引用一个不同的对象(可以是不同的数据类型)**
 - 内建函数type()用于返回给定数据项的数据类型；
 - "="用于将变量名与内存中的某个对象绑定：如果对象事先存在，就直接绑定；否则，则由"="创建引用的对象；
 
@@ -175,36 +179,39 @@ dir(platform),查看该对象包含的方法、属性等；
 - 只能包含字母、数字和下划线，且不能以数字开头
 - 区分字母大小写；
 - 禁止使用保留字；
+- 以下划线开头的变量名在对python解释器有特殊意义；
 
 ### 命名惯例：
 - 以单一下划线开头的变量名(_x)不会被from module import * 语句导入；
 - 前后有双下划线的变量名(\_\_x\_\_)是系统定义的变量名，对python解释器有特殊意义；
-- 以两个下划线开头但结尾没有下划线的变量名(__x)是类的本地变量；
+- 以两个下划线开头，但结尾没有下划线的变量名(__x)是类的本地变量；
 - 交互式模式下，变量名"_"用于保存最后一个表达式的结果；
 
-**注意：变量名没有类型，变量名引用的对象才有；**
+**注意：变量名没有类型，变量名引用的对象才有类型；**
 
 ### 组合数据类型：
-- 数据结构：通过某种方式(例如对元素进行编号)组织在一起的数据元素的集合；
+- 数据结构：
+
+        通过某种方式(例如对元素进行编号)组织在一起的数据元素的集合；
 
 - python常用的组合数据类型：
     - 序列类型：
         - 列表：使用[]创建，如['Call','me','Ishmeal','.']
         - 元组：使用()创建，如('one','two')
-        - 字符串：也属于序列类型；
+        - 字符串：也属于序列类型，字符串使用引号，单、双、三都可以；
     - 集合类型：
         - 集合
     - 映射类型：
         - 字典；
 
 
-列表是可变序列，元组是不可变序列；
+**列表是可变序列，元组是不可变序列；**
 
 python中，组合数据类型也是对象，因此其可以嵌套；
 
     ['hello','world',[1,2,3]]
 
-实质上，列表和元组并不真正存储数据，而是存放对内存对象的引用；
+实质上，**列表和元组并不真正存储数据，而是存放对内存对象的引用；**
 
 python对象可以具有其可以被调用的特定"方法(函数)"
 
@@ -213,28 +220,181 @@ python对象可以具有其可以被调用的特定"方法(函数)"
 ### 逻辑操作符：
 逻辑运算是任何程序设计语言的基本功能；
 
-python提供类4组逻辑运算：
+python提供了4组逻辑运算：
 - 身份操作符：
 
     is：判断左端对象引用是否相同于右端对象引用；也可以与None进行；
+
+```python
+In [2]: a = 10
+
+In [3]: b = 5
+
+In [4]: a is b
+Out[4]: False
+# a和b引用的是两个不同的内存对象；
+In [5]: print(id(a),id(b))
+9169824 9169664
+```
+
+```python
+In [6]: a = 10
+
+In [7]: b = 10
+
+In [8]: a is b
+Out[8]: True
+# a和b引用的是相同的内存对象；
+In [9]: print(id(a),id(b))
+9169824 9169824
+```
+```python
+In [12]: c = 15
+In [14]: def test1(n):
+    ...:     if n == 1:
+    ...:         return None
+    ...:     else:
+    ...:         return True
+    ...:     
+
+In [15]: result = test1(1)
+
+In [16]: print(id(c),id(result))
+9169984 8892416
+
+In [17]: print(c,result)
+15 None
+
+In [18]: c is result
+Out[18]: False
+```
+
 - 比较操作符：
 
     < , > , <= , >= , != , == , <>
+
+    <>在python3中好像已经不支持了；
+
+    判断是否等于，必须使用==
+
 - 成员操作符：
 
     in或not in： 测试成员关系；某个对象是否被包含于右端的对象中；
+
+```python
+In [10]: a = list(range(10))
+
+In [11]: print(a)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+In [12]: 10 in a
+Out[12]: False
+# in 和 not in的结果是相反的；
+In [13]: 9 not in a
+Out[13]: False
+
+In [14]: 9 in a
+Out[14]: True
+```
+
 - 逻辑运算符：
 
     and，or，not
 
+```python
+In [16]: a = 3
+In [17]: b = 5
+
+In [19]: if b > a and b > 4:
+    ...:     print("b greater than 4")
+    ...: if a > 4 or b > 4:
+    ...:     print("at least,one of a,b is greater than 4")
+    ...: if not b > 10:
+    ...:     print("b is lesser than 10")
+    ...:     
+b greater than 4
+at least,one of a,b is greater than 4
+b is lesser than 10
+```
+
 ### 控制流语句：
+
 控制流语句是过程式编程语言的基本控制机制；
 
 python的常见的控制流语句：
-- if
-- while
-- for...in
-- try
+- if分支语句
+
+```python
+The "if" statement
+******************
+
+The "if" statement is used for conditional execution:
+
+   if_stmt ::= "if" expression ":" suite
+               ( "elif" expression ":" suite )*
+               ["else" ":" suite]
+
+It selects exactly one of the suites by evaluating the expressions one
+by one until one is found to be true (see section *Boolean operations*
+for the definition of true and false); then that suite is executed
+(and no other part of the "if" statement is executed or evaluated).
+If all expressions are false, the suite of the "else" clause, if
+present, is executed.
+```
+
+- while循环语句
+
+```python
+The "while" statement
+*********************
+
+The "while" statement is used for repeated execution as long as an
+expression is true:
+
+   while_stmt ::= "while" expression ":" suite
+                  ["else" ":" suite]
+
+This repeatedly tests the expression and, if it is true, executes the
+first suite; if the expression is false (which may be the first time
+it is tested) the suite of the "else" clause, if present, is executed
+and the loop terminates.
+
+A "break" statement executed in the first suite terminates the loop
+without executing the "else" clause's suite.  A "continue" statement
+executed in the first suite skips the rest of the suite and goes back
+to testing the expression.
+```
+
+- for...in 循环语句：
+
+```python
+The "for" statement
+*******************
+
+The "for" statement is used to iterate over the elements of a sequence
+(such as a string, tuple or list) or other iterable object:
+
+   for_stmt ::= "for" target_list "in" expression_list ":" suite
+                ["else" ":" suite]
+```
+
+- try语句：
+
+```python
+The "try" statement
+*******************
+
+The "try" statement specifies exception handlers and/or cleanup code
+for a group of statements:
+
+   try_stmt  ::= try1_stmt | try2_stmt
+   try1_stmt ::= "try" ":" suite
+                 ("except" [expression ["as" identifier]] ":" suite)+
+                 ["else" ":" suite]
+                 ["finally" ":" suite]
+   try2_stmt ::= "try" ":" suite
+                 "finally" ":" suite
+```
 
 ### 算术操作符：
 - python提供了完整的算术操作符；
