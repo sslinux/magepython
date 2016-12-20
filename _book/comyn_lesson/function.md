@@ -166,5 +166,281 @@ In [48]: loop(range(10),range(10))
 
 ## 函数的执行流程：
 
-http://pythontutor.com
+## [代码执行流程分析网站](http://pythontutor.com)
+
+函数的执行流程中的概念：
+
+
+### 内存的分区：
+* 堆： 支持随机访问，用于保存数据；引用；
+* 栈： 先进后出，用于保存现场；值(引用真正保存的数据)；
+* 指令： 顺序访问，用于存储程序指令；
+
+
+```python 
+def inc(n):
+    return n+1
+
+def inc_add(a,b):
+    return inc(a) + inc(b)
+
+x = 1
+y = 2
+z = inc_add(x,y)
+```
+
+
+## 默认参数：
+
+    默认参数是在函数定义时的概念；
+
+```python 
+In [1]: def inc(init,step): 
+   ...:         return init + step
+   ...: 
+
+In [2]: inc(3,2)
+Out[2]: 5
+# 一般情况下，step都是1的话，我们可以使用默认参数；
+In [3]: inc(3,3)
+Out[3]: 6
+```
+
+```python 
+In [4]: def inc(init,step=1):   # step默认为1，调用时可以省略；
+   ...:         return init + step
+   ...: 
+
+In [5]: inc(3,2)
+Out[5]: 5
+
+In [6]: inc(3)
+Out[6]: 4
+```
+
+* 默认参数的作用：
+
+**让API简洁，但又不失去灵活性；**
+
+```python 
+In [11]: def inc(x):
+    ...:     return x + 1
+    ...: 
+
+In [12]: inc(10)
+Out[12]: 11
+
+In [13]: def new_inc(init,step):
+    ...:     return init + step
+    ...: 
+
+In [14]: new_inc(10,2)
+Out[14]: 12
+
+In [15]: def inc(init,step=1):
+    ...:     return init + step
+    ...: 
+```
+**当重构的时候，默认参数可以很好的向下兼容。**
+
+```python 
+In [16]: def inc(init=0,step):
+    ...:         return init + step
+  File "<ipython-input-16-52cb4155d7a0>", line 1
+    def inc(init=0,step):
+           ^
+SyntaxError: non-default argument follows default argument
+```
+**非默认参数必须在默认参数的前面。**
+
+**允许有多个默认参数，但是默认参数需要放在参数列表的最后面。**
+
+
+```python 
+In [27]: def append(x,lst=[]):   # 对于默认参数，定义函数时就定义了一个变量了；
+    ...:     lst.append(x)
+    ...:     return lst
+    ...: 
+
+In [28]: append(1)
+Out[28]: [1]
+
+In [29]: append(2)
+Out[29]: [1, 2]
+```
+
+```python 
+In [30]: def append(x,lst=None):
+    ...:     if lst is None:
+    ...:         lst = []
+    ...:     lst.append(x)
+    ...:     return lst
+    ...: 
+
+In [31]: append(1)
+Out[31]: [1]
+
+In [32]: append(2)
+Out[32]: [2]
+```
+**通常来说，当默认参数是可变对象(list,dict,set,bytearray)的时候，需要特别注意作用域的问题；**
+
+
+## 再谈作用域：
+
+* 全局作用域
+* 函数作用域
+
+### 全局作用域：
+* 函数之外的；
+* 参数列表里的；(只能在当前函数中才能调用，在全局中看不到它的名字。)
+
+### 函数作用域：
+* 函数内定义的；
+
+### 内置函数：
+* locals()  以字典形式返回当前作用域下的所有变量；
+
+```python 
+In [40]: def fn():
+    ...:     x = 1
+    ...:     print(locals())
+    ...:     
+
+In [41]: fn()
+{'x': 1}
+
+In [42]: def fn(x):
+    ...:     print(locals())
+    ...:     
+
+In [43]: fn(3)
+{'x': 3}
+
+In [44]: def fn(x):
+    ...:     x = 1
+    ...:     print(locals())
+    ...:     
+
+In [45]: fn(3)
+{'x': 1}
+```
+
+* globals()  以字典形式返回当前作用域内的所有全局变量；
+
+
+## 位置参数：
+
+    位置参数的顺序必须一致(定义时的顺序和调用时的顺序);
+
+```python 
+In [50]: def minus(x,y):
+    ...:     return x - y
+    ...: 
+
+In [51]: minus(5,3)  # 位置参数；位置传参；
+Out[51]: 2
+
+In [53]: minus(3,5)  # 位置参数；位置传参；
+Out[53]: -2
+```
+
+## 关键字参数：
+
+```python 
+In [54]: minus(x=5,y=3)    # 关键字传参；
+Out[54]: 2
+
+In [55]: minus(y=3,x=5)    # 关键字传参；
+Out[55]: 2
+```
+
+**位置传参和关键字传参是函数调用时的概念。**
+
+```python 
+In [56]: def connect(host,port,user,password,db):   # 仅使用位置参数；
+    ...:     pass
+    ...: 
+
+In [57]: connect('127.0.0.1',3306,'root','123456','test') # 调用时全部使用位置参数很累；
+
+In [58]: connect(host='127.0.0.1',port=3306,user='root',password='123456',db='test') # 全部使用关键字传参，也很累；
+
+In [59]: def connect(host='127.0.0.1',port=3306,user='root',password='123456',db='test'): # 若定义时使用默认参数，调用就很方便了；
+    ...:     pass
+    ...: 
+
+In [60]: connect()    # 全部使用默认参数进行调用；
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
