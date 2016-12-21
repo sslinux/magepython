@@ -932,36 +932,948 @@ help(add)
 
 
 
+---
+---
+
+## 递归：
+
+**斐波那契数列：**
+
+        f(0) = 1
+        f(1) = 1
+        f(n) = f(n-2) + f(n-1)
+
+
+```python 
+In [1]: def fib(n):
+   ...:         if n == 0:
+   ...:                 return 1
+   ...:         if n == 1:
+   ...:                 return 1
+   ...:         return fib(n-1) + fib(n-2)
+   ...: 
+
+In [2]: fib(5)
+Out[2]: 8
+
+In [3]: fib(8)
+Out[3]: 34
+```
+
+
+**阶乘：**
+
+        g(0) = 1
+        g(1) = 1 
+        g(n) = n * g(n-1)
+
+```python 
+def g(n):
+    if n == 0:
+        return 1
+    if n == 1:
+        return 1
+    return n * g(n-1)
+```
+
+递归函数总是涉及到压栈和出栈的过程；
+
+递归函数压栈，直到遇到退出条件，然后出栈；
+
+python的递归函数有深度限制，可以通过sys.getrecursionlimit()函数得到；可以通过sys.setrecursionlimit()函数修改递归深度限制；
+
+```python 
+In [11]: import sys
+
+In [12]: sys.getrecursionlimit()
+Out[12]: 1000
+```
+
+```python 
+In [13]: def g(n):
+    ...:         if n == 0:
+    ...:                 return 1
+    ...:         if n == 1:
+    ...:                 return 1
+    ...:         return n * g(n-1)
+    ...: 
+
+In [14]: g(1000)
+---------------------------------------------------------------------------
+RecursionError                            Traceback (most recent call last)
+<ipython-input-14-036a7be74c8a> in <module>()
+----> 1 g(1000)
+
+<ipython-input-13-8454a97b7766> in g(n)
+      4         if n == 1:
+      5                 return 1
+----> 6         return n * g(n-1)
+
+... last 1 frames repeated, from the frame below ...
+
+<ipython-input-13-8454a97b7766> in g(n)
+      4         if n == 1:
+      5                 return 1
+----> 6         return n * g(n-1)
+# 提示说超出最大递归深度限制；
+RecursionError: maximum recursion depth exceeded in comparison
+```
+
+```python 
+# 修改最大递归深度限制，并重新调用递归函数计算；
+In [15]: sys.setrecursionlimit(10000)
+
+In [16]: g(1000)
+Out[16]: 402387260077093773543702433923003985719374864210714632543799910429938512398629020592044208486969404800479988610197196058631666872994808558901323829669944590997424504087073759918823627727188732519779505950995276120874975462497043601418278094646496291056393887437886487337119181045825783647849977012476632889835955735432513185323958463075557409114262417474349347553428646576611667797396668820291207379143853719588249808126867838374559731746136085379534524221586593201928090878297308431392844403281231558611036976801357304216168747609675871348312025478589320767169132448426236131412508780208000261683151027341827977704784635868170164365024153691398281264810213092761244896359928705114964975419909342221566832572080821333186116811553615836546984046708975602900950537616475847728421889679646244945160765353408198901385442487984959953319101723355556602139450399736280750137837615307127761926849034352625200015888535147331611702103968175921510907788019393178114194545257223865541461062892187960223838971476088506276862967146674697562911234082439208160153780889893964518263243671616762179168909779911903754031274622289988005195444414282012187361745992642956581746628302955570299024324153181617210465832036786906117260158783520751516284225540265170483304226143974286933061690897968482590125458327168226458066526769958652682272807075781391858178889652208164348344825993266043367660176999612831860788386150279465955131156552036093988180612138558600301435694527224206344631797460594682573103790084024432438465657245014402821885252470935190620929023136493273497565513958720559654228749774011413346962715422845862377387538230483865688976461927383814900140767310446640259899490222221765904339901886018566526485061799702356193897017860040811889729918311021171229845901641921068884387121855646124960798722908519296819372388642614839657382291123125024186649353143970137428531926649875337218940694281434118520158014123344828015051399694290153483077644569099073152433278288269864602789864321139083506217095002597389863554277196742822248757586765752344220207573630569498825087968928162753848863396909959826280956121450994871701244516461260379029309120889086942028510640182154399457156805941872748998094254742173582401063677404595741785160829230135358081840096996372524230560855903700624271243416909004153690105933983835777939410970027753472000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+```
+
+函数调用的开销是比较大的，python中的递归没有做尾递归优化；
+
+递归函数在python中比较慢，并且有深度限制(大多少语言都有)，所以**应尽量避免使用递归**。
+
+循环都可以转化为递归，但不是所有递归都可以转化为循环；
+
+
+```python 
+In [19]: def g(n):
+    ...:     ret = 1
+    ...:     for x in range(1,n+1):
+    ...:         ret *= x
+    ...:     return ret
+    ...: 
+
+In [20]: g(1000)
+Out[20]: 402387260077093773543702433923003985719374864210714632543799910429938512398629020592044208486969404800479988610197196058631666872994808558901323829669944590997424504087073759918823627727188732519779505950995276120874975462497043601418278094646496291056393887437886487337119181045825783647849977012476632889835955735432513185323958463075557409114262417474349347553428646576611667797396668820291207379143853719588249808126867838374559731746136085379534524221586593201928090878297308431392844403281231558611036976801357304216168747609675871348312025478589320767169132448426236131412508780208000261683151027341827977704784635868170164365024153691398281264810213092761244896359928705114964975419909342221566832572080821333186116811553615836546984046708975602900950537616475847728421889679646244945160765353408198901385442487984959953319101723355556602139450399736280750137837615307127761926849034352625200015888535147331611702103968175921510907788019393178114194545257223865541461
+```
+
+在python中可以完全不适用递归；
+
+冯诺依曼模型本质就是递归；
+
+
+---
+---
+
+## 生成器：
+
+* 生成器解析式： 用小括号()代替列表解析式的中括号[].
+
+g = (x for x in range(1,100))
+
+```python 
+In [21]: g = (x for x in range(1,100) if x % 2 == 1)
+
+In [22]: type(g)
+Out[22]: generator
+
+In [23]: g
+Out[23]: <generator object <genexpr> at 0x7fbca809ff68>
+
+
+In [25]: next(g)
+Out[25]: 1
+
+In [26]: next(g)
+Out[26]: 3
+```
+
+生成器惰性求值：
+
+生成器定义：
+
+```python 
+In [27]: def gen():
+    ...:     yield 0
+    ...:     
+
+In [28]: g = gen()
+
+In [29]: type(g)
+Out[29]: generator
+
+In [30]: g
+Out[30]: <generator object gen at 0x7fbca9351f68>
+
+In [31]: next(g)
+Out[31]: 0
+
+In [32]: next(g)
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-32-5f315c5de15b> in <module>()
+----> 1 next(g)
+
+StopIteration: 
+```
+
+```python 
+In [33]: def gen():
+    ...:     while True:
+    ...:         yield 0
+    ...:         print('....')
+    ...:         
+
+In [34]: g = gen()
+
+In [35]: next(g)
+Out[35]: 0
+
+In [36]: next(g)
+....
+Out[36]: 0
+```
+
+**生成器的定义和函数类似，但是有yield语句；**
+
+**生成器执行到yield的时候会暂停，再次next会从暂停的地方继续执行；**
+
+
+```python 
+In [37]: def gen(x):
+    ...:     for i in range(x):
+    ...:         yield x
+    ...:         
+
+In [38]: g = gen(10)
+
+In [39]: for x in g:
+    ...:     print(x)
+    ...:     
+10
+10
+10
+10
+10
+10
+10
+10
+10
+10
+
+In [40]: next(g)
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-40-5f315c5de15b> in <module>()
+----> 1 next(g)
+
+StopIteration: 
+```
+
+**yield弹出值，并暂停函数；return返回值，并结束函数。**
+
+
+```python 
+In [41]: def gen(x):
+    ...:     for i in range(10):
+    ...:         if i == 3:
+    ...:             return i
+    ...:         yield i
+    ...:         
+
+In [42]: g = gen(10)
+
+In [43]: for x in g:
+    ...:     print(x)
+    ...:     
+0
+1
+2
+```
+**当yield和return同时存在时，return的返回值会被忽略，但是return依然可以中断生成器。**
+
+```python 
+In [44]: def gen(x):   # 生成器函数，返回值是一个生成器；
+    ...:     for i in range(x):
+    ...:         yield i 
+    ...:     return 'ok'  # 会被当作StopIteration的值；
+    ...: 
+
+In [45]: for x in gen(10):
+    ...:     print(x)
+    ...:     
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+协程是用户空间的轻量线程，跑在一个线程内，由用户空间调度；
+
+```python 
+In [46]: def gen1():
+    ...:     while True:
+    ...:         yield 'gen 1'
+    ...:         
+
+In [48]: def gen2(g):
+    ...:     for x in range(10):
+    ...:         yield 'gen 2'
+    ...:         print(next(g))
+    ...:         
+
+In [49]: g = gen2(gen1())
+
+In [50]: next(g)
+Out[50]: 'gen 2'
+
+In [51]: next(g)
+gen 1
+Out[51]: 'gen 2'
+```
+
+**Example:计数器**
+
+```python 
+In [52]: def counter(init):
+    ...:     c = init
+    ...:     while True:
+    ...:         yield c
+    ...:         c += 1
+    ...:         
+
+In [53]: c = counter(0)
+
+In [54]: next(c)
+Out[54]: 0
+
+In [55]: next(c)
+Out[55]: 1
+```
+
+**Example: 惰性求值。求阶乘：**
+
+```python 
+In [70]: def factorial():
+    ...:     ret = 1
+    ...:     idx = 1
+    ...:     while True:
+    ...:         yield ret
+    ...:         idx += 1
+    ...:         ret *= idx
+    ...:         
+
+In [71]: g = factorial()
+
+In [72]: next(g)
+Out[72]: 1
+
+In [73]: next(g)
+Out[73]: 2
+
+In [74]: next(g)
+Out[74]: 6
+
+In [75]: next(g)
+Out[75]: 24
+
+In [76]: next(g)
+Out[76]: 120
+
+In [77]: next(g)
+Out[77]: 720
+```
+
+
+```python 
+In [79]: def g(n):
+    ...:     def factorial():
+    ...:         ret = 1
+    ...:         idx = 1
+    ...:         while True:
+    ...:             yield ret 
+    ...:             idx += 1
+    ...:             ret *= idx
+    ...:     gen = factorial()
+    ...:     for _ in range(n-1):
+    ...:         next(gen)
+    ...:     return next(gen)
+    ...: 
+
+In [82]: %timeit g(1000)
+1000 loops, best of 3: 678 µs per loop
+
+```
+
+上例：**使用生成器来替换递归；**
+
+**所有的递归，都可以用生成器替换；**
+
+```python 
+n [4]: def gen(n):
+   ...:     for x in range(n):
+   ...:         yield x   # 此处暂停一次；
+   ...:         yield x   # 此处再暂停一次；
+   ...:         
+
+In [5]: g = gen(10)
+
+In [6]: for i in g:
+   ...:     print(i)
+   ...:     
+0
+0
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+```
+
+
+## yield from
+
+```python 
+In [7]: def gen(lst):                # python 2
+   ...:     for x in lst:
+   ...:         yield x
+   ...:         
+
+In [8]: g = gen(range(10))
+
+In [9]: for x in g:
+   ...:     print(x)
+   ...:     
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+In [10]: def gen(lst):              # python 3
+    ...:     yield from lst     # <==> for x in lst: yield x 
+    ...:     
+
+In [11]: g = gen(range(10))
+
+In [12]: for x in g:
+    ...:     print(x)
+    ...:     
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+有yield关键字的函数，叫做生成器函数。
+
+生成器函数返回的值，才叫生成器；
+
+
+
+---
+---
+
+## 高阶函数：
+
+可以接受别的函数作为参数的函数叫做高阶函数；
+
+**函数是一等对象；**
+
+函数可以作为参数传递给其他函数；
+
+
+```python 
+In [45]: def sort(lst,cmp=None,reverse=False):
+    ...:     def default_cmp(a,b):
+    ...:         if a > b:
+    ...:             return 1
+    ...:         if a == b:
+    ...:             return 0
+    ...:         if a < b:
+    ...:             return -1
+    ...:     if cmp is None:
+    ...:         cmp = default_cmp   # 函数是一等对象的一个体现；
+    ...:     dst = []
+    ...:     for n in lst:
+    ...:         for i,e in enumerate(dst):
+    ...:             if not reverse:
+    ...:                 if cmp(n,e) < 0:
+    ...:                     dst.insert(i,n)
+    ...:                     break
+    ...:             else:
+    ...:                 if cmp(n,e) > 0:
+    ...:                     dst.insert(i,n)
+    ...:                     break
+    ...:         else:
+    ...:             dst.append(n)
+    ...:     return dst
+    ...: 
+
+In [46]: sort([3,7,2,9,85,4,1,6,])
+Out[46]: [1, 2, 3, 4, 6, 7, 9, 85]
+
+```
+
+
+**闭包：**一个函数引用了它上一级作用域的变量，当上一级作用域被回收时，它依然存在；
+
+```python 
+# 函数可以作为返回值返回；
+In [47]: def make_counter(init):
+    ...:     counter = [init]
+    ...:     def inc():
+    ...:         counter[0] += 1
+    ...:     def dec():
+    ...:         counter[0] -= 1
+    ...:     def get():
+    ...:         return counter[0]
+    ...:     def reset():
+    ...:         counter[0] = init
+    ...:     return inc,dec,get,reset
+    ...: 
+
+In [48]: inc,dec,get,reset = make_counter(0)
+
+In [49]: inc()
+
+In [50]: get()
+Out[50]: 1
+
+In [51]: dec()
+
+In [52]: inc()
+
+In [53]: inc()
+
+In [54]: inc()
+
+In [55]: get()
+Out[55]: 3
+```
+
+
+* 参数是函数；
+* 返回值是函数；
+
+满足以上两点任意一点的函数，称之为高阶函数；
+
+
+```python 
+# python 3中的闭包；
+# 函数作为返回值；
+In [60]: def make_counter(init=0):
+    ...:     counter = init
+    ...:     def inc():
+    ...:         nonlocal counter 
+    # nonlocal 类似于global，声明此处使用的变量counter是上一级作用域内的；
+    ...:         counter += 1
+    ...:     def dec():
+    ...:         nonlocal counter 
+    ...:         counter -= 1
+    ...:     def get():
+    ...:         nonlocal counter
+    ...:         return counter
+    ...:     def reset():
+    ...:         nonlocal counter
+    ...:         counter = init
+    ...:     return inc,dec,get,reset
+    ...: 
+# 多个函数共享一个变量；
+In [61]: inc,dec,get,reset = make_counter(0)
+
+In [62]: inc()
+
+In [63]: get()
+Out[63]: 1
+
+In [64]: inc()
+
+In [65]: get()
+Out[65]: 2
+
+In [66]: dec()
+
+In [67]: get()
+Out[67]: 1
+
+In [68]: dec()
+
+In [69]: get()
+Out[69]: 0
+
+In [70]: inc()
+
+In [71]: inc()
+
+In [72]: get()
+Out[72]: 2
+
+In [73]: reset()
+
+In [74]: get()
+Out[74]: 0
+```
+
+**偏函数：**
+
+```python 
+from functools import partial
+
+partial(func, *args, **keywords) - new function with partial application
+ |  of the given arguments and keywords.
+
+# 将传入的函数的部分参数固定下来；
+In [3]: help(int)
+
+
+In [4]: hex_to_int = partial(int,base=16)  # 将int函数的参数：base固定为16；
+
+In [5]: hex_to_int('0xAAAA')
+Out[5]: 43690
+```
+
+```python 
+# 库提供者为了通用性，提供了默认参数；
+In [11]: def connect(host='127.0.0.1',port=3306,username='sslinux',password='1qaz2wsx'):
+    ...:     pass
+    ...: 
+
+# 企业在生产环境中都修改了端口，为程序方便，将其固化下来；
+In [12]: myconnect = partial(connect,port=3307)
+
+In [13]: myconnect()
+```
+
+
+**柯里化：**
+
+```python 
+In [6]: def add(x,y):
+   ...:     return x + y
+   ...: 
+
+In [8]: def add(x):
+   ...:     def add(y):
+   ...:         return x + y
+   ...:     return add
+   ...: 
+
+In [9]: add(3)(5)
+Out[9]: 8
+```
+
+f(x,y,z) => g(x)(y)(z)
 
 
 
 
+---
+---
+
+## 匿名函数：
+
+lambda params : expr
+
+* 只能写在一样上；
+* 表达式的结果就是返回值；
+
+
+```python 
+In [14]: lambda x,y: x+y
+Out[14]: <function __main__.<lambda>>
+
+In [15]: add = lambda x,y: x+y
+
+In [16]: add(3,5)
+Out[16]: 8
+```
+
+```python
+In [17]: lambda x,y=1: x+y   # 匿名函数的参数也可以有默认值；
+Out[17]: <function __main__.<lambda>>
+
+In [18]: add = lambda x,y=1: x+y
+
+In [21]: add(x=5)    # 调用匿名函数是也可以传递关键字参数；
+Out[21]: 6
+
+In [22]: add(5)
+Out[22]: 6
+```
+
+```python 
+In [23]: f = lambda *x: x   # lambda也支持可变位置参数；
+
+In [24]: f(1,2,3)
+Out[24]: (1, 2, 3)
+
+In [25]: f = lambda **kw: kw  # 支持可变关键字参数；
+
+In [26]: f(a=0)
+Out[26]: {'a': 0}
+
+In [27]: d = {'a':0,'b':1,'c':2} 
+
+In [28]: f(**d)
+Out[28]: {'a': 0, 'b': 1, 'c': 2}    # 支持可变关键字参数解包；
+
+In [29]: f = lambda x,*,y: x+y       # 支持参数槽；
+
+In [30]: f(1,y=3)
+Out[30]: 4
+```
+
+```python 
+In [31]: concat = lambda *args: ''.join(args)
+
+In [32]: concat('a','b','c')
+Out[32]: 'abc'
+```
+
+### lambda弱点：只能有一个表达式；
+
+* 应用场景：
+
+        匿名函数通常和高阶函数配合使用，作为参数传入、或者作为返回值返回；
 
 
 
+**匿名函数最好不要定义成递归函数。**
+```python 
+In [35]: fib = lambda n: 1 if n == 0 or n == 1 else fib(n-1) + fib(n-2)
+
+In [36]: fib(5)
+Out[36]: 8
+
+In [38]: fib(1000)
+---------------------------------------------------------------------------
+RecursionError                            Traceback (most recent call last)
+<ipython-input-38-0034b0f1a990> in <module>()
+----> 1 fib(1000)
+
+<ipython-input-35-47ac903ec519> in <lambda>(n)
+----> 1 fib = lambda n: 1 if n == 0 or n == 1 else fib(n-1) + fib(n-2)
+
+... last 1 frames repeated, from the frame below ...
+
+<ipython-input-35-47ac903ec519> in <lambda>(n)
+----> 1 fib = lambda n: 1 if n == 0 or n == 1 else fib(n-1) + fib(n-2)
+
+RecursionError: maximum recursion depth exceeded in comparison
+```
+
+---
+---
+
+## 装饰器：
+
+例子：
+
+```python 
+In [39]: import time
+
+In [40]: def sleep(n):
+    ...:     time.sleep(n)
+    ...:     
+
+In [44]: start = time.time();sleep(3);time.time()-start
+Out[44]: 3.0039782524108887
+```
+
+```python 
+In [45]: def timeit(fn,*args,**kwargs):  # 接收一个函数参数和若干个位置参数和若干个关键字参数；
+    ...:     start = time.time()
+    ...:     ret = fn(*args,**kwargs)
+    ...:     print(time.time() - start)  # 统计函数执行的时间；
+    ...:     return ret
+    ...: 
+
+In [46]: timeit(sleep,3)  # 发生在调用的时候；
+3.0038766860961914
+```
+
+```python 
+In [48]: def timeit(fn):   # 定义装饰器；
+    ...:     def wrap(*args,**kwargs):    # 定义：可变参数；
+    ...:         start = time.time()
+    ...:         ret = fn(*args,**kwargs)  # 调用：可变参数解构；
+    ...:         print(time.time() - start)
+    ...:         return ret
+    ...:     return wrap
+    ...: 
+
+In [49]: fn = timeit(sleep)   # 可以提前定义好；
+
+In [50]: fn(3)
+3.003540277481079
 
 
+In [51]: @timeit             # 使用装饰器；  等效于：fn = timeit(fn)
+    ...: def fn(n):
+    ...:         time.sleep(n)
+    ...:         return n
+    ...: 
+
+In [52]: fn(3)
+3.003883123397827
+Out[52]: 3
+
+```
+
+装饰器的本质是函数，接收一个**函数作为参数**，**并且返回一个函数；**
+
+装饰器通常会返回一个封装函数，这个封装函数在传入的函数前后做一些事情；
+
+装饰器肯定是高阶函数；
 
 
+装饰器所装饰的函数即是装饰器所接受的参数；
 
 
+```python 
+@timeit               # 个人理解：@timeit 相当于把后边定义的函数fun()当作参数传递给了timeit；
+                      # 并将timeit函数的返回值赋值给fun;
+def fun(x):
+    time.sleep(x)
+    return x
+
+-----二者等效---
+
+def fun(x):
+    time.sleep(x)
+    return x
+
+fun = timeit(fun)
+左边的fun是接收timeit的返回值的变量，返回值是一个函数；
+右边的fun是前面刚定义的函数fun，作为参数传递给timeit；
+
+```
+
+f(3) => timeit(fun)(3) => wrap(3) => fun(3) 
+
+![装饰器理解](images/装饰器理解.png)
 
 
+```python 
+In [56]: def timeit(fn):
+    ...:     def wrap(*args,**kwargs):
+    ...:         start = time.time()
+    ...:         ret = fn(*args,**kwargs)
+    ...:         print(time.time() - start)
+    ...:         return ret
+    ...:     wrap.__name__ = fn.__name__    # 手动还原函数的属性；
+    ...:     return wrap
+    ...: 
+
+In [57]: @timeit
+    ...: def fun(x):
+    ...:     pass
+    ...: 
+
+In [58]: fun.__name__
+Out[58]: 'fun'
+```
+
+```python 
+In [59]: from functools import wraps
+
+In [60]: def timeit(fn):
+    ...:     @wraps(fn)    # 保持原函数的属性；
+    ...:     def wrap(*args,**kwargs):
+    ...:         start = time.time()
+    ...:         ret = fn(*args,**kwargs)
+    ...:         print(time.time() - start)
+    ...:         return ret
+    ...:     return wrap
+    ...:     
+    ...: 
+
+In [61]: @timeit
+    ...: def add(x,y):
+    ...:     '''x + y'''
+    ...:     return x + y
+    ...: 
+
+In [62]: add.__name__
+Out[62]: 'add'
+
+In [63]: add.__doc__
+Out[63]: 'x + y'
+```
+
+## 带参数的装饰器：
+```python
+def timeit(fn):
+    @wraps(fn)
+    def wrap(*args,**kwargs):
+        start = time.time()
+        ret = fn(*args,**kwargs)
+        print(time.time() - start)
+        return ret 
+    return wrap 
+```
+
+```python 
+@timeit 
+def add(x,y):
+    '''x + y'''
+    return x + y
+```
+
+```python 
+def timeit(cpu_time=False):
+    time_func = time.clock if cpu_time else time.time
+    def dec(fn):
+        @wraps(fn)
+        def wrap(*args,**kwargs):
+            start = time_func()
+            ret = fn(*args,**kwargs)
+            print(time_func() - start)
+            return ret
+        return wrap 
+    return dec 
+```
+
+```python 
+def fun(n):
+    time.sleep(n)
+    return n
+fun = timeit()(fun)
+```
+
+```python 
+@time()
+def fun(n):
+    time.sleep(n)
+    return n
+
+fun(3)
+```
+
+带参数的装饰器是一个函数，**返回一个装饰器；**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+带参数的装饰器最多允许一层；
 
 
 
