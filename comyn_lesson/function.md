@@ -1411,6 +1411,20 @@ Out[20]: 40238726007709377354370243392300398571937486421071463254379991042993851
 
 冯诺依曼模型本质就是递归；
 
+绝大多数递归都可以转化为循环；
+
+**千万要避免出现下面这样的代码：**
+
+```python
+# 环回引用函数：
+def f():    # 不可重现错误；
+    g()
+def g():
+    k()
+def k():
+    f()
+```
+
 
 ---
 ---
@@ -2077,8 +2091,119 @@ RecursionError                            Traceback (most recent call last)
 RecursionError: maximum recursion depth exceeded in comparison
 ```
 
+# 匿名函数
+
+```python 
+In [1]: lambda x: x + 1
+Out[1]: <function __main__.<lambda>>
+```
+
+* lambda来定义
+* 参数列表不需要用小括号 
+* 冒号不是用来开启新语句块
+* 没有return，最后一个表达式的值即返回值；
+
+```python
+In [5]: (lambda x: x + 1)(3)   #第一对括号用来改变优先级，第二对括号表示函数调用
+   ...: 
+Out[5]: 4
+```
+
+```python
+In [6]: inc = lambda x: x + 1
+
+In [7]: inc(2)
+Out[7]: 3
+
+In [8]: inc(3)
+Out[8]: 4
+
+In [9]: type(inc)
+Out[9]: function
+```
+
+
+匿名函数(lambda)只能写在一行上，所以也有人叫它单行函数；
+
+```python
+In [14]: (lambda :0)()   # 匿名函数可以没有参数；
+Out[14]: 0
+
+In [15]: (lambda x,y: x+y)(3,5)  # 可以接受多个参数；
+Out[15]: 8
+
+In [16]: (lambda x,y=3: x+y)(5)  # 可以有默认参数；
+Out[16]: 8
+
+In [17]: (lambda *args: args)(*range(3))   # 可以有可变位置参数；
+Out[17]: (0, 1, 2)
+
+# 可以有可变位置参数和可变关键字参数；
+In [19]: (lambda *args,**kwargs: print(args,kwargs))(*range(3),**{str(x):x for x in range(3)})
+(0, 1, 2) {'0': 0, '1': 1, '2': 2}
+
+# 也可以有keyword-only参数；
+In [20]: (lambda *,x: x)(x=3)
+Out[20]: 3
+```
+
+应用场景：构建简单函数作为参数传递给高阶函数：
+
+    匿名函数通常用于高阶函数的参数，当此函数非常短小的时候，就适合使用匿名函数；
+
+高阶函数：
+
+* sorted
+* map
+* filter
+
+
+```python
+In [22]: from collections import namedtuple
+
+In [23]: User = namedtuple('User',['name','age'])
+
+In [24]: users = {User('comyn',18),User('paggy',16),User('tom',32)}
+
+In [25]: def get_age(user):
+    ...:     return user.age
+    ...: 
+
+In [26]: sorted(users,key=get_age)
+Out[26]: 
+[User(name='paggy', age=16),
+ User(name='comyn', age=18),
+ User(name='tom', age=32)]
+
+In [27]: sorted(users,key=lambda x: x.age)
+Out[27]: 
+[User(name='paggy', age=16),
+ User(name='comyn', age=18),
+ User(name='tom', age=32)]
+```
+
+```python
+In [28]: list(map(lambda x: x.age,users))
+Out[28]: [16, 32, 18]
+
+In [29]: list(filter(lambda x: x.age < 30,users))
+Out[29]: [User(name='paggy', age=16), User(name='comyn', age=18)]
+```
+
+```python
+# map和filter函数的原型：
+In [30]: def map_(fn,it):
+    ...:     return (fn(x) for x in it)
+    ...: 
+
+In [31]: def filter_(fn,it):
+    ...:     return (x for x in it if fn(x))
+    ...: 
+```
+
 ---
 ---
+
 
 ## 装饰器：
 
