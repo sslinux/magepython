@@ -12,9 +12,9 @@ sys.getrefcount() 获取对象引用计数；
 
 - 减少对象的引用次数：
     - 引用此对象的变量名被显式销毁： del x
-    - 引用此对象的某变量名重新赋值；
+    - 给引用此对象的某变量名重新赋值；
     - 从容器中移除对象时，类似list.pop()
-    - 容器本身被销毁；容器中所有引用的对象的引用计数减少；
+    - 容器本身被销毁；容器中所有引用的对象的引用计数都会减少；
 
 2、if：
 
@@ -34,7 +34,7 @@ while boolean_expression:
     while_suite
     if boolean_expression2: continue
     if boolean_expression3: break
-else:
+else:   # 循环正常结束时，可执行一次的代码；
     else_suite
 ```
 4、 for:
@@ -43,7 +43,7 @@ for expression in object:
     for_suit
     if boolean_expression2: continue
     if boolean_expression3: break
-else:
+else:   # 循环正常结束时，可执行一次的代码；
     else_suite
 ```
 
@@ -63,6 +63,7 @@ x 123
 for in range(1,len(l1),2):
     print(l1[i])
 ```
+
 ```python
 l1 = [1,3,4,6,9]
 l2 = [2,3,5,8,9]
@@ -73,7 +74,7 @@ for i in l1:
        l3.append(i)
 ```
 
-完备遍历：for。
+完备遍历：for。 使用for i in list: 遍历list中的每一个元素；
 
 非完备遍历： 使用非完全索引的方式来遍历；
 
@@ -88,6 +89,8 @@ iterable(可迭代)对象；
 		序列类型：如:list,str,tuple
 		非序列类型：如:dict,file
 		用户自定义的一些包含了__iter__()或__getitem__()方法的类;
+
+    调用__iter__或__getitem__方法会在内存中生成一个可以迭代该对象中所有元素的迭代器，使用该迭代起的next方法可以逐个取得迭代器中的元素；直到元素结束，抛出异常；
 ```
 
 ```python
@@ -145,7 +148,9 @@ In [61]: print(l2)
 [1, 4, 9, 16, 25]
 ```
 
-列表解析根据已有列表，高效生成新列表的方式就是列表解析；
+列表解析：
+
+    根据已有列表，高效生成新列表的方式就是列表解析；
 ```python
 l3 = [i**2 for i in l1]   # 比上述通过for完成的要高效；
 

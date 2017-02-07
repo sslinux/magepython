@@ -28,7 +28,7 @@ open方法可以接收三个参数：文件名、模式和缓冲区参数；
 		简单模式：
 			r: 只读
 				open('/var/log/message.log','r')
-			r: 写入，从文件指针所在位置开始写入；
+			w: 写入，从文件指针所在位置开始写入；
 			a：附加，从文件尾部开始写入；
 		在模式后使用"+"表示同时支持输入、输出操作；
 			如：r+、w+和a+
@@ -41,7 +41,7 @@ open方法可以接收三个参数：文件名、模式和缓冲区参数；
 		负数表示使用系统默认设置；
 		正数表示使用近似指定大小的缓冲；
 
-var_name = open(filename[mode,[bufsize]])
+var_name = open(filename,[mode,[bufsize]])
 ```python 
 	mode:
 		r
