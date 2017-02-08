@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Python异常 · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python异常 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -387,76 +387,100 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python&#x5F02;&#x5E38;&#xFF1A;">Python&#x5F02;&#x5E38;&#xFF1A;</h1><h1 id="&#x5F02;&#x5E38;&#xFF1A;">&#x5F02;&#x5E38;&#xFF1A;</h1><p>Python&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x9519;&#x8BEF;&#x79F0;&#x4F5C;&#x5F02;&#x5E38;&#xFF1A;</p><ul><li><p>&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF1A;&#x8F6F;&#x4EF6;&#x7684;&#x7ED3;&#x6784;&#x4E0A;&#x6709;&#x9519;&#x8BEF;&#x800C;&#x5BFC;&#x81F4;&#x4E0D;&#x80FD;&#x88AB;&#x89E3;&#x91CA;&#x5668;&#x89E3;&#x91CA;&#x6216;&#x4E0D;&#x80FD;&#x88AB;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#xFF1B;</p></li>
-<li><p>&#x903B;&#x8F91;&#x9519;&#x8BEF;&#xFF1A;&#x7531;&#x4E8E;&#x4E0D;&#x5B8C;&#x6574;&#x6216;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x8F93;&#x5165;&#x5BFC;&#x81F4;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x903B;&#x8F91;&#x65E0;&#x6CD5;&#x751F;&#x6210;&#x3001;&#x8BA1;&#x7B97;&#x6216;&#x8005;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x7684;&#x8FC7;&#x7A0B;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x7B49;&#x3002;</p></li></ul>
+                                <h1 id="python&#x5F02;&#x5E38;&#xFF1A;">Python&#x5F02;&#x5E38;&#xFF1A;</h1>
+<h1 id="&#x5F02;&#x5E38;&#xFF1A;">&#x5F02;&#x5E38;&#xFF1A;</h1>
+<p>Python&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x9519;&#x8BEF;&#x79F0;&#x4F5C;&#x5F02;&#x5E38;&#xFF1A;</p>
+<ul>
+<li><p>&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF1A;&#x8F6F;&#x4EF6;&#x7684;&#x7ED3;&#x6784;&#x4E0A;&#x6709;&#x9519;&#x8BEF;&#x800C;&#x5BFC;&#x81F4;&#x4E0D;&#x80FD;&#x88AB;&#x89E3;&#x91CA;&#x5668;&#x89E3;&#x91CA;&#x6216;&#x4E0D;&#x80FD;&#x88AB;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#xFF1B;</p>
+</li>
+<li><p>&#x903B;&#x8F91;&#x9519;&#x8BEF;&#xFF1A;&#x7531;&#x4E8E;&#x4E0D;&#x5B8C;&#x6574;&#x6216;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x8F93;&#x5165;&#x5BFC;&#x81F4;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x903B;&#x8F91;&#x65E0;&#x6CD5;&#x751F;&#x6210;&#x3001;&#x8BA1;&#x7B97;&#x6216;&#x8005;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x7684;&#x8FC7;&#x7A0B;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x7B49;&#x3002;</p>
+</li>
+</ul>
 <pre><code class="lang-python">In [1]: f1 = open(&apos;/tmp/a.txt&apos;)
 ---------------------------------------------------------------------------
 FileNotFoundError                         Traceback (most recent call last)
 &lt;ipython-input-1-16a084dd29a2&gt; in &lt;module&gt;()
 ----&gt; 1 f1 = open(&apos;/tmp/a.txt&apos;)
 
-FileNotFoundError: [Errno 2] No such file or directory: &apos;/tmp/a.txt&apos;</code></pre>
+FileNotFoundError: [Errno 2] No such file or directory: &apos;/tmp/a.txt&apos;
+</code></pre>
 <pre><code class="lang-python">In [2]: print(&apos;a&apos;+3)
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 &lt;ipython-input-2-2ac73431b0b1&gt; in &lt;module&gt;()
 ----&gt; 1 print(&apos;a&apos;+3)
 
-TypeError: Can&apos;t convert &apos;int&apos; object to str implicitly</code></pre>
-<p>&#x5F02;&#x5E38;&#x7684;&#x53D1;&#x751F;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7EC8;&#x6B62;&#xFF1B;</p><h3 id="python&#x5F02;&#x5E38;&#xFF1A;">python&#x5F02;&#x5E38;&#xFF1A;</h3><p>python&#x5F02;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8868;&#x793A;&#x9519;&#x8BEF;&#x6216;&#x610F;&#x5916;&#x60C5;&#x51B5;&#xFF1B;</p><p>&#x5728;python&#x68C0;&#x6D4B;&#x5230;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5C06;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#xFF1B;</p><ul><li>python&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5F02;&#x5E38;&#x4F20;&#x5BFC;&#x673A;&#x5236;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF0C;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x51FA;&#x73B0;&#x7684;&#x4FE1;&#x53F7;&#xFF1B;
-</li>
-<li>&#x7A0B;&#x5E8F;&#x5458;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;
-</li></ul>
-<p>Python&#x5F02;&#x5E38;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#xFF1A;&#x7A0B;&#x5E8F;&#x51FA;&#x73B0;&#x4E86;&#x9519;&#x8BEF;&#x800C;&#x5728;&#x6B63;&#x5E38;&#x63A7;&#x5236;&#x6D41;&#x4EE5;&#x5916;&#x91C7;&#x53D6;&#x7684;&#x884C;&#x4E3A;&#xFF1B;</p><ul><li>&#x7B2C;&#x4E00;&#x9636;&#x6BB5;&#xFF1A;&#x89E3;&#x91CA;&#x5668;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF0C;&#x6B64;&#x65F6;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x6D41;&#x5C06;&#x88AB;&#x6253;&#x65AD;&#xFF1B;
-</li>
-<li>&#x7B2C;&#x4E8C;&#x9636;&#x6BB5;&#xFF1A;&#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x5FFD;&#x7565;&#x975E;&#x81F4;&#x547D;&#x6027;&#x9519;&#x8BEF;&#x3001;&#x51CF;&#x8F7B;&#x9519;&#x8BEF;&#x5E26;&#x6765;&#x7684;&#x5F71;&#x54CD;&#x7B49;&#xFF1B;
-</li></ul>
-<h3 id="&#x5F02;&#x5E38;&#x7684;&#x516C;&#x7528;&#xFF1A;">&#x5F02;&#x5E38;&#x7684;&#x516C;&#x7528;&#xFF1A;</h3><ul><li>&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF1A;
+TypeError: Can&apos;t convert &apos;int&apos; object to str implicitly
+</code></pre>
+<p>&#x5F02;&#x5E38;&#x7684;&#x53D1;&#x751F;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7EC8;&#x6B62;&#xFF1B;</p>
+<h3 id="python&#x5F02;&#x5E38;&#xFF1A;">python&#x5F02;&#x5E38;&#xFF1A;</h3>
+<p>python&#x5F02;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8868;&#x793A;&#x9519;&#x8BEF;&#x6216;&#x610F;&#x5916;&#x60C5;&#x51B5;&#xFF1B;</p>
+<p>&#x5728;python&#x68C0;&#x6D4B;&#x5230;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5C06;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#xFF1B;</p>
+<ul>
+<li>python&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5F02;&#x5E38;&#x4F20;&#x5BFC;&#x673A;&#x5236;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF0C;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x51FA;&#x73B0;&#x7684;&#x4FE1;&#x53F7;&#xFF1B;</li>
+<li>&#x7A0B;&#x5E8F;&#x5458;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;</li>
+</ul>
+<p>Python&#x5F02;&#x5E38;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#xFF1A;&#x7A0B;&#x5E8F;&#x51FA;&#x73B0;&#x4E86;&#x9519;&#x8BEF;&#x800C;&#x5728;&#x6B63;&#x5E38;&#x63A7;&#x5236;&#x6D41;&#x4EE5;&#x5916;&#x91C7;&#x53D6;&#x7684;&#x884C;&#x4E3A;&#xFF1B;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x9636;&#x6BB5;&#xFF1A;&#x89E3;&#x91CA;&#x5668;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF0C;&#x6B64;&#x65F6;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x6D41;&#x5C06;&#x88AB;&#x6253;&#x65AD;&#xFF1B;</li>
+<li>&#x7B2C;&#x4E8C;&#x9636;&#x6BB5;&#xFF1A;&#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x5FFD;&#x7565;&#x975E;&#x81F4;&#x547D;&#x6027;&#x9519;&#x8BEF;&#x3001;&#x51CF;&#x8F7B;&#x9519;&#x8BEF;&#x5E26;&#x6765;&#x7684;&#x5F71;&#x54CD;&#x7B49;&#xFF1B;</li>
+</ul>
+<h3 id="&#x5F02;&#x5E38;&#x7684;&#x516C;&#x7528;&#xFF1A;">&#x5F02;&#x5E38;&#x7684;&#x516C;&#x7528;&#xFF1A;</h3>
+<ul>
+<li>&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF1A;
   python&#x7684;&#x9ED8;&#x8BA4;&#x5904;&#x7406;&#xFF1A;&#x505C;&#x6B62;&#x7A0B;&#x5E8F;&#xFF0C;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF1B;
-  &#x4F7F;&#x7528;try&#x8BED;&#x53E5;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x5E76;&#x4ECE;&#x5F02;&#x5E38;&#x4E2D;&#x6062;&#x590D;&#xFF1B;
-</li>
+  &#x4F7F;&#x7528;try&#x8BED;&#x53E5;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x5E76;&#x4ECE;&#x5F02;&#x5E38;&#x4E2D;&#x6062;&#x590D;&#xFF1B;</li>
 <li>&#x4E8B;&#x4EF6;&#x901A;&#x77E5;&#xFF1A;
-  &#x7528;&#x4E8E;&#x53D1;&#x51FA;&#x6709;&#x6548;&#x72B6;&#x6001;&#x4FE1;&#x53F7;&#xFF1B;
-</li>
+  &#x7528;&#x4E8E;&#x53D1;&#x51FA;&#x6709;&#x6548;&#x72B6;&#x6001;&#x4FE1;&#x53F7;&#xFF1B;</li>
 <li>&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x5904;&#x7406;&#xFF1A;
-  &#x65E0;&#x6CD5;&#x8C03;&#x6574;&#x4EE3;&#x7801;&#x53BB;&#x5904;&#x7406;&#x7684;&#x573A;&#x666F;&#xFF1B;
-</li>
+  &#x65E0;&#x6CD5;&#x8C03;&#x6574;&#x4EE3;&#x7801;&#x53BB;&#x5904;&#x7406;&#x7684;&#x573A;&#x666F;&#xFF1B;</li>
 <li>&#x7EC8;&#x6B62;&#x884C;&#x4E3A;&#xFF1A;
-  try/finally&#x8BED;&#x53E5;&#x53EF;&#x786E;&#x4FDD;&#x6267;&#x884C;&#x5FC5;&#x9700;&#x7684;&#x7ED3;&#x675F;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF1B;
-</li>
+  try/finally&#x8BED;&#x53E5;&#x53EF;&#x786E;&#x4FDD;&#x6267;&#x884C;&#x5FC5;&#x9700;&#x7684;&#x7ED3;&#x675F;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF1B;</li>
 <li>&#x975E;&#x5E38;&#x89C4;&#x63A7;&#x5236;&#x6D41;&#x7A0B;&#xFF1A;
-  &#x5F02;&#x5E38;&#x662F;&#x4E00;&#x79CD;&#x9AD8;&#x7EA7;&#x8DF3;&#x8F6C;(goto)&#x673A;&#x5236;&#xFF1B;
-</li></ul>
-<h3 id="&#x68C0;&#x6D4B;&#x548C;&#x5904;&#x7406;&#x5F02;&#x5E38;&#xFF1A;">&#x68C0;&#x6D4B;&#x548C;&#x5904;&#x7406;&#x5F02;&#x5E38;&#xFF1A;</h3><ul><li>&#x5F02;&#x5E38;&#x901A;&#x8FC7;try&#x8BED;&#x53E5;&#x6765;&#x68C0;&#x6D4B;&#xFF1A;
-  &#x4EFB;&#x4F55;&#x5728;try&#x8BED;&#x53E5;&#x5757;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x4F1A;&#x88AB;&#x68C0;&#x6D4B;&#xFF0C;&#x4EE5;&#x68C0;&#x67E5;&#x6709;&#x65E0;&#x5F02;&#x5E38;&#x53D1;&#x751F;&#xFF1B;
-</li>
-<li><p>try&#x8BED;&#x53E5;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;</p><ul><li>try-except:&#x68C0;&#x6D4B;&#x548C;&#x5904;&#x7406;&#x5F02;&#x5E38;
+  &#x5F02;&#x5E38;&#x662F;&#x4E00;&#x79CD;&#x9AD8;&#x7EA7;&#x8DF3;&#x8F6C;(goto)&#x673A;&#x5236;&#xFF1B;</li>
+</ul>
+<h3 id="&#x68C0;&#x6D4B;&#x548C;&#x5904;&#x7406;&#x5F02;&#x5E38;&#xFF1A;">&#x68C0;&#x6D4B;&#x548C;&#x5904;&#x7406;&#x5F02;&#x5E38;&#xFF1A;</h3>
+<ul>
+<li>&#x5F02;&#x5E38;&#x901A;&#x8FC7;try&#x8BED;&#x53E5;&#x6765;&#x68C0;&#x6D4B;&#xFF1A;
+  &#x4EFB;&#x4F55;&#x5728;try&#x8BED;&#x53E5;&#x5757;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x4F1A;&#x88AB;&#x68C0;&#x6D4B;&#xFF0C;&#x4EE5;&#x68C0;&#x67E5;&#x6709;&#x65E0;&#x5F02;&#x5E38;&#x53D1;&#x751F;&#xFF1B;</li>
+<li><p>try&#x8BED;&#x53E5;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>try-except:&#x68C0;&#x6D4B;&#x548C;&#x5904;&#x7406;&#x5F02;&#x5E38;
   &#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;except&#xFF1B;
-  &#x652F;&#x6301;&#x4F7F;&#x7528;else&#x5B50;&#x53E5;&#x5904;&#x7406;&#x6CA1;&#x6709;&#x63A2;&#x6D4B;&#x5F02;&#x5E38;&#x65F6;&#x7684;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#xFF1B;
-</li>
+  &#x652F;&#x6301;&#x4F7F;&#x7528;else&#x5B50;&#x53E5;&#x5904;&#x7406;&#x6CA1;&#x6709;&#x63A2;&#x6D4B;&#x5F02;&#x5E38;&#x65F6;&#x7684;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#xFF1B;</li>
 <li>try-finally: &#x4EC5;&#x68C0;&#x67E5;&#x5F02;&#x5E38;&#x5E76;&#x505A;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x6E05;&#x7406;&#x5DE5;&#x4F5C;&#xFF1B;&#x4E0D;&#x5BF9;&#x5F02;&#x5E38;&#x672C;&#x8EAB;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF1B;
-  &#x4EC5;&#x80FD;&#x6709;&#x4E00;&#x4E2A;finally
-</li></ul>
+  &#x4EC5;&#x80FD;&#x6709;&#x4E00;&#x4E2A;finally</li>
+</ul>
 </li>
 <li><p>try&#x8BED;&#x53E5;&#x7684;&#x590D;&#x5408;&#x5F62;&#x5F0F;&#xFF1A;
-  try-except-finally</p></li></ul>
-<h3 id="try-except&#x8BED;&#x53E5;">try-except&#x8BED;&#x53E5;</h3><p>&#x5B9A;&#x4E49;&#x4E86;&#x8FDB;&#x884C;&#x5F02;&#x5E38;&#x76D1;&#x63A7;&#x7684;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x7684;&#x673A;&#x5236;&#xFF1B;</p><p>&#x8BED;&#x6CD5;&#xFF1A;
+  try-except-finally</p>
+</li>
+</ul>
+<h3 id="try-except&#x8BED;&#x53E5;">try-except&#x8BED;&#x53E5;</h3>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x8FDB;&#x884C;&#x5F02;&#x5E38;&#x76D1;&#x63A7;&#x7684;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x7684;&#x673A;&#x5236;&#xFF1B;</p>
+<p>&#x8BED;&#x6CD5;&#xFF1A;
 try:
     try_suite
 except Exception[,reason]:
-    except_suite</p><p>Example:(python2.7.12)</p><pre><code class="lang-python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">try</span>:
+    except_suite</p>
+<p>Example:(python2.7.12)</p>
+<pre><code class="lang-python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">try</span>:
    ...:     f1 = open(<span class="hljs-string">&apos;/tmp/a.txt&apos;</span>,<span class="hljs-string">&apos;r&apos;</span>)
    ...: <span class="hljs-keyword">except</span> IOError,e:
    ...:     print(<span class="hljs-string">&apos;Could not open file:&apos;</span>,e)  <span class="hljs-comment"># e&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x524D;&#x9762;&#x5F02;&#x5E38;&#x7684;&#x539F;&#x56E0;(reason)</span>
    ...:     
-(<span class="hljs-string">&apos;Could not open file:&apos;</span>, IOError(<span class="hljs-number">2</span>, <span class="hljs-string">&apos;No such file or directory&apos;</span>))</code></pre>
+(<span class="hljs-string">&apos;Could not open file:&apos;</span>, IOError(<span class="hljs-number">2</span>, <span class="hljs-string">&apos;No such file or directory&apos;</span>))
+</code></pre>
 <pre><code class="lang-python">In [<span class="hljs-number">3</span>]: <span class="hljs-keyword">try</span>:
    ...:     f1 = open(<span class="hljs-string">&apos;/tmp/abc.txt&apos;</span>,<span class="hljs-string">&apos;r&apos;</span>)
    ...: <span class="hljs-keyword">except</span> IOError,reason:
    ...:     print(<span class="hljs-string">&quot;Could not open file: /tmp/abc.txt&quot;</span>,reason)
    ...: 
-(<span class="hljs-string">&apos;Could not open file: /tmp/abc.txt&apos;</span>, IOError(<span class="hljs-number">2</span>, <span class="hljs-string">&apos;No such file or directory&apos;</span>))</code></pre>
-<h3 id="try-except-else&#x8BED;&#x53E5;&#xFF1A;">try-except-else&#x8BED;&#x53E5;&#xFF1A;</h3><p>try&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5E26;&#x591A;&#x4E2A;except&#x5B50;&#x53E5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;else&#x5B50;&#x53E5;&#xFF0C;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">try</span>:
+(<span class="hljs-string">&apos;Could not open file: /tmp/abc.txt&apos;</span>, IOError(<span class="hljs-number">2</span>, <span class="hljs-string">&apos;No such file or directory&apos;</span>))
+</code></pre>
+<h3 id="try-except-else&#x8BED;&#x53E5;&#xFF1A;">try-except-else&#x8BED;&#x53E5;&#xFF1A;</h3>
+<p>try&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5E26;&#x591A;&#x4E2A;except&#x5B50;&#x53E5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;else&#x5B50;&#x53E5;&#xFF0C;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">try</span>:
     try_suite
 <span class="hljs-keyword">except</span> Exception1[,reason]:
     suite_exception1
@@ -466,12 +490,21 @@ except Exception[,reason]:
 <span class="hljs-keyword">except</span>:           <span class="hljs-comment"># &#x7A7A;except&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x6355;&#x83B7;&#x4E00;&#x5207;&#x5F02;&#x5E38;&#xFF1B;</span>
     suite_
 <span class="hljs-keyword">else</span>:
-    else_suite</code></pre>
-<p>except&#x5206;&#x53E5;&#x4E2A;&#x6570;&#x6CA1;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x4F46;else&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#xFF1B;</p><p>&#x6CA1;&#x6709;&#x5F02;&#x5E38;&#x53D1;&#x751F;&#x65F6;&#xFF0C;else&#x5206;&#x53E5;&#x624D;&#x4F1A;&#x6267;&#x884C;&#xFF1B;</p><p>&#x6CA1;&#x6709;&#x7B26;&#x5408;&#x7684;except&#x5206;&#x53E5;&#x65F6;&#xFF0C;&#x5F02;&#x5E38;&#x4F1A;&#x5411;&#x4E0A;&#x4F20;&#x9012;&#x5230;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4E4B;&#x524D;&#x8FDB;&#x5165;&#x7684;try&#x8BED;&#x53E5;&#x4E2D;&#x6216;&#x8005;&#x5230;&#x8FDB;&#x7A0B;&#x7684;&#x9876;&#x5C42;(&#x89E3;&#x91CA;&#x5668;)&#xFF1B;</p><h3 id="try-finally&#x8BED;&#x53E5;">try-finally&#x8BED;&#x53E5;</h3><p>&#x65E0;&#x8BBA;&#x5F02;&#x5E38;&#x662F;&#x5426;&#x53D1;&#x751F;&#xFF0C;finally&#x5B50;&#x53E5;&#x90FD;&#x4F1A;&#x6267;&#x884C;&#xFF1B;</p><pre><code>&#x5E38;&#x7528;&#x8BED;&#x5B9A;&#x4E49;&#x5FC5;&#x987B;&#x8FDB;&#x884C;&#x7684;&#x6E05;&#x7406;&#x52A8;&#x4F5C;&#xFF0C;&#x5982;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x6216;&#x65AD;&#x5F00;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x7B49;&#xFF1B;</code></pre>
-<p>finally&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x4F1A;&#x7EE7;&#x7EED;&#x5411;&#x4E0A;&#x4E00;&#x5C42;&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;</p><p>&#x8BED;&#x6CD5;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">try</span>:
+    else_suite
+</code></pre>
+<p>except&#x5206;&#x53E5;&#x4E2A;&#x6570;&#x6CA1;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x4F46;else&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#xFF1B;</p>
+<p>&#x6CA1;&#x6709;&#x5F02;&#x5E38;&#x53D1;&#x751F;&#x65F6;&#xFF0C;else&#x5206;&#x53E5;&#x624D;&#x4F1A;&#x6267;&#x884C;&#xFF1B;</p>
+<p>&#x6CA1;&#x6709;&#x7B26;&#x5408;&#x7684;except&#x5206;&#x53E5;&#x65F6;&#xFF0C;&#x5F02;&#x5E38;&#x4F1A;&#x5411;&#x4E0A;&#x4F20;&#x9012;&#x5230;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4E4B;&#x524D;&#x8FDB;&#x5165;&#x7684;try&#x8BED;&#x53E5;&#x4E2D;&#x6216;&#x8005;&#x5230;&#x8FDB;&#x7A0B;&#x7684;&#x9876;&#x5C42;(&#x89E3;&#x91CA;&#x5668;)&#xFF1B;</p>
+<h3 id="try-finally&#x8BED;&#x53E5;">try-finally&#x8BED;&#x53E5;</h3>
+<p>&#x65E0;&#x8BBA;&#x5F02;&#x5E38;&#x662F;&#x5426;&#x53D1;&#x751F;&#xFF0C;finally&#x5B50;&#x53E5;&#x90FD;&#x4F1A;&#x6267;&#x884C;&#xFF1B;</p>
+<pre><code>&#x5E38;&#x7528;&#x8BED;&#x5B9A;&#x4E49;&#x5FC5;&#x987B;&#x8FDB;&#x884C;&#x7684;&#x6E05;&#x7406;&#x52A8;&#x4F5C;&#xFF0C;&#x5982;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x6216;&#x65AD;&#x5F00;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x7B49;&#xFF1B;
+</code></pre><p>finally&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x4F1A;&#x7EE7;&#x7EED;&#x5411;&#x4E0A;&#x4E00;&#x5C42;&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;</p>
+<p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">try</span>:
     try_suite
 <span class="hljs-keyword">finally</span>:
-    finally_suite</code></pre>
+    finally_suite
+</code></pre>
 <pre><code class="lang-python">In [5]: try:
    ...:     f1 = open(&apos;/tmp/a.txt&apos;,&apos;r&apos;)
    ...:     f1.write(&apos;hello world&apos;)
@@ -492,8 +525,10 @@ NameError                                 Traceback (most recent call last)
       8 
       9 
 
-NameError: name &apos;f1&apos; is not defined   # &#x6B64;&#x5904;&#x51FA;&#x73B0;NameErro&#x662F;&#x56E0;&#x4E3A;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x6240;&#x4EE5;&#x521B;&#x5EFA;f1&#x5BF9;&#x8C61;&#x5931;&#x8D25;&#xFF1B;</code></pre>
-<p>Example:</p><pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
+NameError: name &apos;f1&apos; is not defined   # &#x6B64;&#x5904;&#x51FA;&#x73B0;NameErro&#x662F;&#x56E0;&#x4E3A;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x6240;&#x4EE5;&#x521B;&#x5EFA;f1&#x5BF9;&#x8C61;&#x5931;&#x8D25;&#xFF1B;
+</code></pre>
+<p>Example:</p>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
 <span class="hljs-comment"># </span>
 <span class="hljs-keyword">try</span>:
     <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
@@ -506,8 +541,11 @@ NameError: name &apos;f1&apos; is not defined   # &#x6B64;&#x5904;&#x51FA;&#x73B
 <span class="hljs-keyword">except</span> ValueError:
     print(<span class="hljs-string">&quot;Not &apos;quit&apos;&quot;</span>)
 <span class="hljs-keyword">except</span>:
-    print(<span class="hljs-string">&quot;Unknow error&quot;</span>)</code></pre>
-<h3 id="try-except-else-finally&#x8BED;&#x53E5;">try-except-else-finally&#x8BED;&#x53E5;:</h3><p>&#x8BED;&#x6CD5;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">try</span>:
+    print(<span class="hljs-string">&quot;Unknow error&quot;</span>)
+</code></pre>
+<h3 id="try-except-else-finally&#x8BED;&#x53E5;">try-except-else-finally&#x8BED;&#x53E5;:</h3>
+<p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">try</span>:
     try_suite
 <span class="hljs-keyword">except</span> Exception1:
     suite1_exception1
@@ -517,21 +555,27 @@ NameError: name &apos;f1&apos; is not defined   # &#x6B64;&#x5904;&#x51FA;&#x73B
 <span class="hljs-keyword">else</span>:
     else_suite
 <span class="hljs-keyword">finally</span>:
-    finally_suite</code></pre>
-<p>&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x4E3A;&#x5728;try-finally&#x8BED;&#x53E5;&#x4E2D;&#x5D4C;&#x5957;try-except&#x8BED;&#x53E5;&#x7684;&#x5F62;&#x5F0F;&#xFF1B;</p><h3 id="try&#x8BED;&#x53E5;&#x5D4C;&#x5957;&#xFF1A;">try&#x8BED;&#x53E5;&#x5D4C;&#x5957;&#xFF1A;</h3><pre><code class="lang-python"><span class="hljs-keyword">try</span>:
+    finally_suite
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x4E3A;&#x5728;try-finally&#x8BED;&#x53E5;&#x4E2D;&#x5D4C;&#x5957;try-except&#x8BED;&#x53E5;&#x7684;&#x5F62;&#x5F0F;&#xFF1B;</p>
+<h3 id="try&#x8BED;&#x53E5;&#x5D4C;&#x5957;&#xFF1A;">try&#x8BED;&#x53E5;&#x5D4C;&#x5957;&#xFF1A;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">try</span>:
     <span class="hljs-keyword">try</span>:
         try_suite
     <span class="hljs-keyword">except</span>:
     <span class="hljs-keyword">except</span>:
     <span class="hljs-keyword">else</span>:
 <span class="hljs-keyword">finally</span>:
-    suite_finally</code></pre>
-<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#xFF1A;">&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#xFF1A;</h3><p>raise&#x8BED;&#x53E5;&#x53EF;&#x663E;&#x5F0F;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1A;</p><p>raise [SomeException [, args [, traceback]]]</p><ul><li>SomeException: &#x53EF;&#x9009;&#xFF0C;&#x5F02;&#x5E38;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4EC5;&#x80FD;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x7C7B;&#x6216;&#x5B9E;&#x4F8B;&#xFF1B;
-</li>
-<li>args&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x4EE5;&#x5143;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;&#x4F20;&#x9012;&#x7ED9;&#x5F02;&#x5E38;&#x7684;&#x53C2;&#x6570;&#xFF1B;
-</li>
-<li>traceback&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x5F02;&#x5E38;&#x89E6;&#x53D1;&#x65F6;&#x65B0;&#x751F;&#x6210;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5F02;&#x5E38;-&#x6B63;&#x5E38;&#x5316;&#x7684;&#x8DDF;&#x8E2A;&#x8BB0;&#x5F55;&#xFF0C;&#x591A;&#x7528;&#x4E8E;&#x91CD;&#x65B0;&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#x65F6;&#xFF1B;
-</li></ul>
+    suite_finally
+</code></pre>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#xFF1A;">&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#xFF1A;</h3>
+<p>raise&#x8BED;&#x53E5;&#x53EF;&#x663E;&#x5F0F;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1A;</p>
+<p>raise [SomeException [, args [, traceback]]]</p>
+<ul>
+<li>SomeException: &#x53EF;&#x9009;&#xFF0C;&#x5F02;&#x5E38;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4EC5;&#x80FD;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x7C7B;&#x6216;&#x5B9E;&#x4F8B;&#xFF1B;</li>
+<li>args&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x4EE5;&#x5143;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;&#x4F20;&#x9012;&#x7ED9;&#x5F02;&#x5E38;&#x7684;&#x53C2;&#x6570;&#xFF1B;</li>
+<li>traceback&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x5F02;&#x5E38;&#x89E6;&#x53D1;&#x65F6;&#x65B0;&#x751F;&#x6210;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5F02;&#x5E38;-&#x6B63;&#x5E38;&#x5316;&#x7684;&#x8DDF;&#x8E2A;&#x8BB0;&#x5F55;&#xFF0C;&#x591A;&#x7528;&#x4E8E;&#x91CD;&#x65B0;&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#x65F6;&#xFF1B;</li>
+</ul>
 <pre><code class="lang-python">In [14]: def f1(seq1,seq2):
     ...:     if not seq1 or not seq2:
     ...:         raise ValueError,&quot;Seq must not be empty.&quot;
@@ -568,105 +612,110 @@ ValueError                                Traceback (most recent call last)
 ----&gt; 3         raise ValueError,&quot;Seq must not be empty.&quot;
       4     return [(x1,x2) for x1 in seq1 for x2 in seq2 ]
 
-ValueError: Seq must not be empty.</code></pre>
-<h3 id="raise&#x8BED;&#x53E5;&#x7684;&#x7528;&#x6CD5;&#x5927;&#x5168;&#xFF1B;">raise&#x8BED;&#x53E5;&#x7684;&#x7528;&#x6CD5;&#x5927;&#x5168;&#xFF1B;</h3><p><img alt="raise_usage" src="images/raise_usage.png"></p><h3 id="&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF1A;">&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF1A;</h3><p>Python&#x5F02;&#x5E38;&#x65F6;&#x5185;&#x7F6E;&#x7684;&#x7ECF;&#x5178;&#x7C7B;Exception&#x7684;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p><pre><code>&#x4E3A;&#x4E86;&#x5411;&#x540E;&#x517C;&#x5BB9;&#xFF0C;Python&#x8FD8;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4EFB;&#x4F55;&#x7ECF;&#x5178;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF1B;
-Python2.5&#x4E4B;&#x540E;&#xFF0C;Exception&#x662F;&#x4ECE;BaseException&#x7EE7;&#x627F;&#x7684;&#x65B0;&#x5F0F;&#x7C7B;&#xFF1B;</code></pre>
-<p>Python&#x81EA;&#x8EAB;&#x5F15;&#x53D1;&#x7684;&#x6240;&#x6709;&#x5F02;&#x5E38;&#x90FD;&#x662F;Exception&#x7684;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF1B;</p><p>&#x5927;&#x591A;&#x7684;&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x90FD;&#x662F;&#x7531;StandardError&#x6D3E;&#x751F;&#x7684;&#xFF0C;&#x5176;&#x6709;3&#x4E2A;&#x62BD;&#x8C61;&#x7684;&#x5B50;&#x7C7B;&#xFF1B;</p><ul><li>ArithmeticError
+ValueError: Seq must not be empty.
+</code></pre>
+<h3 id="raise&#x8BED;&#x53E5;&#x7684;&#x7528;&#x6CD5;&#x5927;&#x5168;&#xFF1B;">raise&#x8BED;&#x53E5;&#x7684;&#x7528;&#x6CD5;&#x5927;&#x5168;&#xFF1B;</h3>
+<p><img src="images/raise_usage.png" alt="raise_usage"></p>
+<h3 id="&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF1A;">&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF1A;</h3>
+<p>Python&#x5F02;&#x5E38;&#x65F6;&#x5185;&#x7F6E;&#x7684;&#x7ECF;&#x5178;&#x7C7B;Exception&#x7684;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code>&#x4E3A;&#x4E86;&#x5411;&#x540E;&#x517C;&#x5BB9;&#xFF0C;Python&#x8FD8;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4EFB;&#x4F55;&#x7ECF;&#x5178;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF1B;
+Python2.5&#x4E4B;&#x540E;&#xFF0C;Exception&#x662F;&#x4ECE;BaseException&#x7EE7;&#x627F;&#x7684;&#x65B0;&#x5F0F;&#x7C7B;&#xFF1B;
+</code></pre><p>Python&#x81EA;&#x8EAB;&#x5F15;&#x53D1;&#x7684;&#x6240;&#x6709;&#x5F02;&#x5E38;&#x90FD;&#x662F;Exception&#x7684;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF1B;</p>
+<p>&#x5927;&#x591A;&#x7684;&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x90FD;&#x662F;&#x7531;StandardError&#x6D3E;&#x751F;&#x7684;&#xFF0C;&#x5176;&#x6709;3&#x4E2A;&#x62BD;&#x8C61;&#x7684;&#x5B50;&#x7C7B;&#xFF1B;</p>
+<ul>
+<li>ArithmeticError
   &#x7531;&#x4E8E;&#x7B97;&#x672F;&#x9519;&#x8BEF;&#x800C;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#x57FA;&#x7C7B;&#xFF1B;
-  OverflowError&#xFF0C;ZeroDivisonError&#xFF0C;FloatingPointError
-</li>
+  OverflowError&#xFF0C;ZeroDivisonError&#xFF0C;FloatingPointError</li>
 <li>LookupError
   &#x5BB9;&#x5668;&#x5728;&#x63A5;&#x6536;&#x5230;&#x4E00;&#x4E2A;&#x65E0;&#x6548;&#x952E;&#x6216;&#x7D22;&#x5F15;&#x662F;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#x7684;&#x57FA;&#x7C7B;&#xFF1B;
-  IndexError,KeyError
-</li>
+  IndexError,KeyError</li>
 <li>EnvironmentError
   &#x7531;&#x4E8E;&#x5916;&#x90E8;&#x539F;&#x56E0;&#x800C;&#x5BFC;&#x81F4;&#x7684;&#x5F02;&#x5E38;&#x7684;&#x57FA;&#x7C7B;&#xFF1B;
-  IOError,OSError,WindowsError
-</li></ul>
-<h3 id="&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x7C7B;&#xFF1A;">&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x7C7B;&#xFF1A;</h3><ul><li>AssertionError
-  &#x65AD;&#x8A00;&#x8BED;&#x53E5;&#x5931;&#x8D25;
-</li>
+  IOError,OSError,WindowsError</li>
+</ul>
+<h3 id="&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x7C7B;&#xFF1A;">&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x7C7B;&#xFF1A;</h3>
+<ul>
+<li>AssertionError
+  &#x65AD;&#x8A00;&#x8BED;&#x53E5;&#x5931;&#x8D25;</li>
 <li>AttributeError
-  &#x5C5E;&#x6027;&#x5F15;&#x7528;&#x6216;&#x8D4B;&#x503C;&#x5931;&#x6548;
-</li>
+  &#x5C5E;&#x6027;&#x5F15;&#x7528;&#x6216;&#x8D4B;&#x503C;&#x5931;&#x6548;</li>
 <li>FloatingPointError
-  &#x6D6E;&#x70B9;&#x578B;&#x8FD0;&#x7B97;&#x662F;&#x88AB;&#xFF1B;
-</li>
+  &#x6D6E;&#x70B9;&#x578B;&#x8FD0;&#x7B97;&#x662F;&#x88AB;&#xFF1B;</li>
 <li>IOError
-  I/O&#x64CD;&#x4F5C;&#x5931;&#x8D25;
-</li>
+  I/O&#x64CD;&#x4F5C;&#x5931;&#x8D25;</li>
 <li>ImportError
-  import&#x8BED;&#x53E5;&#x4E0D;&#x80FD;&#x627E;&#x5230;&#x8981;&#x5BFC;&#x5165;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x80FD;&#x627E;&#x5230;&#x8BE5;&#x6A21;&#x5757;&#x7279;&#x522B;&#x8BF7;&#x6C42;&#x7684;&#x540D;&#x79F0;&#xFF1B;
-</li>
+  import&#x8BED;&#x53E5;&#x4E0D;&#x80FD;&#x627E;&#x5230;&#x8981;&#x5BFC;&#x5165;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x80FD;&#x627E;&#x5230;&#x8BE5;&#x6A21;&#x5757;&#x7279;&#x522B;&#x8BF7;&#x6C42;&#x7684;&#x540D;&#x79F0;&#xFF1B;</li>
 <li>IndentationError
-  &#x89E3;&#x6790;&#x5668;&#x9047;&#x5230;&#x7C7B;&#x4E00;&#x4E2A;&#x7531;&#x4E8E;&#x9519;&#x8BEF;&#x7684;&#x7F29;&#x8FDB;&#x800C;&#x5F15;&#x53D1;&#x7684;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF1B;
-</li>
+  &#x89E3;&#x6790;&#x5668;&#x9047;&#x5230;&#x7C7B;&#x4E00;&#x4E2A;&#x7531;&#x4E8E;&#x9519;&#x8BEF;&#x7684;&#x7F29;&#x8FDB;&#x800C;&#x5F15;&#x53D1;&#x7684;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF1B;</li>
 <li>IndexError
-  &#x7528;&#x6765;&#x7D22;&#x5F15;&#x5E8F;&#x5217;&#x7684;&#x6574;&#x6570;&#x8D85;&#x51FA;&#x4E86;&#x8303;&#x56F4;&#xFF1B;
-</li>
+  &#x7528;&#x6765;&#x7D22;&#x5F15;&#x5E8F;&#x5217;&#x7684;&#x6574;&#x6570;&#x8D85;&#x51FA;&#x4E86;&#x8303;&#x56F4;&#xFF1B;</li>
 <li>KeyError
-  &#x7528;&#x6765;&#x7D22;&#x5F15;&#x6620;&#x5C04;&#x7684;&#x952E;&#x4E0D;&#x5728;&#x6620;&#x5C04;&#x4E2D;&#xFF1B;
-</li>
+  &#x7528;&#x6765;&#x7D22;&#x5F15;&#x6620;&#x5C04;&#x7684;&#x952E;&#x4E0D;&#x5728;&#x6620;&#x5C04;&#x4E2D;&#xFF1B;</li>
 <li>KeyboardInterrupt
-  &#x7528;&#x6237;&#x6309;&#x7C7B;&#x4E2D;&#x65AD;&#x952E;(Ctrl+c,Ctrl+Break&#x6216;Delete&#x952E;)
-</li>
+  &#x7528;&#x6237;&#x6309;&#x7C7B;&#x4E2D;&#x65AD;&#x952E;(Ctrl+c,Ctrl+Break&#x6216;Delete&#x952E;)</li>
 <li>MemoryError
-  &#x8FD0;&#x7B97;&#x8017;&#x5C3D;&#x5185;&#x5B58;
-</li>
+  &#x8FD0;&#x7B97;&#x8017;&#x5C3D;&#x5185;&#x5B58;</li>
 <li>NameError
-  &#x5F15;&#x7528;&#x7C7B;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF1B;
-</li>
+  &#x5F15;&#x7528;&#x7C7B;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF1B;</li>
 <li>NotImplementedError
-  &#x7531;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x8986;&#x76D6;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1B;
-</li>
+  &#x7531;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x8986;&#x76D6;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1B;</li>
 <li>OSError
-  &#x7531;&#x6A21;&#x5757;os&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x793A;&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684;&#x9519;&#x8BEF;&#xFF1B;
-</li>
+  &#x7531;&#x6A21;&#x5757;os&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x793A;&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684;&#x9519;&#x8BEF;&#xFF1B;</li>
 <li>OverflowError
-  &#x6574;&#x6570;&#x8FD0;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x592A;&#x5927;&#x5BFC;&#x81F4;&#x6EA2;&#x51FA;&#xFF1B;
-</li>
+  &#x6574;&#x6570;&#x8FD0;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x592A;&#x5927;&#x5BFC;&#x81F4;&#x6EA2;&#x51FA;&#xFF1B;</li>
 <li>SyntaxErro
-  &#x8BED;&#x6CD5;&#x9519;&#x8BEF;
-</li>
+  &#x8BED;&#x6CD5;&#x9519;&#x8BEF;</li>
 <li>SystemError
-  Python&#x672C;&#x8EAB;&#x6216;&#x67D0;&#x4E9B;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x5185;&#x90E8;&#x9519;&#x8BEF;&#xFF1B;
-</li>
+  Python&#x672C;&#x8EAB;&#x6216;&#x67D0;&#x4E9B;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x5185;&#x90E8;&#x9519;&#x8BEF;&#xFF1B;</li>
 <li>TypeError
-  &#x5BF9;&#x67D0;&#x5BF9;&#x8C61;&#x6267;&#x884C;&#x4E86;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;&#xFF1B;
-</li>
+  &#x5BF9;&#x67D0;&#x5BF9;&#x8C61;&#x6267;&#x884C;&#x4E86;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;&#xFF1B;</li>
 <li>UnboundLocalError
-  &#x5F15;&#x7528;&#x672A;&#x7ED1;&#x5B9A;&#x503C;&#x5F97;&#x672C;&#x5730;&#x53D8;&#x91CF;&#xFF1B;
-</li>
+  &#x5F15;&#x7528;&#x672A;&#x7ED1;&#x5B9A;&#x503C;&#x5F97;&#x672C;&#x5730;&#x53D8;&#x91CF;&#xFF1B;</li>
 <li>UnicodeError
-  &#x5728;Unicode&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#xFF1B;
-</li>
+  &#x5728;Unicode&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x65F6;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#xFF1B;</li>
 <li>ValueError
-  &#x5E94;&#x7528;&#x4E8E;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x64CD;&#x4F5C;&#x6216;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5177;&#x6709;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x5374;&#x6709;&#x4E0D;&#x9002;&#x5F53;&#x7684;&#x503C;&#xFF1B;
-</li>
+  &#x5E94;&#x7528;&#x4E8E;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x64CD;&#x4F5C;&#x6216;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5177;&#x6709;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x5374;&#x6709;&#x4E0D;&#x9002;&#x5F53;&#x7684;&#x503C;&#xFF1B;</li>
 <li>WindowsError
-  &#x6A21;&#x5757;os&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x793A;&#x4E0E;Windows&#x76F8;&#x5173;&#x7684;&#x9519;&#x8BEF;&#xFF1B;
-</li>
+  &#x6A21;&#x5757;os&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5F15;&#x53D1;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x793A;&#x4E0E;Windows&#x76F8;&#x5173;&#x7684;&#x9519;&#x8BEF;&#xFF1B;</li>
 <li>ZeroDivisionError
-  &#x9664;&#x6570;&#x4E3A;0
-</li></ul>
-<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;">&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;</h3><h4 id="&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x548C;&#x591A;&#x91CD;&#x7EE7;&#x627F;">&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x548C;&#x591A;&#x91CD;&#x7EE7;&#x627F;</h4><p>&#x8F83;&#x6709;&#x6548;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4ECE;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;&#x548C;&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x7C7B;&#x8FDB;&#x884C;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomAttributeError</span><span class="hljs-params">(CustomException,AttributeError)</span>:</span>
-    <span class="hljs-keyword">pass</span></code></pre>
-<h4 id="&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x5F02;&#x5E38;">&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x5F02;&#x5E38;</h4><p>python&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;&#x8BB8;&#x591A;&#x6A21;&#x5757;&#x90FD;&#x5B9A;&#x4E49;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#xFF0C;&#x5982;socket&#x4E2D;&#x7684;socket error</p><pre><code>&#x7B49;&#x540C;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#xFF1B;</code></pre>
-<h3 id="assert&#x8BED;&#x53E5;">assert&#x8BED;&#x53E5;</h3><p>assert&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5F15;&#x5165;&#x8C03;&#x8BD5;&#x4EE3;&#x7801;</p><p>assert condition[,expression]</p><pre><code>&#x5982;&#x679C;condition&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;assert&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF1B;
-&#x5982;&#x679C;condition&#x6761;&#x4EF6;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;assert&#x4F7F;&#x7528;expression&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;AssertionError&#x5E76;&#x5F15;&#x53D1;&#x7ED3;&#x679C;&#x5B9E;&#x4F8B;&#xFF1B;</code></pre>
-<h4 id="&#x6CE8;&#x610F;&#xFF1A;">&#x6CE8;&#x610F;&#xFF1A;</h4><pre><code>&#x5982;&#x679C;&#x8FD0;&#x884C;Python&#x662F;&#x4F7F;&#x7528;&#x4E86;-O&#x4F18;&#x5316;&#x9009;&#x9879;&#xFF0C;&#x5219;assert&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x64CD;&#x4F5C;&#xFF1A;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x4E3A;assert&#x8BED;&#x53E5;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF1B;</code></pre>
-<p>&#x8FD0;&#x884C;Python&#x65F6;&#x4E0D;&#x4F7F;&#x7528;-O&#x9009;&#x9879;&#xFF0C;&#x5219;<strong>debug</strong>&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x4E3A;True&#xFF0C;&#x5426;&#x5219;&#x5176;&#x503C;&#x4E3A;False&#xFF1B;</p><p>assert&#x8BED;&#x53E5;&#x76F8;&#x5F53;&#x4E8E;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">if</span> __debug__:
+  &#x9664;&#x6570;&#x4E3A;0</li>
+</ul>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;">&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;</h3>
+<h4 id="&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x548C;&#x591A;&#x91CD;&#x7EE7;&#x627F;">&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x548C;&#x591A;&#x91CD;&#x7EE7;&#x627F;</h4>
+<p>&#x8F83;&#x6709;&#x6548;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4ECE;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;&#x548C;&#x6807;&#x51C6;&#x5F02;&#x5E38;&#x7C7B;&#x8FDB;&#x884C;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomAttributeError</span><span class="hljs-params">(CustomException,AttributeError)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<h4 id="&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x5F02;&#x5E38;">&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x5F02;&#x5E38;</h4>
+<p>python&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;&#x8BB8;&#x591A;&#x6A21;&#x5757;&#x90FD;&#x5B9A;&#x4E49;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#xFF0C;&#x5982;socket&#x4E2D;&#x7684;socket error</p>
+<pre><code>&#x7B49;&#x540C;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#xFF1B;
+</code></pre><h3 id="assert&#x8BED;&#x53E5;">assert&#x8BED;&#x53E5;</h3>
+<p>assert&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5F15;&#x5165;&#x8C03;&#x8BD5;&#x4EE3;&#x7801;</p>
+<p>assert condition[,expression]</p>
+<pre><code>&#x5982;&#x679C;condition&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;assert&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF1B;
+&#x5982;&#x679C;condition&#x6761;&#x4EF6;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;assert&#x4F7F;&#x7528;expression&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;AssertionError&#x5E76;&#x5F15;&#x53D1;&#x7ED3;&#x679C;&#x5B9E;&#x4F8B;&#xFF1B;
+</code></pre><h4 id="&#x6CE8;&#x610F;&#xFF1A;">&#x6CE8;&#x610F;&#xFF1A;</h4>
+<pre><code>&#x5982;&#x679C;&#x8FD0;&#x884C;Python&#x662F;&#x4F7F;&#x7528;&#x4E86;-O&#x4F18;&#x5316;&#x9009;&#x9879;&#xFF0C;&#x5219;assert&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x64CD;&#x4F5C;&#xFF1A;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x4E3A;assert&#x8BED;&#x53E5;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF1B;
+</code></pre><p>&#x8FD0;&#x884C;Python&#x65F6;&#x4E0D;&#x4F7F;&#x7528;-O&#x9009;&#x9879;&#xFF0C;&#x5219;<strong>debug</strong>&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x4E3A;True&#xFF0C;&#x5426;&#x5219;&#x5176;&#x503C;&#x4E3A;False&#xFF1B;</p>
+<p>assert&#x8BED;&#x53E5;&#x76F8;&#x5F53;&#x4E8E;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> __debug__:
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> condition:
-        <span class="hljs-keyword">raise</span> AssertionError,&lt;expression&gt;</code></pre>
-<p>assert&#x5B9E;&#x73B0;:    &#x624B;&#x52A8;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;</p><pre><code class="lang-python">    <span class="hljs-keyword">assert</span> condition[,expression]
+        <span class="hljs-keyword">raise</span> AssertionError,&lt;expression&gt;
+</code></pre>
+<p>assert&#x5B9E;&#x73B0;:    &#x624B;&#x52A8;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;</p>
+<pre><code class="lang-python">    <span class="hljs-keyword">assert</span> condition[,expression]
 
     <span class="hljs-keyword">if</span> __debug__:
         <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> condition:
-            <span class="hljs-keyword">raise</span> AssertionError,expression</code></pre>
-<p>Python&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF1A;</p><pre><code>BaseException&#xFF1A;
+            <span class="hljs-keyword">raise</span> AssertionError,expression
+</code></pre>
+<p>Python&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>BaseException&#xFF1A;
 
-    &#x4E09;&#x4E2A;&#x57FA;&#x672C;&#x62BD;&#x8C61;&#x7C7B;&#xFF1B;</code></pre>
-<p>raise&#x624B;&#x52A8;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;</p><p>assert&#x65AD;&#x8A00;(raise&#x7684;&#x7279;&#x6B8A;&#x8868;&#x73B0;)</p>
+    &#x4E09;&#x4E2A;&#x57FA;&#x672C;&#x62BD;&#x8C61;&#x7C7B;&#xFF1B;
+</code></pre><p>raise&#x624B;&#x52A8;&#x89E6;&#x53D1;&#x5F02;&#x5E38;&#xFF1B;</p>
+<p>assert&#x65AD;&#x8A00;(raise&#x7684;&#x7279;&#x6B8A;&#x8868;&#x73B0;)</p>
+
                                 
                                 </section>
                             
@@ -709,7 +758,7 @@ Python2.5&#x4E4B;&#x540E;&#xFF0C;Exception&#x662F;&#x4ECE;BaseException&#x7EE7;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python异常","level":"1.13","depth":1,"next":{"title":"Python编程之MySQLdb模块","level":"1.14","depth":1,"path":"Python编程之MySQLdb模块.md","ref":"Python编程之MySQLdb模块.md","articles":[]},"previous":{"title":"Python模块和包","level":"1.12","depth":1,"path":"Python模块和包.md","ref":"Python模块和包.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python异常.md","mtime":"2016-11-24T09:59:33.636Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-05T14:21:32.561Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python异常","level":"1.13","depth":1,"next":{"title":"Python编程之MySQLdb模块","level":"1.14","depth":1,"path":"Python编程之MySQLdb模块.md","ref":"Python编程之MySQLdb模块.md","articles":[]},"previous":{"title":"Python模块和包","level":"1.12","depth":1,"path":"Python模块和包.md","ref":"Python模块和包.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python异常.md","mtime":"2017-02-07T06:09:38.080Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-07T10:07:43.025Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

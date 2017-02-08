@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
 
 import random
-checkcode = ''
-for i in range(4):
-    current = random.randrange(0,4)
-    if current != i:
-        temp = chr(random.randint(65,90))
-    else:
-        temp = random.randint(0,9)
-    checkcode += str(temp)
+import string 
+# 生成大写字母和小写字母列表：
+# capital = [ chr(i) for i in range(65,91)]
+# lowercase = [chr(i) for i in range(97,123)]
 
-print(checkcode)
+# string模块中已经有相应的实现，不过是字符串而已；
+letters = list(string.ascii_letters)
+capital = list(string.ascii_uppercase)
+lowercase = list(string.ascii_lowercase)
+digits = list(string.digits)
+punctuation = list(string.punctuation)
+
+print(letters)
+print(capital)
+print(lowercase)
+print(digits)
+print(punctuation)
+ran_lower = random.choice(digits)
+print(ran_lower)
+
 

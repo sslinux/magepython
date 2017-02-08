@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Python编程之MySQLdb模块 · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python编程之MySQLdb模块 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -387,7 +387,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python&#x7F16;&#x7A0B;&#x4E4B;mysqldb&#x6A21;&#x5757;">Python&#x7F16;&#x7A0B;&#x4E4B;MySQLdb&#x6A21;&#x5757;</h1><h2 id="python&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF1A;">python&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF1A;</h2><p>&#x89E3;&#x91CA;&#x5668;&#x73AF;&#x5883;&#x4E0E;&#x9009;&#x9879;&#xFF1B;</p><p>python&#x89E3;&#x91CA;&#x5668;&#x542F;&#x52A8;&#xFF1A;</p><p>python [options] [-c cmd | filename | - ] [args]</p><p><img alt="python_options" src="images/python_options.png"></p><hr><h2 id="python&#x89E3;&#x91CA;&#x5668;&#x73AF;&#x5883;&#x53D8;&#x91CF;">python&#x89E3;&#x91CA;&#x5668;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2><p><img alt="python_variables" src="images/python_variables.png"></p><h2 id="python&#x4EE3;&#x7801;&#x7684;&#x6D4B;&#x8BD5;&#x3001;&#x8C03;&#x8BD5;&#x4E0E;&#x63A2;&#x67E5;">python&#x4EE3;&#x7801;&#x7684;&#x6D4B;&#x8BD5;&#x3001;&#x8C03;&#x8BD5;&#x4E0E;&#x63A2;&#x67E5;</h2><p>&#x5982;&#x679C;&#x51FD;&#x6570;&#x3001;&#x7C7B;&#x6216;&#x6A21;&#x5757;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5C31;&#x79F0;&#x4E3A;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;(docstrings)</p><p>&#x5185;&#x7F6E;&#x51FD;&#x6570;help()&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;<strong>doc</strong>&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x8FD9;&#x4E9B;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;</p><p>Example&#xFF1A;</p><pre><code class="lang-python">In [<span class="hljs-number">22</span>]: <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Sum</span><span class="hljs-params">(num1,num2)</span>:</span>
+                                <h1 id="python&#x7F16;&#x7A0B;&#x4E4B;mysqldb&#x6A21;&#x5757;">Python&#x7F16;&#x7A0B;&#x4E4B;MySQLdb&#x6A21;&#x5757;</h1>
+<h2 id="python&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF1A;">python&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF1A;</h2>
+<p>&#x89E3;&#x91CA;&#x5668;&#x73AF;&#x5883;&#x4E0E;&#x9009;&#x9879;&#xFF1B;</p>
+<p>python&#x89E3;&#x91CA;&#x5668;&#x542F;&#x52A8;&#xFF1A;</p>
+<p>python [options] [-c cmd | filename | - ] [args]</p>
+<p><img src="images/python_options.png" alt="python_options"></p>
+<hr>
+<h2 id="python&#x89E3;&#x91CA;&#x5668;&#x73AF;&#x5883;&#x53D8;&#x91CF;">python&#x89E3;&#x91CA;&#x5668;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<p><img src="images/python_variables.png" alt="python_variables"></p>
+<h2 id="python&#x4EE3;&#x7801;&#x7684;&#x6D4B;&#x8BD5;&#x3001;&#x8C03;&#x8BD5;&#x4E0E;&#x63A2;&#x67E5;">python&#x4EE3;&#x7801;&#x7684;&#x6D4B;&#x8BD5;&#x3001;&#x8C03;&#x8BD5;&#x4E0E;&#x63A2;&#x67E5;</h2>
+<p>&#x5982;&#x679C;&#x51FD;&#x6570;&#x3001;&#x7C7B;&#x6216;&#x6A21;&#x5757;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5C31;&#x79F0;&#x4E3A;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;(docstrings)</p>
+<p>&#x5185;&#x7F6E;&#x51FD;&#x6570;help()&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;<strong>doc</strong>&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x8FD9;&#x4E9B;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;</p>
+<p>Example&#xFF1A;</p>
+<pre><code class="lang-python">In [<span class="hljs-number">22</span>]: <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Sum</span><span class="hljs-params">(num1,num2)</span>:</span>
     ...:     <span class="hljs-string">&quot;&quot;&quot;the sumary of num1 and num2.
     ...:     &gt;&gt;&gt; Sum(2,5)
     ...:     7
@@ -408,13 +421,17 @@ Sum(num1, num2)
     &gt;&gt;&gt; Sum(<span class="hljs-number">12</span>,<span class="hljs-number">77</span>)
     <span class="hljs-number">89</span>
 In [<span class="hljs-number">24</span>]: Sum.__doc__
-Out[<span class="hljs-number">24</span>]: <span class="hljs-string">&apos;the sumary of num1 and num2.\n    &gt;&gt;&gt; Sum(2,5)\n    7\n    &gt;&gt;&gt; Sum(12,77)\n    89\n    &apos;</span></code></pre>
-<h2 id="doctest&#x6A21;&#x5757;&#xFF1A;">doctest&#x6A21;&#x5757;&#xFF1A;</h2><p>doctest&#x6A21;&#x5757;&#x5141;&#x8BB8;&#x5728;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x6F5C;&#x5165;&#x6CE8;&#x91CA;&#x4EE5;&#x663E;&#x793A;&#x5404;&#x79CD;&#x8BED;&#x53E5;&#x7684;&#x671F;&#x671B;&#x884C;&#x4E3A;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x7ED3;&#x679C;&#x3002;</p><ul><li>&#x6B64;&#x5904;&#x7684;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#x770B;&#x8D77;&#x6765;&#x5982;&#x540C;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x5F0F;shell&#x4F1A;&#x8BDD;&#xFF1B;
-</li>
-<li>&#x53EF;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x6587;&#x6863;&#x662F;&#x5426;&#x4E0E;&#x7A0B;&#x5E8F;&#x4E3B;&#x4F53;&#x4FDD;&#x6301;&#x540C;&#x6B65;&#xFF0C;&#x6216;&#x57FA;&#x4E8E;&#x6587;&#x6863;&#x5BF9;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;
-</li></ul>
+Out[<span class="hljs-number">24</span>]: <span class="hljs-string">&apos;the sumary of num1 and num2.\n    &gt;&gt;&gt; Sum(2,5)\n    7\n    &gt;&gt;&gt; Sum(12,77)\n    89\n    &apos;</span>
+</code></pre>
+<h2 id="doctest&#x6A21;&#x5757;&#xFF1A;">doctest&#x6A21;&#x5757;&#xFF1A;</h2>
+<p>doctest&#x6A21;&#x5757;&#x5141;&#x8BB8;&#x5728;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x6F5C;&#x5165;&#x6CE8;&#x91CA;&#x4EE5;&#x663E;&#x793A;&#x5404;&#x79CD;&#x8BED;&#x53E5;&#x7684;&#x671F;&#x671B;&#x884C;&#x4E3A;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<ul>
+<li>&#x6B64;&#x5904;&#x7684;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#x770B;&#x8D77;&#x6765;&#x5982;&#x540C;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x5F0F;shell&#x4F1A;&#x8BDD;&#xFF1B;</li>
+<li>&#x53EF;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x6587;&#x6863;&#x662F;&#x5426;&#x4E0E;&#x7A0B;&#x5E8F;&#x4E3B;&#x4F53;&#x4FDD;&#x6301;&#x540C;&#x6B65;&#xFF0C;&#x6216;&#x57FA;&#x4E8E;&#x6587;&#x6863;&#x5BF9;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;</li>
+</ul>
 <p>Example&#xFF1A;
-&#x4F7F;&#x7528;doctest&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF1A;</p><pre><code class="lang-python">sslinux@sslinux-pygo:~$ cat test.py 
+&#x4F7F;&#x7528;doctest&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF1A;</p>
+<pre><code class="lang-python">sslinux@sslinux-pygo:~$ cat test.py 
 <span class="hljs-comment">#!/usr/bin/python</span>
 <span class="hljs-comment">#</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(num1,num2)</span>:</span>
@@ -422,7 +439,8 @@ Out[<span class="hljs-number">24</span>]: <span class="hljs-string">&apos;the su
     &gt;&gt;&gt; add(12,43)
     55
     &apos;&apos;&apos;</span>
-    <span class="hljs-keyword">return</span> num1 + num2</code></pre>
+    <span class="hljs-keyword">return</span> num1 + num2
+</code></pre>
 <pre><code class="lang-python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">import</span> test   <span class="hljs-comment"># &#x5BFC;&#x5165;&#x81EA;&#x5B9A;&#x4E49;test&#x6A21;&#x5757;&#xFF1B;</span>
 
 In [<span class="hljs-number">2</span>]: <span class="hljs-keyword">import</span> doctest
@@ -443,8 +461,11 @@ ok
 <span class="hljs-number">1</span> tests <span class="hljs-keyword">in</span> <span class="hljs-number">2</span> items.
 <span class="hljs-number">1</span> passed <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> failed.
 Test passed.
-Out[<span class="hljs-number">4</span>]: TestResults(failed=<span class="hljs-number">0</span>, attempted=<span class="hljs-number">1</span>)</code></pre>
-<p>&#x5982;&#x679C;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x7ED3;&#x679C;&#x4E0E;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6D4B;&#x8BD5;&#x4F1A;&#x663E;&#x793A;&#x51FA;&#x9519;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#xFF1B;</p><p>&#x4F8B;&#x5982;&#xFF0C;&#x5C06;&#x524D;&#x8FF0;&#x4F8B;&#x5B50;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x7ED3;&#x679C;&#x4FEE;&#x6539;&#x4E3A;&#x9519;&#x8BEF;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5176;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p><pre><code class="lang-python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">import</span> test
+Out[<span class="hljs-number">4</span>]: TestResults(failed=<span class="hljs-number">0</span>, attempted=<span class="hljs-number">1</span>)
+</code></pre>
+<p>&#x5982;&#x679C;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x7ED3;&#x679C;&#x4E0E;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6D4B;&#x8BD5;&#x4F1A;&#x663E;&#x793A;&#x51FA;&#x9519;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#xFF1B;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5C06;&#x524D;&#x8FF0;&#x4F8B;&#x5B50;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x7ED3;&#x679C;&#x4FEE;&#x6539;&#x4E3A;&#x9519;&#x8BEF;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5176;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">import</span> test
 
 In [<span class="hljs-number">2</span>]: <span class="hljs-keyword">import</span> doctest
 
@@ -461,12 +482,15 @@ Got:
 <span class="hljs-number">1</span> items had failures:
    <span class="hljs-number">1</span> of   <span class="hljs-number">2</span> <span class="hljs-keyword">in</span> test.add
 ***Test Failed*** <span class="hljs-number">1</span> failures.
-Out[<span class="hljs-number">3</span>]: TestResults(failed=<span class="hljs-number">1</span>, attempted=<span class="hljs-number">2</span>)</code></pre>
-<p>&#x521B;&#x5EFA;&#x53EF;&#x81EA;&#x6D4B;&#x8BD5;&#x7684;&#x6A21;&#x5757;&#xFF1A;</p><pre><code>&#x5728;&#x6A21;&#x5757;&#x7684;&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#xFF1A;
+Out[<span class="hljs-number">3</span>]: TestResults(failed=<span class="hljs-number">1</span>, attempted=<span class="hljs-number">2</span>)
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x53EF;&#x81EA;&#x6D4B;&#x8BD5;&#x7684;&#x6A21;&#x5757;&#xFF1A;</p>
+<pre><code>&#x5728;&#x6A21;&#x5757;&#x7684;&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#xFF1A;
 if __name__ == &apos;__main__&apos;:
     import doctest
-    doctest.testmod()</code></pre>
-<p>&#x6B64;&#x7C7B;&#x6A21;&#x5757;&#x5728;python&#x89E3;&#x91CA;&#x5668;&#x4E2D;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x65F6;&#x5373;&#x80FD;&#x8FDB;&#x884C;&#x81EA;&#x6211;&#x6D4B;&#x8BD5;&#xFF1B;</p><pre><code class="lang-python">sslinux@sslinux-pygo:~$ python test.py 
+    doctest.testmod()
+</code></pre><p>&#x6B64;&#x7C7B;&#x6A21;&#x5757;&#x5728;python&#x89E3;&#x91CA;&#x5668;&#x4E2D;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x65F6;&#x5373;&#x80FD;&#x8FDB;&#x884C;&#x81EA;&#x6211;&#x6D4B;&#x8BD5;&#xFF1B;</p>
+<pre><code class="lang-python">sslinux@sslinux-pygo:~$ python test.py 
 **********************************************************************
 File <span class="hljs-string">&quot;test.py&quot;</span>, line <span class="hljs-number">7</span>, <span class="hljs-keyword">in</span> __main__.add
 Failed example:
@@ -478,9 +502,14 @@ Got:
 **********************************************************************
 <span class="hljs-number">1</span> items had failures:
    <span class="hljs-number">1</span> of   <span class="hljs-number">2</span> <span class="hljs-keyword">in</span> __main__.add
-***Test Failed*** <span class="hljs-number">1</span> failures.</code></pre>
-<p>python&#xFF1A;</p><pre><code>unitest &#x7EDF;&#x4E00;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;</code></pre>
-<h2 id="python&#x8BBF;&#x95EE;mariadb">Python&#x8BBF;&#x95EE;MariaDB</h2><p>&#x4F9D;&#x8D56;&#x4E8E;&#x6A21;&#x5757;&#xFF1A;MySQLdb  --&#x4F9D;&#x8D56;&#x4E8E;--&gt; easy_install</p><p>&#x7F16;&#x8BD1;&#x3001;&#x5B89;&#x88C5;&#xFF1B;</p><pre><code class="lang-bash">setuptools.1.1.1.tar.gz
+***Test Failed*** <span class="hljs-number">1</span> failures.
+</code></pre>
+<p>python&#xFF1A;</p>
+<pre><code>unitest &#x7EDF;&#x4E00;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;
+</code></pre><h2 id="python&#x8BBF;&#x95EE;mariadb">Python&#x8BBF;&#x95EE;MariaDB</h2>
+<p>&#x4F9D;&#x8D56;&#x4E8E;&#x6A21;&#x5757;&#xFF1A;MySQLdb  --&#x4F9D;&#x8D56;&#x4E8E;--&gt; easy_install</p>
+<p>&#x7F16;&#x8BD1;&#x3001;&#x5B89;&#x88C5;&#xFF1B;</p>
+<pre><code class="lang-bash">setuptools.1.1.1.tar.gz
 tar xf setuptools.1.1.1.tar.gz
 <span class="hljs-built_in">cd</span> setuptools
 python setup.py build
@@ -494,9 +523,13 @@ python setup.py install
 
 vim /etc/ld.so.conf.d/mysql.conf
     <span class="hljs-comment"># &#x6DFB;&#x52A0;MySQL&#x6216;MariaDB&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#xFF1B;</span>
-ldconfig  <span class="hljs-comment"># &#x4F7F;&#x5176;&#x751F;&#x6548;&#xFF1B;</span></code></pre>
-<pre><code class="lang-python"><span class="hljs-keyword">import</span> MySQLdb <span class="hljs-keyword">as</span> mysql</code></pre>
-<h3 id="&#x521B;&#x5EFA;mysql&#x8FDE;&#x63A5;&#xFF1A;">&#x521B;&#x5EFA;MySQL&#x8FDE;&#x63A5;&#xFF1A;</h3><p><img alt="MySQL_Connections" src="images/mysql_connections.png"></p><pre><code class="lang-python">conn = mysql.connect(host=<span class="hljs-string">&apos;10.60.4.167&apos;</span>,user=<span class="hljs-string">&apos;sslinux&apos;</span>,passwd=<span class="hljs-string">&apos;sslinux&apos;</span>,db=<span class="hljs-string">&apos;mydb&apos;</span>)
+ldconfig  <span class="hljs-comment"># &#x4F7F;&#x5176;&#x751F;&#x6548;&#xFF1B;</span>
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> MySQLdb <span class="hljs-keyword">as</span> mysql
+</code></pre>
+<h3 id="&#x521B;&#x5EFA;mysql&#x8FDE;&#x63A5;&#xFF1A;">&#x521B;&#x5EFA;MySQL&#x8FDE;&#x63A5;&#xFF1A;</h3>
+<p><img src="images/mysql_connections.png" alt="MySQL_Connections"></p>
+<pre><code class="lang-python">conn = mysql.connect(host=<span class="hljs-string">&apos;10.60.4.167&apos;</span>,user=<span class="hljs-string">&apos;sslinux&apos;</span>,passwd=<span class="hljs-string">&apos;sslinux&apos;</span>,db=<span class="hljs-string">&apos;mydb&apos;</span>)
 conn.stat()   <span class="hljs-comment"># &#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x72B6;&#x6001;&#xFF1B;</span>
 conn.ping()   <span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x8FDE;&#x901A;&#x6027;&#xFF1B;</span>
 conn.commit()   <span class="hljs-comment"># &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;&#xFF1B;</span>
@@ -523,8 +556,11 @@ sqlins = <span class="hljs-string">&apos;insert into t1 (name) value (&quot;tom&
 cur.execute(sqlins)
 
 cur.execute(<span class="hljs-string">&apos;select * form t1&apos;</span>)
-cur.fetchall()</code></pre>
-<hr><h1 id="&#x6279;&#x91CF;&#x63D2;&#x5165;&#xFF1A;">&#x6279;&#x91CF;&#x63D2;&#x5165;&#xFF1A;</h1><pre><code class="lang-python">sqlins = <span class="hljs-string">&apos;insert into t1 (name) value (&quot;tom&quot;),(&quot;stu1&quot;),(&quot;stu2&quot;)&apos;</span>
+cur.fetchall()
+</code></pre>
+<hr>
+<h1 id="&#x6279;&#x91CF;&#x63D2;&#x5165;&#xFF1A;">&#x6279;&#x91CF;&#x63D2;&#x5165;&#xFF1A;</h1>
+<pre><code class="lang-python">sqlins = <span class="hljs-string">&apos;insert into t1 (name) value (&quot;tom&quot;),(&quot;stu1&quot;),(&quot;stu2&quot;)&apos;</span>
 
 sqlins = <span class="hljs-string">&apos;insert into t1 (name) value (%s)&apos;</span>   <span class="hljs-comment"># &#x65E0;&#x8BBA;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E3A;&#x4F55;&#xFF0C;&#x90FD;&#x7528;%s;</span>
 cur.excute(sqlins,(value1,value2,...valueN))
@@ -535,8 +571,10 @@ cur.execute(<span class="hljs-string">&apos;create table t2 (id int,name varchar
 sqlins = <span class="hljs-string">&apos;insert into t2 (id,name,gerder,age) values (%s,%s,%s,%s)&apos;</span>
 cur.execute(sqlins,(<span class="hljs-number">0</span>,<span class="hljs-string">&apos;tom&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">30</span>))
 cur.execute(<span class="hljs-string">&apos;select * from t2&apos;</span>)
-cur.fetchall()</code></pre>
-<h1 id="&#x4E00;&#x6B21;&#x63D2;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF1B;">&#x4E00;&#x6B21;&#x63D2;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF1B;</h1><pre><code class="lang-python">datains = ((<span class="hljs-number">2</span>,<span class="hljs-string">&apos;str2&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">17</span>),(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;stu3&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">27</span>))
+cur.fetchall()
+</code></pre>
+<h1 id="&#x4E00;&#x6B21;&#x63D2;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF1B;">&#x4E00;&#x6B21;&#x63D2;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF1B;</h1>
+<pre><code class="lang-python">datains = ((<span class="hljs-number">2</span>,<span class="hljs-string">&apos;str2&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">17</span>),(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;stu3&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">27</span>))
 cur.executemany(sqlins,datains)
 
 execute()
@@ -548,8 +586,10 @@ a[<span class="hljs-number">1</span>]
 a[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>]
 
 cur.close() <span class="hljs-comment">#&#x5173;&#x95ED;&#x6E38;&#x6807;&#xFF1B;</span>
-conn.close() <span class="hljs-comment"># &#x5173;&#x95ED;&#x8FDE;&#x63A5;&#xFF1B;</span></code></pre>
-<h3 id="&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#xFF1A;">&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#xFF1A;</h3><pre><code class="lang-python">
+conn.close() <span class="hljs-comment"># &#x5173;&#x95ED;&#x8FDE;&#x63A5;&#xFF1B;</span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#xFF1A;">&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#xFF1A;</h3>
+<pre><code class="lang-python">
 <span class="hljs-keyword">import</span> MySQLdb <span class="hljs-keyword">as</span> mysql
 
 &#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;:
@@ -575,8 +615,11 @@ cur = conn.curson()
 
 &#x5173;&#x95ED;&#xFF1A;
     cur.close()
-    conn.close()</code></pre>
-<h2 id="&#x7EC3;&#x4E60;&#xFF1A;">&#x7EC3;&#x4E60;&#xFF1A;</h2><p>&#x628A;/etc/passwd&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x5B58;&#x50A8;&#x5728;MariaDB&#x7684;&#x8868;&#x4E2D;&#xFF1B;</p>
+    conn.close()
+</code></pre>
+<h2 id="&#x7EC3;&#x4E60;&#xFF1A;">&#x7EC3;&#x4E60;&#xFF1A;</h2>
+<p>&#x628A;/etc/passwd&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x5B58;&#x50A8;&#x5728;MariaDB&#x7684;&#x8868;&#x4E2D;&#xFF1B;</p>
+
                                 
                                 </section>
                             
@@ -619,7 +662,7 @@ cur = conn.curson()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python编程之MySQLdb模块","level":"1.14","depth":1,"next":{"title":"Python编程之socket模块","level":"1.15","depth":1,"path":"Python编程之socket模块.md","ref":"Python编程之socket模块.md","articles":[]},"previous":{"title":"Python异常","level":"1.13","depth":1,"path":"Python异常.md","ref":"Python异常.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python编程之MySQLdb模块.md","mtime":"2016-11-24T09:59:33.637Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-05T14:21:32.561Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python编程之MySQLdb模块","level":"1.14","depth":1,"next":{"title":"Python编程之socket模块","level":"1.15","depth":1,"path":"Python编程之socket模块.md","ref":"Python编程之socket模块.md","articles":[]},"previous":{"title":"Python异常","level":"1.13","depth":1,"path":"Python异常.md","ref":"Python异常.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python编程之MySQLdb模块.md","mtime":"2017-02-07T06:09:38.080Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-07T10:07:43.025Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

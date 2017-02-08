@@ -7,6 +7,8 @@
     - [list](comyn_lesson/list.md)
     - [tuple](comyn_lesson/tuple.md)
     - [str](comyn_lesson/string.md)
+    - [set](comyn_lesson/set.md)
+    
 * [字典、表达式和语句](字典、表达式和语句.md)
 * [Python程序控制结构](Python程序控制结构.md)
 * [Python迭代器、列表解析及生成器](Python迭代器、列表解析及生成器.md)

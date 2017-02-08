@@ -232,7 +232,8 @@ In [3]: b = 5
 
 In [4]: a is b
 Out[4]: False
-# a和b引用的是两个不同的内存对象；
+
+# a和b引用的是两个不同的内存对象；
 In [5]: print(id(a),id(b))
 9169824 9169664
 ```
@@ -415,7 +416,7 @@ for a group of statements:
 
     input()
 
-    raw_input()
+    raw_input()   # python3 中已经废弃，仅保留input().
 
 python解释器提供了三种文件描述对象，分别为标准输入、标准输出和标准错误输出，他们在sys模块中分别以sys.stdin、sys.stdout和sys.stderr形式提供；
 
@@ -436,6 +437,15 @@ python的print语句实现打印————一个对程序员友好的标准输
 print "String %format1 %format2 ..." % (variable1,variable2,...)
 ```
 
+```python
+#python3.5.2
+In [12]: print("String %d %f %s" % (12,3.14,"guiyin.xiong"))
+String 12 3.140000 guiyin.xiong
+
+In [13]: print("print test {num},{fot},{s}".format(num=23,fot=3.14,s="guiyin.xiong")) # 建议使用.format方法；
+print test 23,3.14,guiyin.xiong
+```
+
 ![Print_Format](images/Print_Format.png)
 
 ### 数据类型转换：
@@ -450,16 +460,16 @@ help(str): 获取帮助；
 
     %[(name)][flags][width][.precision]typecode
 
-位于括号中的一个属于后面的字典的键名，用于选出一个具体项；
+name:位于括号中的一个属于后面的字典的键名，用于选出一个具体项；
 
-下面标志中的一个或多个：
+flags:下面标志中的一个或多个：
 ```
 	-：表示左对齐；
 	+：表示包含数字符号，正数也会带"+"
 	0：表示一个0填充；
 ```
 
-一个指定最小宽度的数字；
+width:一个指定最小宽度的数字；
 
 一个小数点，用于按照精度分隔字段的宽度；
 

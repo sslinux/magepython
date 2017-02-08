@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Python文件对象及os、os.path和pickle模块 · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python文件对象及os、os.path和pickle模块 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -387,11 +387,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x53CA;os&#x3001;ospath&#x548C;pickle&#x6A21;&#x5757;">Python&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x53CA;os&#x3001;os.path&#x548C;pickle&#x6A21;&#x5757;</h1><h3 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x6587;&#x4EF6;&#xFF1A;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x6587;&#x4EF6;&#xFF1A;</h3><p>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x662F;OS&#x7528;&#x4E8E;&#x660E;&#x786E;&#x78C1;&#x76D8;&#x6216;&#x5206;&#x533A;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x2014;&#x2014;&#x5373;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7EC4;&#x7EC7;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;</p><p>&#x8BA1;&#x7B97;&#x673A;&#x6587;&#x4EF6;(&#x6216;&#x79F0;&#x6587;&#x4EF6;&#x3001;&#x7535;&#x8111;&#x6863;&#x6848;&#x3001;&#x6863;&#x6848;),&#x662F;&#x5B58;&#x50A8;&#x5728;&#x67D0;&#x79CD;&#x957F;&#x671F;&#x50A8;&#x5B58;&#x8BBE;&#x5907;&#x6216;&#x4E34;&#x65F6;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x4E2D;&#x7684;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x5E76;&#x4E14;&#x5F52;&#x5C5E;&#x4E8E;&#x8BA1;&#x7B97;&#x673A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x4E4B;&#x4E0B;&#xFF1B;</p><p>&#x6982;&#x62EC;&#x6765;&#x8BB2;&#xFF1A;</p><pre><code>&#x6587;&#x4EF6;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x7531;OS&#x7BA1;&#x7406;&#x7684;&#x5177;&#x6709;&#x540D;&#x5B57;&#x7684;&#x5B58;&#x50A8;&#x533A;&#x57DF;&#xFF1B;
+                                <h1 id="python&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x53CA;os&#x3001;ospath&#x548C;pickle&#x6A21;&#x5757;">Python&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x53CA;os&#x3001;os.path&#x548C;pickle&#x6A21;&#x5757;</h1>
+<h3 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x6587;&#x4EF6;&#xFF1A;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x6587;&#x4EF6;&#xFF1A;</h3>
+<p>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x662F;OS&#x7528;&#x4E8E;&#x660E;&#x786E;&#x78C1;&#x76D8;&#x6216;&#x5206;&#x533A;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x2014;&#x2014;&#x5373;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7EC4;&#x7EC7;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;</p>
+<p>&#x8BA1;&#x7B97;&#x673A;&#x6587;&#x4EF6;(&#x6216;&#x79F0;&#x6587;&#x4EF6;&#x3001;&#x7535;&#x8111;&#x6863;&#x6848;&#x3001;&#x6863;&#x6848;),&#x662F;&#x5B58;&#x50A8;&#x5728;&#x67D0;&#x79CD;&#x957F;&#x671F;&#x50A8;&#x5B58;&#x8BBE;&#x5907;&#x6216;&#x4E34;&#x65F6;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x4E2D;&#x7684;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x5E76;&#x4E14;&#x5F52;&#x5C5E;&#x4E8E;&#x8BA1;&#x7B97;&#x673A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x4E4B;&#x4E0B;&#xFF1B;</p>
+<p>&#x6982;&#x62EC;&#x6765;&#x8BB2;&#xFF1A;</p>
+<pre><code>&#x6587;&#x4EF6;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x7531;OS&#x7BA1;&#x7406;&#x7684;&#x5177;&#x6709;&#x540D;&#x5B57;&#x7684;&#x5B58;&#x50A8;&#x533A;&#x57DF;&#xFF1B;
 
-&#x5728;Linux&#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x6587;&#x4EF6;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#xFF1B;</code></pre>
-<p>&#x5957;&#x63A5;&#x5B57;&#x6587;&#x4EF6;&#x3001;&#x547D;&#x540D;&#x7BA1;&#x9053;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x63A5;&#x53E3;&#x6765;&#x8BBF;&#x95EE;&#xFF1B;</p><h3 id="python&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF1A;">Python&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF1A;</h3><p>Python&#x5185;&#x7F6E;&#x51FD;&#x6570;open()&#x7528;&#x4E8E;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x548C;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#xFF1B;</p><pre><code>open(name[,mode [,bufsize]])</code></pre>
-<p>open&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x6587;&#x4EF6;&#x540D;&#x3001;&#x6A21;&#x5F0F;&#x548C;&#x7F13;&#x51B2;&#x533A;&#x53C2;&#x6570;&#xFF1B;</p><pre><code>open&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#xFF1B;
+&#x5728;Linux&#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x6587;&#x4EF6;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#xFF1B;
+</code></pre><p>&#x5957;&#x63A5;&#x5B57;&#x6587;&#x4EF6;&#x3001;&#x547D;&#x540D;&#x7BA1;&#x9053;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x63A5;&#x53E3;&#x6765;&#x8BBF;&#x95EE;&#xFF1B;</p>
+<h3 id="python&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF1A;">Python&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF1A;</h3>
+<p>Python&#x5185;&#x7F6E;&#x51FD;&#x6570;open()&#x7528;&#x4E8E;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x548C;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#xFF1B;</p>
+<pre><code>open(name[,mode [,bufsize]])
+</code></pre><p>open&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x6587;&#x4EF6;&#x540D;&#x3001;&#x6A21;&#x5F0F;&#x548C;&#x7F13;&#x51B2;&#x533A;&#x53C2;&#x6570;&#xFF1B;</p>
+<pre><code>open&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#xFF1B;
 
 mode&#xFF1A;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x6253;&#x5F00;&#x6A21;&#x5F0F;&#xFF1B;
 
@@ -399,7 +408,7 @@ mode&#xFF1A;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x6253;&#x5F00;&#x6A21;&#x5
     &#x7B80;&#x5355;&#x6A21;&#x5F0F;&#xFF1A;
         r: &#x53EA;&#x8BFB;
             open(&apos;/var/log/message.log&apos;,&apos;r&apos;)
-        r: &#x5199;&#x5165;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6;&#x6307;&#x9488;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#xFF1B;
+        w: &#x5199;&#x5165;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6;&#x6307;&#x9488;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#xFF1B;
         a&#xFF1A;&#x9644;&#x52A0;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6;&#x5C3E;&#x90E8;&#x5F00;&#x59CB;&#x5199;&#x5165;&#xFF1B;
     &#x5728;&#x6A21;&#x5F0F;&#x540E;&#x4F7F;&#x7528;&quot;+&quot;&#x8868;&#x793A;&#x540C;&#x65F6;&#x652F;&#x6301;&#x8F93;&#x5165;&#x3001;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#xFF1B;
         &#x5982;&#xFF1A;r+&#x3001;w+&#x548C;a+
@@ -410,8 +419,9 @@ bufsize&#xFF1A;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x7F13;&#x5B58;&#xFF1B;
     0&#x8868;&#x793A;&#x65E0;&#x8F93;&#x51FA;&#x7F13;&#x5B58;&#xFF1B;
     1&#x8868;&#x793A;&#x4F7F;&#x7528;&#x7F13;&#x51B2;&#xFF1B;
     &#x8D1F;&#x6570;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#xFF1B;
-    &#x6B63;&#x6570;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x8FD1;&#x4F3C;&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x7F13;&#x51B2;&#xFF1B;</code></pre>
-<p>var_name = open(filename[mode,[bufsize]])</p><pre><code class="lang-python">    mode:
+    &#x6B63;&#x6570;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x8FD1;&#x4F3C;&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x7F13;&#x51B2;&#xFF1B;
+</code></pre><p>var_name = open(filename,[mode,[bufsize]])</p>
+<pre><code class="lang-python">    mode:
         r
         w
         a
@@ -431,8 +441,10 @@ bufsize&#xFF1A;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x7F13;&#x5B58;&#xFF1B;
         <span class="hljs-number">1</span>&#xFF1A;&#x4F7F;&#x7528;&#x7F13;&#x51B2;&#xFF0C;&#x53EA;&#x7F13;&#x51B2;&#x4E00;&#x884C;&#x6570;&#x636E;&#xFF1B;
         <span class="hljs-number">2</span>+&#xFF1A; &#x6307;&#x5B9A;&#x7F13;&#x51B2;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#xFF1B;
 
-f1 = open(<span class="hljs-string">&apos;passwd.txt&apos;</span>,<span class="hljs-string">&apos;w+&apos;</span>)</code></pre>
-<p>&#x65B9;&#x6CD5;&#xFF1A;</p><pre><code class="lang-python">    f1.next()  <span class="hljs-comment"># &#x8FED;&#x4EE3;&#x5668;&#x7684;next()</span>
+f1 = open(<span class="hljs-string">&apos;passwd.txt&apos;</span>,<span class="hljs-string">&apos;w+&apos;</span>)
+</code></pre>
+<p>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-python">    f1.next()  <span class="hljs-comment"># &#x8FED;&#x4EE3;&#x5668;&#x7684;next()</span>
     f1.close() <span class="hljs-comment"># &#x5173;&#x95ED;&#x6587;&#x4EF6;&#xFF0C;&#x6709;&#x6253;&#x5F00;&#x4E00;&#x5B9A;&#x8981;&#x6709;&#x5173;&#x95ED;&#xFF1B;</span>
     In [<span class="hljs-number">14</span>]: f1.fileno()   <span class="hljs-comment"># &#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF1B;</span>
     Out[<span class="hljs-number">14</span>]: <span class="hljs-number">6</span>               <span class="hljs-comment"># 0&#xFF0C;1&#xFF0C;2&#x662F;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x3001;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x3001;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;</span>
@@ -451,12 +463,17 @@ f1 = open(<span class="hljs-string">&apos;passwd.txt&apos;</span>,<span class="h
     f1.name    <span class="hljs-comment"># &#x5C5E;&#x6027;&#xFF0C;&#x8C03;&#x7528;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#xFF1B;</span>
     f1.write()  <span class="hljs-comment"># &#x5199;&#x5165;</span>
         f1.write(<span class="hljs-string">&apos;new line.\n&apos;</span>)
-    f1.flush()  <span class="hljs-comment"># &#x5237;&#x5199;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x5C06;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x624B;&#x52A8;&#x5199;&#x5165;&#x5230;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</span></code></pre>
-<h3 id="&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#xFF1A;">&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#xFF1A;</h3><p>1&#x3001;&#x4EE5;&#x8BFB;&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F1A;&#x62A5;IOError&#x9519;&#x8BEF;&#xFF1B;</p><pre><code>r,r+,rb+</code></pre>
-<p>2&#x3001;&#x4EE5;w&#x6216;a&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x4F1A;&#x521B;&#x5EFA;&#xFF1B;</p><pre><code class="lang-python">In [<span class="hljs-number">8</span>]: <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> ( i**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>)):
+    f1.flush()  <span class="hljs-comment"># &#x5237;&#x5199;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x5C06;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x624B;&#x52A8;&#x5199;&#x5165;&#x5230;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</span>
+</code></pre>
+<h3 id="&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#xFF1A;">&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#xFF1A;</h3>
+<p>1&#x3001;&#x4EE5;&#x8BFB;&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F1A;&#x62A5;IOError&#x9519;&#x8BEF;&#xFF1B;</p>
+<pre><code>r,r+,rb+
+</code></pre><p>2&#x3001;&#x4EE5;w&#x6216;a&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x4E0D;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x4F1A;&#x521B;&#x5EFA;&#xFF1B;</p>
+<pre><code class="lang-python">In [<span class="hljs-number">8</span>]: <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> ( i**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>)):
    ...:     f1.write(str(line) + <span class="hljs-string">&apos;\n&apos;</span>)
    ...:  
-In [<span class="hljs-number">9</span>]: f1.close()   </code></pre>
+In [<span class="hljs-number">9</span>]: f1.close()
+</code></pre>
 <pre><code class="lang-bash">sslinux@sslinux-pygo:~$ cat /tmp/passwd 
 new line.
 1
@@ -468,7 +485,8 @@ new line.
 49
 64
 81
-100</code></pre>
+100
+</code></pre>
 <pre><code class="lang-python">In [10]: f4 = open(&apos;/tmp/test2.txt&apos;,&apos;w+&apos;)
 
 In [11]: l1 = [ i**2 for i in range(1,11) ]
@@ -492,7 +510,8 @@ In [16]: print l2
 [&apos;X11&apos;, &apos;subuid&apos;, &apos;hostname&apos;, &apos;ucf.conf&apos;, &apos;rmt&apos;, &apos;pki&apos;, &apos;.pwd.lock&apos;, &apos;pam.conf&apos;, &apos;ca-certificates.conf&apos;, &apos;gnome&apos;, &apos;fwupd.conf&apos;, &apos;acpi&apos;, &apos;rsyslog.conf&apos;, &apos;apparmor&apos;, &apos;network&apos;, &apos;sgml&apos;, &apos;ppp&apos;, &apos;localtime&apos;, &apos;bash.bashrc&apos;, &apos;resolv.conf&apos;, &apos;signond.conf&apos;, &apos;pnm2ppa.conf&apos;, &apos;fstab&apos;, &apos;rcS.d&apos;, &apos;update-notifier&apos;, &apos;group&apos;, &apos;os-release&apos;, &apos;shells&apos;, &apos;upstart-xsessions&apos;, &apos;gai.conf&apos;, &apos;locale.gen&apos;, &apos;aptdaemon&apos;, &apos;zsh_command_not_found&apos;, &apos;ufw&apos;, &apos;modules-load.d&apos;, &apos;libao.conf&apos;, &apos;init&apos;, &apos;protocols&apos;, &apos;init.d&apos;, &apos;hdparm.conf&apos;, &apos;gshadow&apos;, &apos;logcheck&apos;, &apos;cron.hourly&apos;, &apos;sudoers&apos;, &apos;apm&apos;, &apos;apt&apos;, &apos;kbd&apos;, &apos;libpaper.d&apos;, &apos;grub.d&apos;, &apos;cron.daily&apos;, &apos;subgid&apos;, &apos;xdg&apos;, &apos;udev&apos;, &apos;mailcap.order&apos;, &apos;ltrace.conf&apos;, &apos;polkit-1&apos;, &apos;securetty&apos;, &apos;rc0.d&apos;, &apos;doc-base&apos;, &apos;magic.mime&apos;, &apos;usb_modeswitch.conf&apos;, &apos;rc.local&apos;, &apos;libnl-3&apos;, &apos;thermald&apos;, &apos;rc5.d&apos;, &apos;magic&apos;, &apos;profile&apos;, &apos;lightdm&apos;, &apos;pulse&apos;, &apos;selinux&apos;, &apos;gss&apos;, &apos;adduser.conf&apos;, &apos;hosts.allow&apos;, &apos;mke2fs.conf&apos;, &apos;sensors.d&apos;, &apos;avahi&apos;, &apos;rpc&apos;, &apos;python2.7&apos;, &apos;python3.5&apos;, &apos;sensors3.conf&apos;, &apos;rc2.d&apos;, &apos;kernel-img.conf&apos;, &apos;papersize&apos;, &apos;rc1.d&apos;, &apos;inputrc&apos;, &apos;rc3.d&apos;, &apos;ld.so.conf&apos;, &apos;ghostscript&apos;, &apos;NetworkManager&apos;, &apos;shadow-&apos;, &apos;bluetooth&apos;, &apos;initramfs-tools&apos;, &apos;update-manager&apos;, &apos;speech-dispatcher&apos;, &apos;modprobe.d&apos;, &apos;hosts&apos;, &apos;groff&apos;, &apos;pcmcia&apos;, &apos;deluser.conf&apos;, &apos;ld.so.cache&apos;, &apos;gshadow-&apos;, &apos;pam.d&apos;, &apos;insserv.conf.d&apos;, &apos;apparmor.d&apos;, &apos;login.defs&apos;, &apos;manpath.config&apos;, &apos;machine-id&apos;, &apos;ssl&apos;, &apos;pm&apos;, &apos;timidity&apos;, &apos;binfmt.d&apos;, &apos;group-&apos;, &apos;cupshelpers&apos;, &apos;udisks2&apos;, &apos;ssh&apos;, &apos;issue&apos;, &apos;console-setup&apos;, &apos;kernel&apos;, &apos;bash_completion&apos;, &apos;resolvconf&apos;, &apos;usb_modeswitch.d&apos;, &apos;legal&apos;, &apos;wpa_supplicant&apos;, &apos;vdpau_wrapper.cfg&apos;, &apos;host.conf&apos;, &apos;passwd&apos;, &apos;openal&apos;, &apos;UPower&apos;, &apos;brltty.conf&apos;, &apos;tmpfiles.d&apos;, &apos;anacrontab&apos;, &apos;dconf&apos;, &apos;sysctl.d&apos;, &apos;insserv.conf&apos;, &apos;apport&apos;, &apos;appstream.conf&apos;, &apos;brlapi.key&apos;, &apos;fuse.conf&apos;, &apos;gdb&apos;, &apos;cron.monthly&apos;, &apos;calendar&apos;, &apos;sysctl.conf&apos;, &apos;gnome-app-install&apos;, &apos;kerneloops.conf&apos;, &apos;python&apos;, &apos;modules&apos;, &apos;gtk-3.0&apos;, &apos;hp&apos;, &apos;updatedb.conf&apos;, &apos;subuid-&apos;, &apos;depmod.d&apos;, &apos;alternatives&apos;, &apos;ld.so.conf.d&apos;, &apos;guest-session&apos;, &apos;profile.d&apos;, &apos;sane.d&apos;, &apos;mime.types&apos;, &apos;compizconfig&apos;, &apos;networks&apos;, &apos;ImageMagick-6&apos;, &apos;cups&apos;, &apos;mtab&apos;, &apos;rc6.d&apos;, &apos;newt&apos;, &apos;libaudit.conf&apos;, &apos;opt&apos;, &apos;at-spi2&apos;, &apos;shadow&apos;, &apos;rc4.d&apos;, &apos;dbus-1&apos;, &apos;terminfo&apos;, &apos;lvm&apos;, &apos;default&apos;, &apos;bash_completion.d&apos;, &apos;dpkg&apos;, &apos;subgid-&apos;, &apos;brltty&apos;, &apos;mtools.conf&apos;, &apos;rsyslog.d&apos;, &apos;lsb-release&apos;, &apos;crontab&apos;, &apos;skel&apos;, &apos;mailcap&apos;, &apos;python3&apos;, &apos;iproute2&apos;, &apos;cron.weekly&apos;, &apos;nanorc&apos;, &apos;locale.alias&apos;, &apos;debconf.conf&apos;, &apos;popularity-contest.conf&apos;, &apos;drirc&apos;, &apos;nsswitch.conf&apos;, &apos;passwd-&apos;, &apos;thunderbird&apos;, &apos;gtk-2.0&apos;, &apos;xml&apos;, &apos;dnsmasq.d&apos;, &apos;ldap&apos;, &apos;bindresvport.blacklist&apos;, &apos;chatscripts&apos;, &apos;wgetrc&apos;, &apos;timezone&apos;, &apos;issue.net&apos;, &apos;environment&apos;, &apos;cracklib&apos;, &apos;lintianrc&apos;, &apos;ifplugd&apos;, &apos;firefox&apos;, &apos;apg.conf&apos;, &apos;services&apos;, &apos;perl&apos;, &apos;systemd&apos;, &apos;dhcp&apos;, &apos;update-motd.d&apos;, &apos;ca-certificates&apos;, &apos;cron.d&apos;, &apos;logrotate.d&apos;, &apos;emacs&apos;, &apos;iftab&apos;, &apos;vim&apos;, &apos;vtrgb&apos;, &apos;signon-ui&apos;, &apos;libreoffice&apos;, &apos;insserv&apos;, &apos;hosts.deny&apos;, &apos;wildmidi&apos;, &apos;security&apos;, &apos;debian_version&apos;, &apos;gconf&apos;, &apos;dictionaries-common&apos;, &apos;fonts&apos;, &apos;logrotate.conf&apos;, &apos;sudoers.d&apos;]
 
 In [18]: f4.writelines(l2)
-In [19]: f4.flush()</code></pre>
+In [19]: f4.flush()
+</code></pre>
 <pre><code class="lang-python">In [<span class="hljs-number">20</span>]: l3 = [ i + <span class="hljs-string">&apos;\n&apos;</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> os.listdir(<span class="hljs-string">&apos;/etc&apos;</span>) ]
 
 In [<span class="hljs-number">21</span>]: <span class="hljs-keyword">print</span> l3
@@ -502,7 +521,8 @@ In [<span class="hljs-number">22</span>]: f4.seek(<span class="hljs-number">0</s
 
 In [<span class="hljs-number">23</span>]: f4.writelines(l3)
 
-In [<span class="hljs-number">24</span>]: f4.flush()</code></pre>
+In [<span class="hljs-number">24</span>]: f4.flush()
+</code></pre>
 <pre><code class="lang-python">In [<span class="hljs-number">26</span>]: f4.isatty() <span class="hljs-comment"># &#x5224;&#x65AD;&#x662F;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#x6587;&#x4EF6;&#xFF1B;</span>
 
 Out[<span class="hljs-number">26</span>]: <span class="hljs-keyword">False</span>
@@ -527,7 +547,8 @@ Out[<span class="hljs-number">30</span>]:
  <span class="hljs-string">&apos;gnome\n&apos;</span>,
  <span class="hljs-string">&apos;fwupd.conf\n&apos;</span>,
  <span class="hljs-string">&apos;acpi\n&apos;</span>,
- <span class="hljs-string">&apos;r&apos;</span>]</code></pre>
+ <span class="hljs-string">&apos;r&apos;</span>]
+</code></pre>
 <pre><code class="lang-python">In [<span class="hljs-number">31</span>]: f4.seek(<span class="hljs-number">0</span>)
 
 In [<span class="hljs-number">32</span>]: f4.readline()
@@ -541,7 +562,8 @@ In [<span class="hljs-number">34</span>]: f4.truncate(f4.tell())   <span class="
 In [<span class="hljs-number">35</span>]: f4.seek(<span class="hljs-number">0</span>)
 
 In [<span class="hljs-number">36</span>]: f4.readlines()
-Out[<span class="hljs-number">36</span>]: [<span class="hljs-string">&apos;X11\n&apos;</span>, <span class="hljs-string">&apos;subuid\n&apos;</span>]</code></pre>
+Out[<span class="hljs-number">36</span>]: [<span class="hljs-string">&apos;X11\n&apos;</span>, <span class="hljs-string">&apos;subuid\n&apos;</span>]
+</code></pre>
 <pre><code class="lang-python">In [<span class="hljs-number">37</span>]: f4.closed   <span class="hljs-comment"># &#x5C5E;&#x6027;&#xFF0C;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#xFF1B;</span>
 Out[<span class="hljs-number">37</span>]: <span class="hljs-keyword">False</span>
 
@@ -553,8 +575,10 @@ Out[<span class="hljs-number">39</span>]: <span class="hljs-string">&apos;w+&apo
 In [<span class="hljs-number">40</span>]: f4.newlines  <span class="hljs-comment"># &#x5C5E;&#x6027;&#xFF0C;&#x8FD4;&#x56DE;&#x6362;&#x884C;&#x7B26;&#xFF1B;</span>
 
 In [<span class="hljs-number">41</span>]: f4.softspace   <span class="hljs-comment"># &#x5C5E;&#x6027;&#xFF0C;&#x5199;&#x5165;&#x884C;&#x65F6;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x8F6F;&#x7A7A;&#x683C;&#xFF1B;</span>
-Out[<span class="hljs-number">41</span>]: <span class="hljs-number">0</span></code></pre>
-<h3 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#xFF1A;os&#x6A21;&#x5757;&#xFF1B;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#xFF1A;os&#x6A21;&#x5757;&#xFF1B;</h3><pre><code class="lang-python">In [<span class="hljs-number">42</span>]: <span class="hljs-keyword">import</span> os
+Out[<span class="hljs-number">41</span>]: <span class="hljs-number">0</span>
+</code></pre>
+<h3 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#xFF1A;os&#x6A21;&#x5757;&#xFF1B;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x529F;&#x80FD;&#xFF1A;os&#x6A21;&#x5757;&#xFF1B;</h3>
+<pre><code class="lang-python">In [<span class="hljs-number">42</span>]: <span class="hljs-keyword">import</span> os
 
 In [<span class="hljs-number">43</span>]: os.abort 
         os.abort            os.EX_CANTCREAT     os.execv            os.getegid           
@@ -576,12 +600,15 @@ In [<span class="hljs-number">43</span>]: os.abort
         os.dup2             os.execl            os.fsync            os.isatty            
         os.environ          os.execle           os.ftruncate        os.kill              
         os.errno            os.execlp           os.getcwd           os.killpg            
-        os.error            os.execlpe          os.getcwdu          os.lchown   </code></pre>
+        os.error            os.execlpe          os.getcwdu          os.lchown
+</code></pre>
 <pre><code class="lang-python">os.mkdir(<span class="hljs-string">&apos;/tmp/testdir1&apos;</span>)    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x76EE;&#x5F55;&#xFF1B;</span>
 os.getcwd()        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1B;</span>
 os.chdir(<span class="hljs-string">&apos;/tmp&apos;</span>)        <span class="hljs-comment"># &#x5207;&#x6362;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1B;</span>
-os.stat(<span class="hljs-string">&apos;test2.txt&apos;</span>)    <span class="hljs-comment"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x76EE;&#x5F55;test2.txt&#x6587;&#x4EF6;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#xFF1B;</span></code></pre>
-<h3 id="&#x76EE;&#x5F55;&#xFF1A;">&#x76EE;&#x5F55;&#xFF1A;</h3><pre><code class="lang-python">chdir() <span class="hljs-comment"># &#x6539;&#x53D8;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1B;</span>
+os.stat(<span class="hljs-string">&apos;test2.txt&apos;</span>)    <span class="hljs-comment"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x76EE;&#x5F55;test2.txt&#x6587;&#x4EF6;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#xFF1B;</span>
+</code></pre>
+<h3 id="&#x76EE;&#x5F55;&#xFF1A;">&#x76EE;&#x5F55;&#xFF1A;</h3>
+<pre><code class="lang-python">chdir() <span class="hljs-comment"># &#x6539;&#x53D8;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1B;</span>
 fchdir() <span class="hljs-comment"># &#x901A;&#x8FC7;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x6539;&#x53D8;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1B;&#x4E0D;&#x5E38;&#x7528;&#xFF1B;</span>
 chroot()  <span class="hljs-comment"># &#x8BBE;&#x5B9A;&#x5F53;&#x524D;&#x8FDB;&#x7A0B;&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF1B;</span>
 listdir() <span class="hljs-comment"># &#x5217;&#x51FA;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x8FD4;&#x56DE;&#x4E3A;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF1B;</span>
@@ -589,8 +616,10 @@ mkdir()   <span class="hljs-comment"># &#x521B;&#x5EFA;&#x6307;&#x5B9A;&#x76EE;&
 makedirs()  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x591A;&#x7EA7;&#x76EE;&#x5F55;&#xFF0C;&#x82E5;&#x7236;&#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5148;&#x521B;&#x5EFA;&#x7236;&#x76EE;&#x5F55;&#xFF1B;&#x7C7B;&#x4F3C;&#x4E8E;mkdir -pv</span>
 getcwd()    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1B;</span>
 rmdir()     <span class="hljs-comment"># &#x5220;&#x9664;&#x7A7A;&#x76EE;&#x5F55;&#xFF1B;</span>
-removedirs() <span class="hljs-comment"># &#x5220;&#x9664;&#x591A;&#x7EA7;&#x76EE;&#x5F55;&#xFF1B;</span></code></pre>
-<h3 id="&#x6587;&#x4EF6;">&#x6587;&#x4EF6;:</h3><pre><code class="lang-python">mkfifo()   <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#x7BA1;&#x9053;&#xFF1B;</span>
+removedirs() <span class="hljs-comment"># &#x5220;&#x9664;&#x591A;&#x7EA7;&#x76EE;&#x5F55;&#xFF1B;</span>
+</code></pre>
+<h3 id="&#x6587;&#x4EF6;">&#x6587;&#x4EF6;:</h3>
+<pre><code class="lang-python">mkfifo()   <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#x7BA1;&#x9053;&#xFF1B;</span>
 mknode()   <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#xFF1B;</span>
 remove()   <span class="hljs-comment"># &#x5220;&#x9664;&#x6587;&#x4EF6;&#xFF1B;</span>
 unlink()   <span class="hljs-comment"># &#x5220;&#x9664;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#xFF1B;</span>
@@ -601,22 +630,30 @@ utime()    <span class="hljs-comment"># &#x66F4;&#x65B0;&#x6587;&#x4EF6;&#x7684;
 tmpfile()  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5E76;&#x6253;&#x5F00;(w+b)&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4E34;&#x65F6;&#x6587;&#x4EF6;</span>
 walk()     <span class="hljs-comment"># &#x76EE;&#x5F55;&#x6811;&#x751F;&#x6210;&#x5668;&#xFF1B;</span>
     g1 = os.walk(<span class="hljs-string">&apos;tmp&apos;</span>)
-    g1.next()</code></pre>
-<h3 id="&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF1A;">&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF1A;</h3><pre><code class="lang-python">access()   <span class="hljs-comment"># &#x68C0;&#x9A8C;&#x6743;&#x9650;&#x6A21;&#x5F0F;&#xFF1B;</span>
+    g1.next()
+</code></pre>
+<h3 id="&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF1A;">&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF1A;</h3>
+<pre><code class="lang-python">access()   <span class="hljs-comment"># &#x68C0;&#x9A8C;&#x6743;&#x9650;&#x6A21;&#x5F0F;&#xFF1B;</span>
     os.access(<span class="hljs-string">&apos;test2.txt&apos;</span>,<span class="hljs-number">500</span>)   <span class="hljs-comment"># &#x6570;&#x5B57;&#x662F;uid&#x6216;gid</span>
 chmod()    <span class="hljs-comment"># &#x4FEE;&#x6539;&#x6743;&#x9650;&#xFF1B;</span>
     os.chmod(path,mode)
     os.chmod(<span class="hljs-string">&apos;test2.txt&apos;</span>,<span class="hljs-number">0640</span>)  
 chown()    <span class="hljs-comment"># &#x6539;&#x53D8;&#x5C5E;&#x4E3B;&#x5C5E;&#x7EC4;&#xFF1B;</span>
     os.chown(path,uid,gid)
-umask()    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6743;&#x9650;&#x906E;&#x7F69;&#x7801;(&#x6A21;&#x5F0F;)&#xFF1B;</span></code></pre>
-<h3 id="&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF1A;">&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF1A;</h3><pre><code class="lang-python">open()     <span class="hljs-comment"># &#x5E95;&#x5C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;open&#xFF0C;for low level IO&#xFF1B;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#xFF1B;</span>
+umask()    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6743;&#x9650;&#x906E;&#x7F69;&#x7801;(&#x6A21;&#x5F0F;)&#xFF1B;</span>
+</code></pre>
+<h3 id="&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF1A;">&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF1A;</h3>
+<pre><code class="lang-python">open()     <span class="hljs-comment"># &#x5E95;&#x5C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;open&#xFF0C;for low level IO&#xFF1B;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#xFF1B;</span>
 read()     
-write()    </code></pre>
-<h3 id="&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#xFF1A;">&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#xFF1A;</h3><pre><code class="lang-python">makedev()    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8BBE;&#x5907;&#xFF1B;</span>
+write()
+</code></pre>
+<h3 id="&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#xFF1A;">&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#xFF1A;</h3>
+<pre><code class="lang-python">makedev()    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8BBE;&#x5907;&#xFF1B;</span>
 major()         <span class="hljs-comment"># &#x83B7;&#x53D6;&#x4E3B;&#x8BBE;&#x5907;&#x53F7;</span>
-minor()      <span class="hljs-comment"># &#x83B7;&#x53D6;&#x6B21;&#x8BBE;&#x5907;&#x53F7;</span></code></pre>
-<h3 id="&#x5B50;&#x6A21;&#x5757;-ospath">&#x5B50;&#x6A21;&#x5757;: os.path</h3><pre><code class="lang-python"><span class="hljs-keyword">import</span> os.path    <span class="hljs-comment"># &#x8DDF;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x76F8;&#x5173;&#xFF1B;</span>
+minor()      <span class="hljs-comment"># &#x83B7;&#x53D6;&#x6B21;&#x8BBE;&#x5907;&#x53F7;</span>
+</code></pre>
+<h3 id="&#x5B50;&#x6A21;&#x5757;-ospath">&#x5B50;&#x6A21;&#x5757;: os.path</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os.path    <span class="hljs-comment"># &#x8DDF;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x76F8;&#x5173;&#xFF1B;</span>
 
 basename()    <span class="hljs-comment"># &#x6587;&#x4EF6;&#x57FA;&#x540D;</span>
 dirname()     <span class="hljs-comment"># &#x8DEF;&#x5F84;&#x76EE;&#x5F55;&#x540D;&#xFF1B;</span>
@@ -636,19 +673,27 @@ Out[<span class="hljs-number">48</span>]: <span class="hljs-string">&apos;/etc/s
 
 
 aplit()   <span class="hljs-comment"># &#x8FD4;&#x56DE;dirname(),basename()&#x7ED3;&#x679C;&#x7684;&#x5143;&#x7EC4;&#xFF1B;</span>
-splitext()  <span class="hljs-comment"># &#x8FD4;&#x56DE;(filename,extension)&#x5143;&#x7EC4;&#xFF1B;</span></code></pre>
-<h4 id="&#x4FE1;&#x606F;&#xFF1A;">&#x4FE1;&#x606F;&#xFF1A;</h4><pre><code class="lang-python">getatime()    <span class="hljs-comment"># &#x8FD4;&#x56DE;atime</span>
+splitext()  <span class="hljs-comment"># &#x8FD4;&#x56DE;(filename,extension)&#x5143;&#x7EC4;&#xFF1B;</span>
+</code></pre>
+<h4 id="&#x4FE1;&#x606F;&#xFF1A;">&#x4FE1;&#x606F;&#xFF1A;</h4>
+<pre><code class="lang-python">getatime()    <span class="hljs-comment"># &#x8FD4;&#x56DE;atime</span>
 getctime()
 getmtime()
-getsize()     <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF1B;</span></code></pre>
-<h4 id="&#x67E5;&#x8BE2;&#xFF1A;">&#x67E5;&#x8BE2;&#xFF1A;</h4><pre><code class="lang-python">exists()      <span class="hljs-comment"># &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF1B;</span>
+getsize()     <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF1B;</span>
+</code></pre>
+<h4 id="&#x67E5;&#x8BE2;&#xFF1A;">&#x67E5;&#x8BE2;&#xFF1A;</h4>
+<pre><code class="lang-python">exists()      <span class="hljs-comment"># &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF1B;</span>
 isabs()       <span class="hljs-comment"># &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x4E3A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1B;</span>
 isdir()       <span class="hljs-comment"># &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x4E3A;&#x76EE;&#x5F55;&#xFF1B;</span>
 isfile()      <span class="hljs-comment"># &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E14;&#x4E3A;&#x6587;&#x4EF6;&#xFF1B;</span>
 islink()      <span class="hljs-comment"># &#x662F;&#x5426;&#x4E3A;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#xFF1B;</span>
 ismount()     <span class="hljs-comment"># &#x662F;&#x5426;&#x4E3A;&#x6302;&#x8F7D;&#x70B9;&#xFF1B;</span>
-samefile()    <span class="hljs-comment"># &#x4E24;&#x4E2A;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x6307;&#x5411;&#x4E86;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF1B;</span></code></pre>
-<p>&#x7EC3;&#x4E60;&#xFF1A;&#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5B58;&#x5728;&#x5219;&#x6253;&#x5F00;&#xFF1B;</p><p>&#x8BA9;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x952E;&#x76D8;&#x53CD;&#x590D;&#x8F93;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF1B;</p><p>&#x8FFD;&#x52A0;&#x4FDD;&#x5B58;&#x81F3;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</p><pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/python2.7</span>
+samefile()    <span class="hljs-comment"># &#x4E24;&#x4E2A;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x6307;&#x5411;&#x4E86;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF1B;</span>
+</code></pre>
+<p>&#x7EC3;&#x4E60;&#xFF1A;&#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5B58;&#x5728;&#x5219;&#x6253;&#x5F00;&#xFF1B;</p>
+<p>&#x8BA9;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x952E;&#x76D8;&#x53CD;&#x590D;&#x8F93;&#x5165;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF1B;</p>
+<p>&#x8FFD;&#x52A0;&#x4FDD;&#x5B58;&#x81F3;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/python2.7</span>
 <span class="hljs-comment">#</span>
 
 <span class="hljs-keyword">import</span> os
@@ -669,14 +714,19 @@ filename = raw_input(<span class="hljs-string">&quot;Which file you want to edit
 
     f1.write(line+<span class="hljs-string">&apos;\n&apos;</span>)
 
-f1.close()</code></pre>
-<hr><h1 id="&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5B58;&#x50A8;&#xFF1A;">&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5B58;&#x50A8;&#xFF1A;</h1><pre><code>&#x5B58;&#x5230;&#x6587;&#x4EF6;&#x4E2D;:
+f1.close()
+</code></pre>
+<hr>
+<h1 id="&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5B58;&#x50A8;&#xFF1A;">&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5B58;&#x50A8;&#xFF1A;</h1>
+<pre><code>&#x5B58;&#x5230;&#x6587;&#x4EF6;&#x4E2D;:
     pickle&#x6A21;&#x5757;
     marshal&#x6A21;&#x5757;
 DBM&#x63A5;&#x53E3; &#xFF1B;
     &#x7B2C;&#x4E09;&#x65B9;&#x63A5;&#x53E3;&#xFF1B;
-shelve&#x6A21;&#x5757;&#xFF1A;</code></pre>
-<p>import pickle</p><p>pickle.dump()  # &#x5C06;&#x5BF9;&#x8C61;&#x6D41;&#x5F0F;&#x5316;&#x5B58;&#x50A8;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</p><pre><code class="lang-python">In [<span class="hljs-number">52</span>]: d1 = {<span class="hljs-string">&apos;Mon&apos;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&apos;Tus&apos;</span>:<span class="hljs-number">2</span>,<span class="hljs-string">&apos;Thu&apos;</span>:<span class="hljs-number">3</span>}
+shelve&#x6A21;&#x5757;&#xFF1A;
+</code></pre><p>import pickle</p>
+<p>pickle.dump()  # &#x5C06;&#x5BF9;&#x8C61;&#x6D41;&#x5F0F;&#x5316;&#x5B58;&#x50A8;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</p>
+<pre><code class="lang-python">In [<span class="hljs-number">52</span>]: d1 = {<span class="hljs-string">&apos;Mon&apos;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&apos;Tus&apos;</span>:<span class="hljs-number">2</span>,<span class="hljs-string">&apos;Thu&apos;</span>:<span class="hljs-number">3</span>}
 
 In [<span class="hljs-number">54</span>]: f5 = open(<span class="hljs-string">&apos;/tmp/dfile.txt&apos;</span>,<span class="hljs-string">&apos;a+&apos;</span>)
 
@@ -684,7 +734,8 @@ In [<span class="hljs-number">55</span>]: <span class="hljs-keyword">import</spa
 
 In [<span class="hljs-number">57</span>]: pickle.dump(d1,f5)
 
-In [<span class="hljs-number">59</span>]: f5.flush()</code></pre>
+In [<span class="hljs-number">59</span>]: f5.flush()
+</code></pre>
 <pre><code class="lang-bash">sslinux@sslinux-pygo:~$ cat /tmp/dfile.txt 
 (dp0
 S<span class="hljs-string">&apos;Thu&apos;</span>
@@ -696,15 +747,18 @@ I2
 sS<span class="hljs-string">&apos;Mon&apos;</span>
 p3
 I1
-s.sslinux@sslinux-pygo:~$ </code></pre>
-<p>pickle.load(FILE)   # &#x8BFB;&#x53D6;&#x6D41;&#x5F0F;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8FD8;&#x539F;&#x4E3A;&#x539F;&#x672C;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#xFF1B;</p><pre><code class="lang-python">In [<span class="hljs-number">9</span>]: f5.close()
+s.sslinux@sslinux-pygo:~$
+</code></pre>
+<p>pickle.load(FILE)   # &#x8BFB;&#x53D6;&#x6D41;&#x5F0F;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8FD8;&#x539F;&#x4E3A;&#x539F;&#x672C;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#xFF1B;</p>
+<pre><code class="lang-python">In [<span class="hljs-number">9</span>]: f5.close()
 
 In [<span class="hljs-number">10</span>]: f6 = open(<span class="hljs-string">&apos;/tmp/dfile.txt&apos;</span>,<span class="hljs-string">&apos;r+&apos;</span>)
 
 In [<span class="hljs-number">11</span>]: d2 = pickle.load(f6)  <span class="hljs-comment"># &#x5C06;&#x6D41;&#x5F0F;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#x91CD;&#x65B0;&#x88C5;&#x8F7D;&#x56DE;&#x6765;&#xFF0C;&#x4F9D;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#xFF1B;</span>
 
 In [<span class="hljs-number">12</span>]: <span class="hljs-keyword">print</span> d2
-{<span class="hljs-string">&apos;Thu&apos;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&apos;Tus&apos;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&apos;Mon&apos;</span>: <span class="hljs-number">1</span>}</code></pre>
+{<span class="hljs-string">&apos;Thu&apos;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&apos;Tus&apos;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&apos;Mon&apos;</span>: <span class="hljs-number">1</span>}
+</code></pre>
 
                                 
                                 </section>
@@ -748,7 +802,7 @@ In [<span class="hljs-number">12</span>]: <span class="hljs-keyword">print</span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python文件对象及os、os.path和pickle模块","level":"1.8","depth":1,"next":{"title":"Python中的正则表达式","level":"1.9","depth":1,"path":"Python中的正则表达式.md","ref":"Python中的正则表达式.md","articles":[]},"previous":{"title":"Python迭代器、列表解析及生成器","level":"1.7","depth":1,"path":"Python迭代器、列表解析及生成器.md","ref":"Python迭代器、列表解析及生成器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python文件对象及os、os.path和pickle模块.md","mtime":"2016-11-24T09:59:33.636Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-05T14:21:32.561Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python文件对象及os、os.path和pickle模块","level":"1.8","depth":1,"next":{"title":"Python中的正则表达式","level":"1.9","depth":1,"path":"Python中的正则表达式.md","ref":"Python中的正则表达式.md","articles":[]},"previous":{"title":"Python迭代器、列表解析及生成器","level":"1.7","depth":1,"path":"Python迭代器、列表解析及生成器.md","ref":"Python迭代器、列表解析及生成器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python文件对象及os、os.path和pickle模块.md","mtime":"2017-02-07T07:54:54.623Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-07T10:07:43.025Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

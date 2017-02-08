@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Python编程之socket模块 · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python编程之socket模块 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -387,20 +387,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;">Python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;</h1><h2 id="python&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#xFF1A;">python&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#xFF1A;</h2><p>&#x5206;&#x5C42;&#x6A21;&#x578B;&#xFF1A;</p><p><img alt="network_layer" src="images/network_layer.png"></p><p>&#x8DE8;Inter&#x7684;&#x4E3B;&#x673A;&#x95F4;&#x901A;&#x8BAF;&#xFF1A;
-<img alt="hosts_comminication" src="images/hosts_comminication.png"></p><p>&#x57FA;&#x4E8E;TCP&#x5BA2;&#x6237;/&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x51FD;&#x6570;&#xFF1A;</p><p><img alt="socket_function" src="images/socket_function.png"></p><pre><code class="lang-python">In [<span class="hljs-number">5</span>]: <span class="hljs-keyword">import</span> socket
+                                <h1 id="python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;">Python&#x7F16;&#x7A0B;&#x4E4B;socket&#x6A21;&#x5757;</h1>
+<h2 id="python&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#xFF1A;">python&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#xFF1A;</h2>
+<p>&#x5206;&#x5C42;&#x6A21;&#x578B;&#xFF1A;</p>
+<p><img src="images/network_layer.png" alt="network_layer"></p>
+<p>&#x8DE8;Inter&#x7684;&#x4E3B;&#x673A;&#x95F4;&#x901A;&#x8BAF;&#xFF1A;
+<img src="images/hosts_comminication.png" alt="hosts_comminication"></p>
+<p>&#x57FA;&#x4E8E;TCP&#x5BA2;&#x6237;\/&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x51FD;&#x6570;&#xFF1A;</p>
+<p><img src="images/socket_function.png" alt="socket_function"></p>
+<pre><code class="lang-python">In [<span class="hljs-number">5</span>]: <span class="hljs-keyword">import</span> socket
 In [<span class="hljs-number">6</span>]: <span class="hljs-keyword">import</span> os
-In [<span class="hljs-number">7</span>]: <span class="hljs-keyword">import</span> re</code></pre>
-<h3 id="socketsocketfamilytype">socket.socket(family,type)</h3><ul><li><p>family:</p><p>AF_INET   # &#x8868;&#x793A;&#x4F7F;&#x7528;TCP/UDP&#x5957;&#x63A5;&#x5B57;&#xFF1B;</p><p>AF_UNIX   # &#x8868;&#x793A;&#x4F7F;&#x7528;UNIX&#x5957;&#x63A5;&#x5B57;&#xFF1B;</p></li>
-<li><p>type:</p><p>STREAM:tcp</p><p>SOCK_DGRAM:udp</p></li></ul>
-<p>tcpconn = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</p><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7ED1;&#x5B9A;&#x5730;&#x5740;&#xFF1B;
-    &#x4F7F;&#x7528;&#x5957;&#x63A5;&#x5B57;&#x5BF9;&#x8C61;&#x7684;bind&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#x4E0E;&#x67D0;&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#xFF1B;</p><pre><code>tcpconn.bind((&apos;ip&apos;,port))   # &#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;ip&#x548C;port&#x7684;&#x5143;&#x7EC4;
-tcpconn.bind((&apos;192.168.0.100&apos;,8023))</code></pre>
-<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x4F7F;&#x7528;listen&#x65B9;&#x6CD5;&#x8FDB;&#x5165;&#x76D1;&#x542C;&#x72B6;&#x6001;&#xFF1B;
-    tcpconn.listen(backlog)   # backlog&#xFF1A; &#x7B49;&#x5F85;&#x961F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#xFF1B;</p><pre><code>tcpconn.listten(100)</code></pre>
-<p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x5FAA;&#x73AF;&#x76D1;&#x542C;&#x72B6;&#x6001;&#xFF1A;
+In [<span class="hljs-number">7</span>]: <span class="hljs-keyword">import</span> re
+</code></pre>
+<h3 id="socketsocketfamilytype">socket.socket(family,type)</h3>
+<ul>
+<li><p>family:</p>
+<p>  AF_INET   # &#x8868;&#x793A;&#x4F7F;&#x7528;TCP\/UDP&#x5957;&#x63A5;&#x5B57;&#xFF1B;</p>
+<p>  AF_UNIX   # &#x8868;&#x793A;&#x4F7F;&#x7528;UNIX&#x5957;&#x63A5;&#x5B57;&#xFF1B;</p>
+</li>
+<li><p>type:</p>
+<p>  STREAM:tcp</p>
+<p>  SOCK_DGRAM:udp</p>
+</li>
+</ul>
+<p>tcpconn = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7ED1;&#x5B9A;&#x5730;&#x5740;&#xFF1B;
+    &#x4F7F;&#x7528;&#x5957;&#x63A5;&#x5B57;&#x5BF9;&#x8C61;&#x7684;bind&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#x4E0E;&#x67D0;&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#xFF1B;</p>
+<pre><code>tcpconn.bind((&apos;ip&apos;,port))   # &#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;ip&#x548C;port&#x7684;&#x5143;&#x7EC4;
+tcpconn.bind((&apos;192.168.0.100&apos;,8023))
+</code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x4F7F;&#x7528;listen&#x65B9;&#x6CD5;&#x8FDB;&#x5165;&#x76D1;&#x542C;&#x72B6;&#x6001;&#xFF1B;
+    tcpconn.listen(backlog)   # backlog&#xFF1A; &#x7B49;&#x5F85;&#x961F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#xFF1B;</p>
+<pre><code>tcpconn.listten(100)
+</code></pre><p>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x5FAA;&#x73AF;&#x76D1;&#x542C;&#x72B6;&#x6001;&#xFF1A;
     &#x4F7F;&#x7528;&#x5957;&#x63A5;&#x5B57;&#x5BF9;&#x8C61;&#x7684;accept&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#xFF1B;
-    accepte()  --&gt; (socket object,address info)</p><h2 id="&#x7F16;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#xFF1A;">&#x7F16;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#xFF1A;</h2><pre><code>import socket
+    accepte()  --&gt; (socket object,address info)</p>
+<h2 id="&#x7F16;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#xFF1A;">&#x7F16;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#xFF1A;</h2>
+<pre><code>import socket
 &#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;socket&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF1A;
     clientsock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
@@ -411,8 +433,9 @@ tcpconn.bind((&apos;192.168.0.100&apos;,8023))</code></pre>
 &#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF1A;
     clientsock.send(&quot;hello world&quot;)
 
-clientsock.recv() # &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1B;</code></pre>
-<p>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B8C;&#x6574;&#x811A;&#x672C;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+clientsock.recv() # &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1B;
+</code></pre><p>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B8C;&#x6574;&#x811A;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 sa = (<span class="hljs-string">&apos;172.27.100.7&apos;</span>,<span class="hljs-number">8023</span>)
 s.bind(sa)
@@ -423,21 +446,27 @@ s.listen(<span class="hljs-number">20</span>)
     data = cinfo.recv(<span class="hljs-number">1024</span>)
     print(<span class="hljs-string">&quot;Recv data: %s&quot;</span> % data)
     cinfo.send(<span class="hljs-string">&quot;echo:&quot;</span> + data)
-    cinfo.close()</code></pre>
-<p>&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;</p><pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+    cinfo.close()
+</code></pre>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
 c = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 saddr = (<span class="hljs-string">&apos;192.168.0.100&apos;</span>,<span class="hljs-number">8023</span>)
 c.connect(saddr)
 c.send(<span class="hljs-string">&quot;hello server&quot;</span>)
 data = c.recv(<span class="hljs-number">1024</span>)
-print(<span class="hljs-string">&quot;Reply from server %s&quot;</span> % data)</code></pre>
+print(<span class="hljs-string">&quot;Reply from server %s&quot;</span> % data)
+</code></pre>
 <p>Web&#x6846;&#x67B6;&#xFF1A;
     Django
     Flask
     Web2py
-    TuborGears</p><p>sys&#x6A21;&#x5757;&#xFF1A;
+    TuborGears</p>
+<p>sys&#x6A21;&#x5757;&#xFF1A;
     sys.ext()
-    sys.argv()   # &#x4F7F;python&#x811A;&#x672C;&#x80FD;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#xFF1B;</p><p>&#x591A;&#x8BFB;&#x4EE3;&#x7801;&#x5427;&#xFF0C;&#x9A9A;&#x5E74;!</p>
+    sys.argv()   # &#x4F7F;python&#x811A;&#x672C;&#x80FD;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#xFF1B;</p>
+<p>&#x591A;&#x8BFB;&#x4EE3;&#x7801;&#x5427;&#xFF0C;&#x9A9A;&#x5E74;!</p>
+
                                 
                                 </section>
                             
@@ -480,7 +509,7 @@ print(<span class="hljs-string">&quot;Reply from server %s&quot;</span> % data)<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python编程之socket模块","level":"1.15","depth":1,"next":{"title":"comyn_lesson","level":"1.16","depth":1,"path":"comyn_lesson/SUMMARY.md","ref":"comyn_lesson/SUMMARY.md","articles":[]},"previous":{"title":"Python编程之MySQLdb模块","level":"1.14","depth":1,"path":"Python编程之MySQLdb模块.md","ref":"Python编程之MySQLdb模块.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python编程之socket模块.md","mtime":"2016-11-24T02:33:35.637Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-05T14:21:32.561Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python编程之socket模块","level":"1.15","depth":1,"next":{"title":"comyn_lesson","level":"1.16","depth":1,"path":"comyn_lesson/SUMMARY.md","ref":"comyn_lesson/SUMMARY.md","articles":[]},"previous":{"title":"Python编程之MySQLdb模块","level":"1.14","depth":1,"path":"Python编程之MySQLdb模块.md","ref":"Python编程之MySQLdb模块.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python编程之socket模块.md","mtime":"2017-02-07T06:09:38.080Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-07T10:07:43.025Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
