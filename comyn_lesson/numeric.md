@@ -4,7 +4,7 @@
 
 ![Builtin-Types](images/Builtin_Types.png)
 
-![Numeric](images/Numeric.png)
+![Numeric](images/numeric.png)
 
 
 ## 比较运算符：
