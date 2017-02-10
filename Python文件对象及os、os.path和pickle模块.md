@@ -29,44 +29,40 @@ open方法可以接收三个参数：文件名、模式和缓冲区参数；
 			r: 只读
 				open('/var/log/message.log','r')
 			w: 写入，从文件指针所在位置开始写入；
-			a：附加，从文件尾部开始写入；
+			a：追加，从文件尾部开始写入；
 		在模式后使用"+"表示同时支持输入、输出操作；
 			如：r+、w+和a+
 		在模式后附加"b"表示以二进制方式打开；
 			如：rb、wb+
 
-	bufsize：定义输出缓存；
-		0表示无输出缓存；
-		1表示使用缓冲；
-		负数表示使用系统默认设置；
-		正数表示使用近似指定大小的缓冲；
-
-var_name = open(filename,[mode,[bufsize]])
 ```python 
-	mode:
-		r
-		w
-		a
-		r+
-		w+
-		a+
-	b表示以二进制模式打开文件：
-		rb
-		wb
-		ab
-		rb+
-		wb+
-		ab+
-	缓冲：
-		0：禁用；
-		负数：使用系统默认缓冲；
-		1：使用缓冲，只缓冲一行数据；
-		2+： 指定缓冲空间大小；
-
-f1 = open('passwd.txt','w+')
+# Mode:
+========= ===============================================================
+Character Meaning
+--------- ---------------------------------------------------------------
+'r'       open for reading (default)
+'w'       open for writing, truncating the file first
+'x'       create a new file and open it for writing
+'a'       open for writing, appending to the end of the file if it exists
+'b'       binary mode
+'t'       text mode (default)
+'+'       open a disk file for updating (reading and writing)
+'U'       universal newline mode (deprecated)
+========= ===============================================================
 ```
 
-方法：
+	bufsize：定义输出缓存；
+		0：表示无输出缓存；
+		负数：表示使用系统默认设置；
+		1：表示使用缓冲，只缓冲一行数据；
+		2+: 表示使用近似指定大小的缓冲；
+
+var_name = open(filename,[mode,[bufsize]])
+
+open函数 实例化一个文件对象给var_name;
+
+
+## 文件对象的方法：
 ```python
 	f1.next()  # 迭代器的next()
 	f1.close() # 关闭文件，有打开一定要有关闭；
@@ -202,6 +198,7 @@ In [36]: f4.readlines()
 Out[36]: ['X11\n', 'subuid\n']
 ```
 
+### 文件对象的属性：
 ```python
 In [37]: f4.closed   # 属性，查看文件是否已经关闭；
 Out[37]: False
@@ -216,6 +213,9 @@ In [40]: f4.newlines  # 属性，返回换行符；
 In [41]: f4.softspace   # 属性，写入行时是否使用软空格；
 Out[41]: 0
 ```
+
+---
+
 
 ### 文件系统功能：os模块；
 
@@ -246,10 +246,10 @@ In [43]: os.abort
 ```
 
 ```python
-os.mkdir('/tmp/testdir1')    # 创建目录；
-os.getcwd()		# 获取当前工作目录；
-os.chdir('/tmp')		# 切换工作目录；
-os.stat('test2.txt')    # 查看当前目录test2.txt文件的元数据信息；
+os.mkdir('/tmp/testdir1')   # 创建目录；
+os.getcwd()					# 获取当前工作目录；
+os.chdir('/tmp')			# 切换工作目录；
+os.stat('test2.txt')    	# 查看当前目录test2.txt文件的元数据信息；
 ```
 
 ### 目录：
