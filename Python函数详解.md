@@ -35,12 +35,12 @@ Python提供了很多内置函数，
 ### 一些相关的概念：
 
 	def是一个可执行语句
-		因此可以出现在任何能够使用语句的地方，甚至可以嵌套与其他语句；例如if或while中；
+		因此可以出现在任何能够使用语句的地方，甚至可以嵌套于其他语句中；例如if或while中；
 
 	def创建了一个对象并将其赋值给一个变量名(即函数名)
 
 	return用于返回结果对象，其为可选，无return语句的函数自动返回None对象；
-		返回多个值是彼此间使用逗号分隔，其组合为元组形式返回一个对象；
+		返回多个值时彼此间使用逗号分隔，其组合为元组形式返回一个对象；
 
 	def语句运行之后，可以在程序中通过函数后附加括号进行调用；
 
@@ -61,7 +61,7 @@ def testFunc():
 testFunc()
 ```
 
-函数的作用域，函数的使用会导致变量有了作用域；
+函数的作用域，函数的使用导致变量有了作用域；
 
 名称空间：/作用域；
 
@@ -88,7 +88,7 @@ print(x)
 
 函数内部使用跟全局变量同名的变量，其实是定义了一个局部变量；
 
-函数内部可以读取读取全局变量，但若要改变全局变量则要使用global关键字；
+函数内部可以读取全局变量，但若要改变全局变量则要使用global关键字；
 
 ```python
 #!/usr/bin/python3
@@ -286,12 +286,26 @@ Out[30]: [1, 2, 13, 4]
 In [31]: print(L)
 [1, 2, 3, 4]
 
+
+In [2]: L = [1,2,3,4]
+
+In [3]: def changer(x):
+   ...:     x = x[:]      # 在函数内部将调用时传递过来的参数创建一个副本。
+   ...:     x[2] += 10
+   ...:     return x
+   ...: 
+
+In [4]: changer(L)
+Out[4]: [1, 2, 13, 4]
+
+In [5]: L
+Out[5]: [1, 2, 3, 4]
 ```
 
 ### 参数匹配模型：
 默认情况下，参数通过其位置进行传递，从左至右，
 
-这意味着，必须精确地传递和函数头部参数一样多的参数；
+这意味着，必须精确地传递和函数头部(定义时)一样多的参数；
 
 
 #### 但也可以通过关键字参数、默认参数或参数容器等改变这种机制；
@@ -299,7 +313,7 @@ In [31]: print(L)
 -	位置：从左至右；
 -	关键字参数：使用"name=value"的语法通过参数名进行匹配；
 -	默认参数：定义函数时使用"name=value"的语法直接给变量一个值，从而传入的值可以少于参数个数；
--	**可变参数**：定义函数时使用*开头的参数，可用于收集任意多基于位置或关键字的参数；
+-	**可变参数**：定义函数时使用\*或者\*\*开头的参数，可用于收集任意多基于位置或关键字的参数；
 -	可变参数解包：调用函数时，使用*开头的参数，可用于将参数集合打散，从而传递任意多基于位置或关键字的参数；
 
 ```python
@@ -317,7 +331,7 @@ TypeError: f6() takes 2 positional arguments but 3 were given
 
 In [36]: print(m,n)          
 3 4
-# 传递的参数，位置与定义参数时一致；
+# 传递的参数个数，位置与定义参数时一致；
 In [37]: print(n,8)
 4 8
 ```
@@ -368,7 +382,7 @@ In [46]: f7(z=o,y=n,m)    # 混用位置参数和关键字参数时，位置参�
 SyntaxError: positional argument follows keyword argument  # 位置参数在关键字参数后了，错了；
 ```
 
-混用位置参数和关键字参数时：所有位置参数，所有的关键字参数；
+混用位置参数和关键字参数时：位置参数在前，关键字参数在后；
 
 #### 默认参数：
 ```python
@@ -394,10 +408,10 @@ TypeError: f8() missing 1 required positional argument: 'y'   # 缺少一个位�
 ```
 
 
-**可变参数**：定义函数时使用*开头的参数，可用于收集任意多基于位置或关键字的参数；
+**可变参数**：定义函数时使用\*或\*\*开头的参数，可用于收集任意多基于位置或关键字的参数；
 
 ```python
-In [52]: def f10(*x):     # 定义了可变参数；
+In [52]: def f10(*x):     # 定义了可变位置参数；此处所谓可变是说参数个数可变。
     ...:     print(x)
     ...:     
 
@@ -421,12 +435,13 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: f10() got an unexpected keyword argument 'z'   
 # 此处将传递过来的关键字参数z识别为字典了；
+# 定义时，仅定义了可变长度的位置参数，调用时却用了关键字参数，故而报错。
 ```
 
 #### 调用函数时使用可变参数要求：
 
-- 	定义函数时使用*，收集位置函数；
--	定义函数时使用**，收集关键字参数；
+- 	定义函数时使用*，收集可变位置函数；
+-	定义函数时使用**，收集可变关键字参数；
 
 ```python
 In [60]: def f11(**x):   # 定义函数是使用**，收集关键字函数；
@@ -438,7 +453,7 @@ In [61]: f11(x=1,y=2,z=9)
 ```
 
 ```python
-In [62]: def f12(x,*y):			# 混用位置参数和可变参数
+In [62]: def f12(x,*y):			# 混用位置参数和可变位置参数
     ...:     print(x,y)         
     ...:     
 
@@ -474,7 +489,7 @@ In [67]: def f14(x,y=10,*z):
 In [68]: f14(m,n,o)     # 因为是自左至右的匹配，所以n匹配给了y；
 3
 4
-(7,)
+(7,)    # 可变位置参数传递过去后是一个元组；
 ```
 
 ```python
@@ -518,13 +533,13 @@ In [77]: def f17(x,y,z):
     ...:     print(x,y,z)
     ...:     
 
-In [78]: f17(*l1)   # 调用时使用*号；将一个对象打散至函数中的各个变量；
+In [78]: f17(*l1)   # 调用时使用*号：将一个对象中的元素打散至函数中的各个变量；
 Sun Mon Tus
 
 In [79]: l2 = ['a','b','c','d']
 
 In [80]: f17(*l2)    
-# 可变参数解包时，定义函数是参数的个数必须与调用时所传递的随想能分解出来的元素个数一致；
+# 可变参数解包时，定义参数时参数的个数，必须与调用时所传递的对象能分解出来的元素个数一致；
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-80-11c8d83d4d4d> in <module>()
@@ -606,8 +621,9 @@ In [92]: f19(m,n,o,key1='v1',key2='v2')
 lambda运算符：
 
 -	lambda args: expression
-            args: 以都好分隔的参数列表；
+            args: 以逗号分隔的参数列表；
             expression：用到args中各参数的表达式；
+
 -	lambda语句定义的代码必须是合法的表达式，不能出现多条件语句(可使用if的三元表达式)和其他非表达式语句，如for和while等；
 
 -	lambda的首要用途是指定短小的回调函数；
@@ -618,7 +634,8 @@ lambda运算符：
 -	lambda是一个单个表达式，而不是一个代码块；
 
 ```python
-In [1]: lambda x,y: pring(x,y)   # python2中会报错，要求lambda函数中只能是表达式，而不能是语句；
+In [1]: lambda x,y: print(x,y)   # python2中会报错，要求lambda函数中只能是表达式，而不能是语句；
+# python3 中可以使用语句；
 Out[1]: <function __main__.<lambda>>
 
 In [2]: lambda x,y: x+y
@@ -637,7 +654,7 @@ Out[5]: 13
 
 ```python
 In [6]: def f20(x,y):
-   ...:     return x + y    # 是以返回值的形式返回值的；
+   ...:     return x + y    # 是以返回值的形式返回函数的执行结果的；
    ...: 
 
 In [7]: f20(3,4)         # 此处是返回值，而不是函数输出；
@@ -663,7 +680,7 @@ Out[11]: 15
 
 In [12]: f2 = (lambda x,y,z=10: x+y+z)  # 默认参数；
 
-In [13]: f2(4,5)            # 调用是默认参数，可以不传递；
+In [13]: f2(4,5)            # 调用时默认参数可以不传递；
 Out[13]: 19
 ```
 
@@ -694,7 +711,7 @@ In [17]: for i in l3:            # 使用for遍历匿名函数列表，并对列
 
 ### python支持有限的函数式编程功能：
 
-- fileter(func,seq) : 调用一个布尔函数func来迭代遍历每个seq中的元素；
+- fileter(func,seq) : 调用一个布尔函数func来迭代遍历seq中的每个元素；
 
     返回一个使func返回值为true的元素的序列；
 
@@ -714,15 +731,36 @@ filter()为已知的序列的每个元素调用给定的布尔函数；
 
 ```python
 # python3.5
-In [20]: l1 = [1,2,3,42,67,16]
+In [18]: l1 = [1,2,3,42,67,16]
 
-In [22]: def f1(x):
-    ...:     if x > 20: 
+In [19]: def f1(x):
+    ...:     if x > 20:
     ...:         return True
-    ...:     else: 
+    ...:     else:
     ...:         return False
-In [23]: filter(f1,l1)
-Out[23]: <filter at 0x7fa81f8e7470>
+    ...:     
+
+In [20]: ff = filter(f1,l1)
+
+In [21]: next(ff)
+Out[21]: 42
+
+In [22]: next(ff)
+Out[22]: 67
+
+In [23]: next(ff)
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-23-7aedb352da6b> in <module>()
+----> 1 next(ff)
+
+StopIteration: 
+
+In [24]: type(ff)    # 过滤器也是一个可迭代对象，所以可以使用netx()函数；
+Out[24]: filter
+
+In [25]: print(ff)
+<filter object at 0x7fce013ddbe0>
 ```
 
 ```python
@@ -825,6 +863,8 @@ Out[4]:
 
 
 ### reduce(func,seq[,init])
+
+#### python 3中，我没有找到该函数，是不是没有了呀？
 ```python
 
 In [5]: def f5(x,y):
@@ -912,13 +952,17 @@ The old position is (9,13),and the new position is (10,10).
 
 列表解析：
 
+```python 
+    [ x ** 2 for x in range(1,11)]
+```
+
 生成器：
 ```python
 In [28]: for i in (j**2 for j in range(1,11)):
     ...:     print(i)
     ...:   
 
-In [30]: list((i**2 for i in range(1,11)))
+In [30]: list((i**2 for i in range(1,11)))    # list()类型转换，将generator转换为list；
 Out[30]: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 ```
@@ -926,9 +970,9 @@ Out[30]: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```python
 In [30]: list((i**2 for i in range(1,11)))
 Out[30]: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+```
 
-
-函数内部使用yield,使其成为生成器对象；
+## 函数内部使用yield,使其成为生成器对象；
 
 ```python
 # 函数中使用yield，会返回一个生成器对象；
@@ -1022,6 +1066,8 @@ In [48]: for i in g1:
 400
 ```
 
+---
+
 ## 装饰器：
 函数装饰器，能够把其他函数的功能增强；
 
@@ -1081,6 +1127,70 @@ hello,mars
 No zuo no die.
 ```
 
+* Example:
+
+```python 
+# 这里定义的是基础函数，在里面预留了一个位置func(x,y)，后面我们可以单独定义函数，并将该函数传递过来，填充到预留的位置；
+In [13]: def num(func):
+    ...:     def add(x,y):
+    ...:         print("{} plus {} is: {}".format(x,y,x+y))
+    ...:         func(x,y)
+    ...:         print("add successful")
+    ...:     return add
+    ...: 
+```
+
+```python 
+In [17]: @num
+    ...: def minus(x,y):
+    ...:     print("{} minus {} is: {}".format(x,y,x-y))
+    ...:     
+
+In [18]: @num
+    ...: def multiplied(x,y):
+    ...:     print("{} multipliedBy {} is {}".format(x,y,x*y))
+    ...:     
+
+In [20]: minus(3,4)
+3 plus 4 is: 7      
+3 minus 4 is: -1     # 由minus函数替代得到的结果；
+add successful
+
+In [21]: multiplied(3,4)
+3 plus 4 is: 7
+3 multipliedBy 4 is 12   # 由multiplied函数替代得到的结果；
+add successful
+```
+
+* Example:
+
+```python 
+In [36]: def deco(func):
+    ...:     def wrapper(name,place):
+    ...:         print("Please say something:")
+    ...:         result = func(name,place)     # result收到的返回值是一个tuple。
+    ...:         print("{} come from {} in {}".format(result[0],result[1],func))
+    ...:     return wrapper
+    ...: 
+
+In [37]: @deco
+    ...: def show(name,place):
+    ...:     print("人生苦短，我用Python!")
+    ...:     return name,place   # 这里返回了两个对象，会被封包为一个元组；
+    ...:     
+
+In [38]: show("guiyin.xiong","Sichuan")
+Please say something:
+人生苦短，我用Python!
+guiyin.xiong come from Sichuan in <function show at 0x7f5ea2a9a840>
+
+In [39]: show("long.wang","Nei Menggu")
+Please say something:
+人生苦短，我用Python!
+long.wang come from Nei Menggu in <function show at 0x7f5ea2a9a840>
+
+```
+
 ## 递归：
 函数执行过程中调用自身；
 
@@ -1090,6 +1200,7 @@ No zuo no die.
 
 	10 * 9 * 8 * 7 * 6 * 5 * 4 *3 * 2 * 1
 	10 * (10-1) (10-1-1)
+
 ```python
 In [58]: def fact(n):
     ...:     if n <= 1: return 1
@@ -1113,6 +1224,7 @@ Out[61]: 3628800
 
 协程： 不太常用，自行研究
 
+---
 
 ### 函数的设计规范：
 
@@ -1131,7 +1243,8 @@ Out[61]: 3628800
 		(1) 每个函数都应该有一个单一的、统一的目标；
 
 		(2) 每个函数的功能都应该相对简单；
-	.	
+
+---
 
 练习1： 将/etc/passwd文件中的每一行都分隔为一个列表；
 
@@ -1143,7 +1256,7 @@ Out[61]: 3628800
 
     函数可以通过多种办法获得输入及产生输出；
 
-![函数执行环境](/images/funcIO.png)
+![函数执行环境](images/funcIO.png)
 
 
 
