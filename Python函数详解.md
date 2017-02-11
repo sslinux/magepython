@@ -864,9 +864,9 @@ Out[4]:
 
 ### reduce(func,seq[,init])
 
-#### python 3中，我没有找到该函数，是不是没有了呀？
+#### from functools import reduce
 ```python
-
+from functools import reduce 
 In [5]: def f5(x,y):
    ...:     return x + y
    ...: 
