@@ -98,7 +98,7 @@ $ pip install --egg pyenv
 
 ```bash
 [sslinux@localhost ~]$ sudo yum -y install gdbm-devel openssl-devel \
-sqlite-devel readline-devel zlib-devel bzip2-devel
+sqlite-devel readline-devel zlib-devel bzip2-devel libffi-devel
 ```
 
 **安装python 3.5.2**
